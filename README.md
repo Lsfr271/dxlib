@@ -20,6 +20,14 @@
 
 ---
 
+### Who is it for?
+
+- Dxlib is for beginners who want to get used to C++ but
+- without the verbose code. And dxlib wraps all of that to
+- be very simple.
+
+---
+
 ### How to use?
 
 Just include the header in your project:

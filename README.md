@@ -46,9 +46,3 @@ int main() {
     // your code here.
 }
 ```
-
-- if you have the dx.h file in a dir do this:
-
-```ccp
-#include "../dir/dx.h"
-```

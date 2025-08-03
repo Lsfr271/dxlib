@@ -4,7 +4,7 @@
 
 - Mathematical calculations (geometry, trigonometry, volumes)
 - File operations (reading, writing, copying, deleting)
-- String and text manipulation (trimming, splitting, case changes)
+- String and text manipulation (trimming, case changes, etc..)
 - Time and date utilities
 - Random number generation and string creation
 - Console input/output helpers
@@ -13,10 +13,9 @@
 
 ### Why use dxlib?
 
-- Header-only: Just include `dx.h` and you’re ready to go!
 - Organized: Clean namespaces for different functionalities
 - Cross-platform support with Windows and Linux compatibility
-- Simple API designed to speed up your coding workflow
+- Simple API designed to speed up your terminal-only projects!
 
 ---
 
@@ -71,10 +70,7 @@ int main() {
 Just include the header in your project:
 
 ```cpp
-#include "../include/dx.h" // if you have dx.h in the include folder, else do #include "dx.h"
-// or you might do this in other cases:
-// #include "include/dx.h"
-// the includes above depends on your compiler, so dont complain if you get include path errors
+#include "../include/dx.h" // Adjust the path based on your project structure or compiler-type (it might be different)
 
 using namespace dxlib;  
 using namespace dxlibConvert;

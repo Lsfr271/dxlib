@@ -47,7 +47,7 @@ It turned into a utility library that makes many common tasks much simpler.
 #include "../include/dx.h"
 
 using namespace dxlib;
-using namespace dxPrint;
+using namespace dxlibPrint;
 
 int main() {
     // print hello world
@@ -58,6 +58,9 @@ int main() {
     varp("Age is -age-", age);
 
     // get user input and print it
+    // note: dxi<>() directly asks for input and returns the value,
+    // so the next time you print the value, you get a different result depending on what
+    // the user entered on the input
     std::string name = dxi<std::string>("What is your name?: ");
     varp("Hello, -name-!", name);
 }

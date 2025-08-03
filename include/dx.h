@@ -46,36 +46,12 @@ namespace dxlib {
     }
 
     namespace dxlibRandom {
-        double RandomNumRange(int min, int max, std::string type){
-            if (type == "int"){
-                return min + rand() % (max - min + 1); // no need for type conversion because min and max is already int
-            }
-            else if (type == "float"){
-                return static_cast<float>(min) + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX) / (max - min));
-            }
-            else if (type == "double"){
-                return static_cast<double>(min) + static_cast<double>(rand()) / (static_cast<double>(RAND_MAX) / (max - min));  
-            }
-            else {
-                throw std::invalid_argument("Invalid Type. Enter either int, float, or double");
-            }
+        double RandomNumRange(int min, int max){
+            return min + rand() % (max - min + 1);
         }
 
-        void PrintRandomNum(int min, int max, std::string type){
-            if (type == "int"){
-                std::cout << "Int: " << min + rand() % (max - min + 1); // no need for type conversion because min and max is already int
-            }
-            else if (type == "float"){
-                std::cout << "Float: " << (static_cast<float>(min) + static_cast<float>(rand()) /
-                            (static_cast<float>(RAND_MAX) / (max - min)) + 0.5f) << std::endl;
-            }
-            else if (type == "double"){
-                std::cout << "Double: " << (static_cast<double>(min) + static_cast<double>(rand()) /
-                                                    (static_cast<double>(RAND_MAX) / (max - min)) + 0.15) << std::endl;  
-            }
-            else {
-                throw std::invalid_argument("Invalid Type. Enter either int, float, or double");
-            }
+        void PrintRandomNum(int min, int max){
+            std::cout << "Int: " << min + rand() % (max - min + 1);
         }
     }
 

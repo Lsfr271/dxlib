@@ -26,6 +26,8 @@ Just include the header in your project:
 
 ```cpp
 #include "../include/dx.h" // if you have dx.h in the include folder, else do #include "dx.h"
+// or you might do this in other cases:
+// #include "include/dx.h"
 
 using namespace dxlib;  
 using namespace dxlibConvert;

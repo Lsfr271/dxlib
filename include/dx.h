@@ -53,7 +53,7 @@ namespace dxlib {
         void PrintRandomNum(int min, int max){
             std::cout << "Int: " << min + rand() % (max - min + 1);
         }
-    }
+    } 
 
     namespace dxlibConvert {
         int ConvertDoubleToInt(const double &i){
@@ -94,17 +94,6 @@ namespace dxlib {
             contents << file.rdbuf();
 
             return contents.str();
-        }
-
-        // read entire file content into a vector<char>
-        std::vector<char> readFileToVector(const std::string& filename){
-            std::ifstream file(filename, std::ios::in | std::ios::binary);
-
-            if (!file){
-                throw std::runtime_error("Failed to open file: " + filename);
-            }
-
-            return std::vector<char>((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
         }
 
         // write a string to file (overwrite)

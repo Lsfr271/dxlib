@@ -48,7 +48,7 @@ It turned into a utility library that makes many common tasks much simpler.
 #include "../include/dx.h"
 
 using namespace dxlib;
-using namespace dxlib::dxPrint;
+using namespace dxPrint;
 
 int main() {
     // print hello world

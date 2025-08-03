@@ -22,18 +22,15 @@
 
 ### Who is it for?
 
-- Dxlib is for beginners who want to get used to C++ but
-- without the verbose code. And dxlib wraps all of that to
-- be very simple.
+- dxlib is for beginners who want to get comfortable with C++
+without writing verbose boilerplate. It wraps many features into a simple, beginner-friendly interface.
 
 ---
 
 ### Why did i create it?
 
-- i am an amateur programmer myself
-- i created it as a project to test my self
-- and guess what, i created an API that makes
-- everything (not everything but you get what i mean) simpler!
+- I built dxlib as a personal challenge to improve my C++.
+It turned into a utility library that makes many common tasks much simpler.
 
 ---
 
@@ -45,6 +42,31 @@
 ---
 
 ### How to use?
+## Example snippet:
+
+```cpp
+#include "../include/dx.h"
+
+using namespace dxlib;
+using namespace dxlib::dxPrint;
+
+int main() {
+    // print hello world
+    dxp("Hello, World!");
+
+    // print variables in a print statement
+    int age = 20;
+    varp("Age is -age-", age);
+
+    // get user input and print it
+    std::string name = dxi<std::string>("What is your name?: ");
+    varp("Hello, -name-!", name);
+}
+```
+
+---
+
+### How to initialize fully?
 
 Just include the header in your project:
 

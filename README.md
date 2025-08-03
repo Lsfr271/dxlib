@@ -28,6 +28,22 @@
 
 ---
 
+### Why did i create it?
+
+- i am an amateur programmer myself
+- i created it as a project to test my self
+- and guess what, i created an API that makes
+- everything (not everything but you get what i mean) simpler!
+
+---
+
+### About me
+
+- I have been learning C++ for about 2 months now
+- My favourite programming language is C++ and second is Python
+
+---
+
 ### How to use?
 
 Just include the header in your project:

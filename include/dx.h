@@ -209,23 +209,23 @@ namespace dxlib {
         }
 
         namespace dxlibMathAdditions {
-                int OperatorNums(int a, int b, std::string type){
-                    if (type == "+") return a + b;
-                    else if (type == "-") return a - b;
-                    else if (type == "*") return a * b;
-                    else if (type == "/") return a / b;
-                    else if (type == "/*-") {
-                        if (b == 0){
-                            throw std::invalid_argument("Divison by zero '/*-' operation Invalid.");
-                        }
-                        else {
-                            return a / b * b * pow(a, 2) - (a - b); // pow (a, 2) hardcoded (because if user enters)
-                                                                                    // something like 150 as a. it will be pow (a, a) which
-                                                                                    // is extremely large.
-                        }
+            int OperatorNums(int a, int b, std::string type){
+                if (type == "+") return a + b;
+                else if (type == "-") return a - b;
+                else if (type == "*") return a * b;
+                else if (type == "/") return a / b;
+                else if (type == "/*-") {
+                    if (b == 0){
+                        throw std::invalid_argument("Divison by zero '/*-' operation Invalid.");
                     }
-                
-                    throw std::invalid_argument("Invalid operator type. Enter +, -, /, *, or /*-");
+                    else {
+                        return a / b * b * pow(a, 2) - (a - b); // pow (a, 2) hardcoded (because if user enters)
+                                                                                // something like 150 as a. it will be pow (a, a) which
+                                                                                // is extremely large.
+                    }
+                }
+            
+                throw std::invalid_argument("Invalid operator type. Enter +, -, /, *, or /*-");
             }
 
             double MultNums(const std::vector<double> &numbers){

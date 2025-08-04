@@ -1,5 +1,5 @@
 # Welcome to dxlib!
-# VERSION 1.01 (More to be added!)
+## v1.0.1
 
 **dxlib** is a lightweight, easy-to-use C++ header-only library that provides a collection of utilities and tools for:
 

@@ -33,6 +33,13 @@ It turned into a utility library that makes many common tasks much simpler.
 
 ---
 
+### How to learn more about dxlib if you are stuck
+
+- Please go to ``include/dxHelp.h`` in this github repository
+you will find every function there explained.
+
+---
+
 ### About me
 
 - I have been learning C++ for about 2 months now

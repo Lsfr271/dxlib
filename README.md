@@ -1,3 +1,5 @@
+### If you have questions please DM me: ._2afKeeper (discord)
+
 # Welcome to dxlib!
 ## v1.0.1
 

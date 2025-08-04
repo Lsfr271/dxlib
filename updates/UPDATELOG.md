@@ -12,7 +12,7 @@
   This namespace provides easy-to-use debugging utilities that wrap verbose code, simplifying debugging tasks.  
   For details, please check `dxHelp.h` where all new functions are explained.
 
-- 2025/8/4
+- 2025/8/04
 
 ---
 
@@ -20,7 +20,7 @@
   The file is suppose to show how dxlib is suppose to be used, covering a few namespaces.
   File location in this repository: `include/src/dxlibExample.cpp`
 
-- 2025/8/4
+- 2025/8/04
 
 ---
 

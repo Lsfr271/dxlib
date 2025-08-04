@@ -4,7 +4,7 @@
 
 ---
 
-```ccp
+```cpp
 #include "../include/dxHelp.h" // it can be different on your project layout
 
 // call the functions with help like:

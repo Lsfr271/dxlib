@@ -83,6 +83,13 @@ namespace dxlibHelp {
         std::cout << "RTrim(): Removes whitespace on the right side of a string." << std::endl;
         std::cout << "CapitalizeWords(): Capitalizes the first letter of each word in a string." << std::endl;
     }
+
+    void dxlibDebugUtil() {
+        std::cout << "log(): Logs a message and gives either a [INFO], [WARN], or [ERRORS]" << std::endl;
+        std::cout << "debugBreak(): Breaks the code immediately if something went wrong. Supports both Windows And Linux" << std::endl;
+        std::cout << "assertLog(): Makes something not 0." << std::endl;
+        std::cout << "timeLog(): Measures how much time has passed during some block of code execution" << std::endl;
+    }
 }
 
 #endif // DX_HELP

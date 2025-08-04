@@ -1,7 +1,5 @@
 /*
 This file is used to show how dxlib is used.
-If you have anything to share please dm me on discord:
-._2afkeeper
 */
 #include "include/dx.h"
 
@@ -57,8 +55,8 @@ int main() {
 
                 dxp("It looks like you found some coins!");
                 varp("You found: -moneyGain-$ coins!", moneyGain); // show the amount of money
-                showMoney();
                 userMoney += moneyGain;
+                showMoney();
                 sleepfor("s", 1);
 
                 continue;
@@ -104,9 +102,9 @@ int main() {
                 int tooMuchMoney = RandomNumRange(10, 100);
 
                 varp("You found: -tooMuchMoney-$ Coins!", tooMuchMoney);
-                showMoney();
                 sleepfor("s", 1);
                 userMoney += tooMuchMoney;
+                showMoney();
                 continue;
             }
             else {

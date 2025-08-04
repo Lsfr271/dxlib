@@ -7,89 +7,81 @@
 namespace dxlibHelp {
 
     void dxlibMainUtil() { 
-        std::cout << "dxlibMain has 2 functions, being CinFail() and dxClearBuf()" << std::endl;
+        std::cout << "dxlibMain has 2 functions: CinFail() and dxClearBuf()" << std::endl;
 
-        std::cout << "CinFail(): Checks if any std::cin has failed (likely to invalid data type)" << std::endl;
-        std::cout << "dxClearBuf(): When you do a std::endl it adds a buffer, so on the next input"
-                     " it would automatically enter as a new line. This is why dxClearBuf() exists." << std::endl;
+        std::cout << "CinFail(): Checks if std::cin failed (likely due to an invalid data type)." << std::endl;
+        std::cout << "dxClearBuf(): After std::endl, a buffer is added, which can auto-submit the next input."
+                     " This function clears that buffer." << std::endl;
     }
 
     void dxlibRandUtil() {
-        std::cout << "dxlibRandom has 2 functions, being RandomNumRange() and PrintRandomNum()" << std::endl;
+        std::cout << "dxlibRandom has 2 functions: RandomNumRange() and PrintRandomNum()" << std::endl;
         
-        std::cout << "RandomNumRange(): It takes in 2 arguments, being the min and max. Min is where the computer starts"
-                     " the lowest, and max being where the computer ends. And in between that, it picks a random number." << std::endl;
-        std::cout << "PrintRandomNum(): It is very simmilar to RandomNumRange, instead of returning it directly prints the random number." << std::endl;
+        std::cout << "RandomNumRange(): Takes two arguments (min and max) and returns a random number between them." << std::endl;
+        std::cout << "PrintRandomNum(): Similar to RandomNumRange(), but directly prints the random number instead of returning it." << std::endl;
     }
 
     void dxlibConvertUtil() {
-        std::cout << "dxlibConvert has 5 functions. They are about converting data types, lets explain one." << std::endl;
+        std::cout << "dxlibConvert has 5 functions for converting between data types. Here's one as an example:" << std::endl;
 
-        std::cout << "ConvertDoubleToInt(): It takes in a double parameter and converts it to an int."
-                     " Imagine you have this: 'double a = 3.14', ConvertDoubleToInt(double) converts 3.14 to 3" << std::endl;
-        std::cout << "For the other functions its very simmilar. I wont explain them but if you do not know datatypes"
-                     " go watch a tutorial explaining them." << std::endl;
+        std::cout << "ConvertDoubleToInt(): Takes a double (e.g., 3.14) and converts it to an int (3)." << std::endl;
+        std::cout << "The rest are similar. If you're unfamiliar with data types, look up a beginner tutorial." << std::endl;
     }
 
     void dxlibFileUtil() {
-        std::cout << "FileExists(): Checks if a file exists by checking the filename argument passed" << std::endl;
-        std::cout << "FileToString(): Checks the files name passed and reads the file and returns a string of everything" << std::endl;
-        std::cout << "WriteString_ToFileAndOverWrite(): Takes in a filename and a string then puts that string in the file." << std::endl;
-        std::cout << "WriteVectorToFileAnd_OverWrite(): Takes in a file name and a vector of characters and puts that vector of chars"
-                     " in the file" << std::endl;
-        std::cout << "CreateFile(): Takes in a filename and a filetype and creates it. For example: example.txt, the .txt"
-                     " is the filetype, and the example is the filename" << std::endl;
-        std::cout << "DeleteFile(): Deletes an existing file, otherwise throws an error" << std::endl;
-        std::cout << "CopyFile(): Copies the contents of the file and its name and takes in arguments to where it should be" << std::endl;
-        std::cout << "RenameFile(): Renames an exising file, otherwise throws an error." << std::endl;
+        std::cout << "FileExists(): Checks if a file exists by its name." << std::endl;
+        std::cout << "FileToString(): Reads an entire file and returns its contents as a string." << std::endl;
+        std::cout << "WriteString_ToFileAndOverWrite(): Takes a filename and a string, then writes the string to the file." << std::endl;
+        std::cout << "WriteVectorToFileAnd_OverWrite(): Takes a filename and a vector of characters, writing them to the file." << std::endl;
+        std::cout << "CreateFile(): Takes a filename and file extension, and creates the file (e.g., example.txt)." << std::endl;
+        std::cout << "DeleteFile(): Deletes an existing file; throws an error if it doesn't exist." << std::endl;
+        std::cout << "CopyFile(): Copies a file to a new destination using the arguments provided." << std::endl;
+        std::cout << "RenameFile(): Renames an existing file; throws an error if the file doesn't exist." << std::endl;
     }
 
     void dxlibMathUtil() {
-        std::cout << "The first functions is very difficult to explain, but if you know sin, cos, tan it should be easy." << std::endl;
-        std::cout << "OperatorNums(): Takes in 2 integers and a type. If its + it adds the 2 integers and so on"
-                     " theres one type you should be aware about, its \"/*-\", this type has the formula of: "
-                     " return a / b * b * pow(a, 2) - (a - b), so be aware." << std::endl;
-        std::cout << "MultNums(): Takes in a vector and iterates through each element and multiplies the element." << std::endl;
-        std::cout << "PrintPower(): Takes in 3 arguments, a base & exponent and a boolean twist, if the twist is false"
-                     " it calculates it nomrally, but its off it does some weird algorithm. So be aware. And it prints the result" << std::endl;
-        std::cout << "ReturnPower(): This is the same as PrintPower() but returns it instead of printing it, giving you more control" << std::endl;
-        std::cout << "The other functions are for shapes, if your interested you can take a look at the source code in dx.h" << std::endl;
+        std::cout << "The first few functions are harder to explain, but if you understand sin, cos, and tan, they should make sense." << std::endl;
+        std::cout << "OperatorNums(): Takes two integers and a character. For example, '+' adds them. For the special type \"/*-\","
+                     " it runs: a / b * b * pow(a, 2) - (a - b). Be cautious with that." << std::endl;
+        std::cout << "MultNums(): Takes a vector of numbers and multiplies all its elements together." << std::endl;
+        std::cout << "PrintPower(): Takes a base, exponent, and a twist boolean. If twist is false, it works normally."
+                     " If true, it runs a unique algorithm and prints the result." << std::endl;
+        std::cout << "ReturnPower(): Same as PrintPower(), but returns the result instead of printing it." << std::endl;
+        std::cout << "There are also shape-related functions — check the dx.h source for those." << std::endl;
     }
 
     void dxlibTimeUtil() {
         std::cout << "FormatDate(): Converts a time structure (tm) into a formatted string." << std::endl;
-        std::cout << "sleepfor(): Takes in two arguments, a type and an integer, if the type is \"s\" and the type"
-                     " is 1, it waits for 1 second and then runs the code below in your program, you can look"
-                     " at the source code for more information or enter an invalid type to get more information" << std::endl;
-        std::cout << "GetLocalTime(): Gets the local time of your country." << std::endl;
-        std::cout << "AddSecToTime(): Adds a specified number of seconds to a time structure, converts into numeric value"
-                     " then converts it back." << std::endl;
+        std::cout << "sleepfor(): Takes a type (e.g., 's') and an integer. If type is 's' and value is 1, it waits 1 second."
+                     " You can check the source or pass an invalid type to learn more." << std::endl;
+        std::cout << "GetLocalTime(): Returns your system’s current local time." << std::endl;
+        std::cout << "AddSecToTime(): Adds seconds to a time structure by converting it to a numeric value and back." << std::endl;
     }
 
     void dxlibGenUtil() {
-        std::cout << "RandomStr(): Generates a random password-like string and depends on what length is passed on how long it is" << std::endl;
-        std::cout << "ShuffleVect(): Shuffles a vector. For example: std::vector<std::char> ex = {'a', 'b', 'c'}"
-                     " ShuffleVect(ex), it might become like: {'a', 'c', 'b'} or some different places." << std::endl;
+        std::cout << "RandomStr(): Generates a password-like random string. The length depends on the value passed." << std::endl;
+        std::cout << "ShuffleVect(): Shuffles a vector. For example: std::vector<char> ex = {'a', 'b', 'c'};"
+                     " ShuffleVect(ex) might become {'a', 'c', 'b'}." << std::endl;
     }
 
     void dxlibPrintUtil() {
-        std::cout << "dxp(): Prints something to the screen. (only string is supporte)" << std::endl;
-        std::cout << "varp(): Prints a variable plus a string onto the screen, here is an example: "
-                     " int a = 20; varp(\"Something is -a- years old\", a) what it basically does it gets the value of the"
-                     " integer and puts it in the string. Note: Use - - around something and PASS the variable as an argument" << std::endl;
+        std::cout << "dxp(): Prints a string to the screen. (Only string is supported)" << std::endl;
+        std::cout << "varp(): Prints a variable inside a string. Example:"
+                     " int a = 20; varp(\"Something is -a- years old\", a)."
+                     " Use - - around the variable name in the string and pass the variable as an argument." << std::endl;
     }
 
     void dxlibTextUtil() {
-        std::cout << "startsWith(): Returns true if the prefix of a word starts with whatever string is passed. Otherwise false" << std::endl;
-        std::cout << "endsWith(): Same logic as startsWith()" << std::endl;
-        std::cout << "ChangeCase(): Changes a string from uppercase or lowercase." << std::endl;
-        std::cout << "Split(): Splits a string into smaller strings using a delimiter" << std::endl;
-        std::cout << "Join(): Joins two strings together" << std::endl;
-        std::cout << "TrimString(): Removes any whitespace in a string." << std::endl;
-        std::cout << "ReverseString(): Reverses the string. For example: \"Hello\" would be \"olleH\" if you called the Function with it" << std::endl;
-        std::cout << "LTrim(): Same logic as TrimString() but removes any whitespace on the left side of a string." << std::endl;
-        std::cout << "RTrim(): Same logic as LTrim but removes the any whitespace on the right side of a string." << std::endl;
-        std::cout << "CapitalizeWords(): Capitalizes the first letter of a word." << std::endl;
+        std::cout << "startsWith(): Returns true if a string starts with the given prefix." << std::endl;
+        std::cout << "endsWith(): Returns true if a string ends with the given suffix." << std::endl;
+        std::cout << "ChangeCase(): Changes a string to uppercase or lowercase." << std::endl;
+        std::cout << "Split(): Splits a string using a delimiter and returns parts as separate strings." << std::endl;
+        std::cout << "Join(): Joins strings together." << std::endl;
+        std::cout << "TrimString(): Removes all whitespace from a string." << std::endl;
+        std::cout << "ReverseString(): Reverses a string. E.g., \"Hello\" becomes \"olleH\"." << std::endl;
+        std::cout << "LTrim(): Removes whitespace on the left side of a string." << std::endl;
+        std::cout << "RTrim(): Removes whitespace on the right side of a string." << std::endl;
+        std::cout << "CapitalizeWords(): Capitalizes the first letter of each word in a string." << std::endl;
     }
 }
 

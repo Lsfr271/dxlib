@@ -179,7 +179,14 @@ namespace dxlib {
                 if (type == "+") return a + b;
                 else if (type == "-") return a - b;
                 else if (type == "*") return a * b;
-                else if (type == "/") return a / b;
+                else if (type == "/") {
+                    if (b == 0){
+                        throw std::invalid_argument("Divison by zero '/' operation invalid.");
+                    }
+                    else {
+                        return a / b
+                    }
+                }
                 else if (type == "/*-") {
                     if (b == 0){
                         throw std::invalid_argument("Divison by zero '/*-' operation Invalid.");
@@ -601,3 +608,4 @@ namespace dxlib {
 }
 
 #endif // DX_H
+

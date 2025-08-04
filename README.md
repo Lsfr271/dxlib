@@ -84,18 +84,7 @@ Just include the header in your project:
 
 using namespace dxlib;  
 using namespace dxlibConvert;
-using namespace dxlibFileUtils;
-using namespace dxlibFileOperations;
-using namespace dxlibGen;
-using namespace dxlibMain;
-using namespace dxlibMath;
-using namespace dxlibMathAdditions;
-using namespace dxlibPower;
-using namespace dxlibPrint;
-using namespace dxlibRandom;
-using namespace dxlibTime;
-using namespace dxlibText;
-using namespace dxlibShapesCalc;
+// other namespaces nested in dxlib
 
 int main() {
     // your code here.

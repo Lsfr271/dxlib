@@ -57,6 +57,7 @@ you will find every function there explained.
 - `dxlibTime` – Time handling and delays
 - `dxlibPrint` – Easy variable printing
 - `dxlibText` – String utilities (trim, split, join, case, etc.)
+- `dxlibDebug` - Debug Utilities (log, assertLog, etc..)
 
 ---
 

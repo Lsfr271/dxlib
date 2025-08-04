@@ -28,6 +28,7 @@
     #include <pwd.h>
     #include <limits.h>
 #endif
+#include <functional>
 
 namespace dxlib {
     namespace dxlibMain {
@@ -552,6 +553,49 @@ namespace dxlib {
                     c = std::tolower(static_cast<unsigned char>(c));
                 }
             }
+        }
+    }
+
+    namespace dxlibDebug {
+        enum class LogLevel {INFO, WARN, ERRORS};
+
+        void log(const std::string& msg, LogLevel level = LogLevel::INFO){
+            std::string prefix;
+
+            switch (level){
+                case LogLevel::INFO: prefix = "[INFO]"; break;
+                case LogLevel::WARN: prefix = "[WARN]"; break;
+                case LogLevel::ERRORS: prefix = "[ERROR]"; break;
+            }
+
+            std::cout << prefix << " " << msg << std::endl;
+        }
+
+        void debugBreak() {
+            #ifdef _WIN32
+                __debugbreak(); //MSVC
+            #else
+                std::raise(SIGTRAP); //linux
+            #endif // _WIN32
+        }
+
+        void assertLog(bool cond, const std::string& msg){
+            if (!cond) {
+                log("[ASSERT FAIL]" + msg, LogLevel::ERRORS);
+                std::exit(EXIT_FAILURE);
+            }
+            // do nothing if cond passed
+        }
+
+        void timeLog(const std::string& label, const std::function<void()>&func){
+            auto start = std::chrono::high_resolution_clock::now();
+            func(); // run user func
+            auto end = std::chrono::high_resolution_clock::now();
+
+            auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+            double ms = duration / 1000.0;
+
+            log(label + " took " + std::to_string(ms) + " ms");
         }
     }
 }

@@ -1,17 +1,19 @@
-### Updates:
+### Updates
 
-- Added a dxHelp.h For people who are stuck.
-- You can go to `include/dxHelp.h` and find all functions explained.
+- Added a new helper file: `dxHelp.h`  
+  This file explains all functions in the library for users who get stuck.  
+  You can find it at `include/dxHelp.h` in the repository.
 
-- 2025/8/3
-
----
-
-- Added a new nested namespace called 'dxlibDebug'
-  this lets you debug things without writing the code itself
-- Essentially soft wrapping the verbose code
-  please go to dxHelp.h to read all the added functions!
+- 2025/08/01
 
 ---
 
-### More updates will come soon!
+- Introduced a new nested namespace: `dxlibDebug`  
+  This namespace provides easy-to-use debugging utilities that wrap verbose code, simplifying debugging tasks.  
+  For details, please check `dxHelp.h` where all new functions are explained.
+
+- 2025/8/4
+
+---
+
+### More updates will be coming soon!

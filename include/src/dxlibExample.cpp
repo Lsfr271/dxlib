@@ -1,7 +1,7 @@
 /*
 This file is used to show how dxlib is used.
-This file is a minimal example so you can see how dxlib is used.
-Thank you
+If you have anything to share please dm me on discord:
+._2afkeeper
 */
 #include "include/dx.h"
 

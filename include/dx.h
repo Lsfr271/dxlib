@@ -336,34 +336,6 @@ namespace dxlib {
 
             return new_tm;
         }
-
-        // class to measure time
-        class dxlibTimer {
-            private:
-                std::chrono::time_point<std::chrono::high_resolution_clock> start_time;
-                bool running = false;
-
-            public:
-                void Timer_start() {
-                    start_time = std::chrono::high_resolution_clock::now();
-                    running = true;
-                }
-
-                void Timer_stop() {
-                    running = false;
-                }
-
-                // returns elapsed time in ms
-                double ElapsedTimeMs() const {
-                    if (running){
-                        auto now = std::chrono::high_resolution_clock::now();
-                        
-                        return std::chrono::duration<double, std::milli>(now - start_time).count();
-                    }
-
-                    return 0.0;
-                }
-        };
     }
 
     namespace dxlibGen {

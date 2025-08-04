@@ -16,4 +16,12 @@
 
 ---
 
+- Created an src folder in include and a dxlibExample.cpp
+  The file is suppose to show how dxlib is suppose to be used, covering a few namespaces.
+  File location in this repository: `include/src/dxlibExample.cpp`
+
+- 2025/8/4
+
+---
+
 ### More updates will be coming soon!

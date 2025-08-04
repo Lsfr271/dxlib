@@ -7,4 +7,11 @@
 
 ---
 
+- Added a new nested namespace called 'dxlibDebug'
+  this lets you debug things without writing the code itself
+- Essentially soft wrapping the verbose code
+  please go to dxHelp.h to read all the added functions!
+
+---
+
 ### More updates will come soon!

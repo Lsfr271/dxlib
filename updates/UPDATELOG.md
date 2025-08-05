@@ -60,11 +60,15 @@ int main() {
 
 ---
 
-## **Name fix**
+## **Name fixes**
 - In `dxlibMain::dxClearBuf` the dxClearBuf is not understandable to especially
   Beginners, so it was changed to `ClearBuffer`
 
 - Originally, main dxlib .h file was named `dx.h`, now its named `dxlib.h` for clarity
+
+- Printing Lines would usually need you to call `dxp` or `varp`, but now it has been changed
+  dxp is now `printlnie` and varp is now `varPrint`, this change has been done to make it
+  easier for beginners to understand
 
 - **2025/09/05**
 

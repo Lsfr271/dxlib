@@ -447,7 +447,7 @@ namespace dxlib {
         }
 
         template<typename T>
-        T dxi(const std::string& ques, bool nl = true) {
+        T askInput(const std::string& ques, bool nl = true) {
             T input{};
 
             while (true) {
@@ -616,5 +616,6 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 

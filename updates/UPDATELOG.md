@@ -64,6 +64,8 @@ int main() {
 - In `dxlibMain::dxClearBuf` the dxClearBuf is not understandable to especially
   Beginners, so it was changed to `ClearBuffer`
 
+- Originally, main dxlib .h file was named `dx.h`, now its named `dxlib.h` for clarity
+
 - **2025/09/05**
 
 ---

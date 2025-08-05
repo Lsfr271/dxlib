@@ -485,7 +485,7 @@ namespace dxlib {
             else if (type == "upper") {
                 std::transform(s.begin(), s.end(), s.begin(), ::toupper);
             }
-            else if (type == "middle"){
+            else if (type == "randomized"){
                 static std::random_device rd;
                 static std::mt19937 gen(rd());
                 static std::uniform_int_distribution<> dist(0, 1);
@@ -617,4 +617,3 @@ namespace dxlib {
 }
 
 #endif // DX_H
-

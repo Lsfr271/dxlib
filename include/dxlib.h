@@ -383,7 +383,7 @@ namespace dxlib {
             }
         }
         
-        void varp(std::string text, const std::unordered_map<std::string, std::string>& vars, bool nl = true) {
+        void printVar(std::string text, const std::unordered_map<std::string, std::string>& vars, bool nl = true) {
             size_t pos = 0;
 
             while ((pos = text.find('-', pos)) != std::string::npos) {
@@ -410,12 +410,12 @@ namespace dxlib {
 
         // Variadic template helper (internal)
         namespace {
-            void varp_helper(std::string& text) {
+            void printVar_helper(std::string& text) {
                 std::cout << text << std::endl;
             }
 
             template<typename T, typename... Args>
-            void varp_helper(std::string& text, T&& firstArg, Args&&... restArgs) {
+            void printVar_helper(std::string& text, T&& firstArg, Args&&... restArgs) {
                 size_t start = text.find('-');
                 if (start == std::string::npos) {
                     std::cout << text << std::endl;
@@ -437,15 +437,14 @@ namespace dxlib {
 
                 text = before + replacement + after;
 
-                varp_helper(text, std::forward<Args>(restArgs)...);
+                printVar_helper(text, std::forward<Args>(restArgs)...);
             }
         }
 
         template<typename... Args>
         void printVar(std::string text, Args&&... args) {
-            varp_helper(text, std::forward<Args>(args)...);
+            printVar_helper(text, std::forward<Args>(args)...);
         }
-
 
         template<typename T>
         T dxi(const std::string& ques, bool nl = true) {
@@ -617,6 +616,5 @@ namespace dxlib {
 }
 
 #endif // DX_H
-
 
 

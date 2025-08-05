@@ -41,7 +41,7 @@ namespace dxlib {
             }
         }
 
-        void dxClearBuf(){
+        void ClearBuffer(){
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
@@ -617,4 +617,5 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 

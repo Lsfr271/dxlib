@@ -502,7 +502,7 @@ namespace dxlib {
                 }
             }
             else {
-                throw std::invalid_argument("Invalid Type. Enter either lower or upper");
+                throw std::invalid_argument("Invalid Type. Enter either lower, upper, or randomized");
             }
         }
 
@@ -617,3 +617,4 @@ namespace dxlib {
 }
 
 #endif // DX_H
+

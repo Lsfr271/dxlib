@@ -52,6 +52,8 @@ int main() {
 
     varp("New word: -word-", word);
 }
+
+// Output: hElLo // or something different because its randomized
 ```
 
 - **2025/08/05**

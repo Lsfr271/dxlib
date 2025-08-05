@@ -20,7 +20,7 @@ int main() {
 
     // game loop
     while (true) {
-        std::string choice = dxi<std::string>("What will be your choice? (l = left, r = right): ");
+        std::string choice = askInput<std::string>("What will be your choice? (l = left, r = right): ");
         ChangeCase(choice, "lower");
 
         // Winning condition
@@ -58,7 +58,7 @@ int main() {
                 sleepfor("s", 1);
                 printVar("Its says: -reversed_word-", reversed_word);
 
-                std::string guessWord = dxi<std::string>("What is the original Word?: ");
+                std::string guessWord = askInput<std::string>("What is the original Word?: ");
                 ChangeCase(guessWord, "lower");
                 TrimString(guessWord);
 

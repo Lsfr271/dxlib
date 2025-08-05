@@ -179,14 +179,7 @@ namespace dxlib {
                 if (type == "+") return a + b;
                 else if (type == "-") return a - b;
                 else if (type == "*") return a * b;
-                else if (type == "/") {
-                    if (b == 0){
-                        throw std::invalid_argument("Divison by zero '/' operation invalid.");
-                    }
-                    else {
-                        return a / b
-                    }
-                }
+                else if (type == "/") return a / b;
                 else if (type == "/*-") {
                     if (b == 0){
                         throw std::invalid_argument("Divison by zero '/*-' operation Invalid.");
@@ -492,6 +485,22 @@ namespace dxlib {
             else if (type == "upper") {
                 std::transform(s.begin(), s.end(), s.begin(), ::toupper);
             }
+            else if (type == "randomized"){
+                static std::random_device rd;
+                static std::mt19937 gen(rd());
+                static std::uniform_int_distribution<> dist(0, 1);
+
+                for (auto& ch : s){
+                    if (std::isalpha(static_cast<unsigned char>(ch))) {
+                        if (dist(gen) == 0){
+                            ch = static_cast<char>(std::tolower(ch));
+                        }
+                        else {
+                            ch = static_cast<char>(std::toupper(ch));
+                        }
+                    }
+                }
+            }
             else {
                 throw std::invalid_argument("Invalid Type. Enter either lower or upper");
             }
@@ -608,4 +617,3 @@ namespace dxlib {
 }
 
 #endif // DX_H
-

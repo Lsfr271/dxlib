@@ -74,7 +74,7 @@ namespace dxlibHelp {
     void dxlibTextUtil() {
         std::cout << "startsWith(): Returns true if a string starts with the given prefix." << std::endl;
         std::cout << "endsWith(): Returns true if a string ends with the given suffix." << std::endl;
-        std::cout << "ChangeCase(): Changes a string to uppercase or lowercase." << std::endl;
+        std::cout << "ChangeCase(): Changes a string to uppercase, lowercase, or randomized." << std::endl;
         std::cout << "Split(): Splits a string using a delimiter and returns parts as separate strings." << std::endl;
         std::cout << "Join(): Joins strings together." << std::endl;
         std::cout << "TrimString(): Removes all whitespace from a string." << std::endl;

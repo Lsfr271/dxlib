@@ -60,4 +60,12 @@ int main() {
 
 ---
 
+## **Name fix**
+- In `dxlibMain::dxClearBuf` the dxClearBuf is not understandable to especially
+  Beginners, so it was changed to `ClearBuffer`
+
+- **2025/09/05**
+
+---
+
 ### More updates coming soon!

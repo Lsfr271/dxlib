@@ -7,10 +7,10 @@
 namespace dxlibHelp {
 
     void dxlibMainUtil() { 
-        std::cout << "dxlibMain has 2 functions: CinFail() and dxClearBuf()" << std::endl;
+        std::cout << "dxlibMain has 2 functions: CinFail() and ClearBuffer()" << std::endl;
 
         std::cout << "CinFail(): Checks if std::cin failed (likely due to an invalid data type)." << std::endl;
-        std::cout << "dxClearBuf(): After std::endl, a buffer is added, which can auto-submit the next input."
+        std::cout << "ClearBuffer(): After std::endl, a buffer is added, which can auto-submit the next input."
                      " This function clears that buffer." << std::endl;
     }
 

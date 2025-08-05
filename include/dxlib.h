@@ -371,7 +371,7 @@ namespace dxlib {
     }
 
     namespace dxlibPrint {
-        void dxp(std::string text, bool endl=true){
+        void printline(std::string text, bool endl=true){
             if (endl){
                 std::cout << text << std::endl;
             }
@@ -442,7 +442,7 @@ namespace dxlib {
         }
 
         template<typename... Args>
-        void varp(std::string text, Args&&... args) {
+        void printVar(std::string text, Args&&... args) {
             varp_helper(text, std::forward<Args>(args)...);
         }
 
@@ -617,5 +617,6 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 

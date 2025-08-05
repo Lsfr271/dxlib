@@ -19,7 +19,6 @@
 #include <unordered_map>
 
 #ifdef _WIN32
-    #include <windows.h>
     #include <Lmcons.h>
 #else
     #include <unistd.h>
@@ -616,6 +615,5 @@ namespace dxlib {
 }
 
 #endif // DX_H
-
 
 

@@ -48,7 +48,7 @@ using namespace dxlibPrint;
 
 int main() {
     std::string word = "Hello!";
-    ChangeCase(word, "middle");
+    ChangeCase(word, "randomized");
 
     varp("New word: -word-", word);
 }

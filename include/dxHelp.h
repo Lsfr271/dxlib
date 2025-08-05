@@ -65,10 +65,12 @@ namespace dxlibHelp {
     }
 
     void dxlibPrintUtil() {
-        std::cout << "dxp(): Prints a string to the screen. (Only string is supported)" << std::endl;
-        std::cout << "varp(): Prints a variable inside a string. Example:"
-                     " int a = 20; varp(\"Something is -a- years old\", a)."
+        std::cout << "printline(): Prints a string to the screen. (Only string is supported)" << std::endl;
+        std::cout << "printVar(): Prints a variable inside a string. Example:"
+                     " int a = 20; printVar(\"Something is -a- years old\", a)."
                      " Use - - around the variable name in the string and pass the variable as an argument." << std::endl;
+        std::cout << "askInput(): Asks for input in the terminal. For example: "
+                     " std::string name = askInput<std::string>(\"What is your name?\")" << std::endl;
     }
 
     void dxlibTextUtil() {

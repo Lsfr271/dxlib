@@ -34,4 +34,28 @@
 
 ---
 
+## **New Addition**
+- Added a new type in **ChangeCase** in *dxlibText*
+  This allows you to uppercase/lowercase a string randomly
+- Example:
+
+```cpp
+#include "../include/dx.h"
+
+using namespace dxlib;
+using namespace dxlibText;
+using namespace dxlibPrint;
+
+int main() {
+    std::string word = "Hello!";
+    ChangeCase(word, "middle");
+
+    varp("New word: -word-", word);
+}
+```
+
+- **2025/08/05**
+
+---
+
 ### More updates coming soon!

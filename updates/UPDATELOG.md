@@ -70,7 +70,10 @@ int main() {
   dxp is now `printlnie` and varp is now `varPrint`, this change has been done to make it
   easier for beginners to understand
 
-- **2025/09/05**
+- Asking for input was usually needed for you to call `dxi` function. It has been renamed to
+  `askInput` to make it more clearer for beginners.
+
+- **2025/08/05**
 
 ---
 

@@ -119,9 +119,14 @@ int main() {
 
 ---
 
-## **Removed Function**
+## **Removed Functions/namespaces**
 - In `dxlib::dxlibRandom` there used to be a `PrintRandomNum()` function, now that is removed since
   It is useless.
+
+- There used to be a `dxlib::dxlibGen`, its now deleted and all its functions are moved to: `dxlib::dxlibRandom` since it
+  Makes more sense.
+
+---
 
 - **2025/08/07**
 

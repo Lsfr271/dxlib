@@ -127,7 +127,7 @@ int main() {
 
 ---
 
-## **New Addition**
+## **New Additions**
 
 - `OperatorNums()` in `dxlibMath` has been reworked to support `int`, `float`, `long`, `double`, and `long long`
 
@@ -147,6 +147,12 @@ int main() {
 
 `Would output: 12 13.05 15.905`
 
+- Added a new namespace in `dxlib`, its called `dxlibCheck`, it checks for various cases like if a string is alphanumeric
+  or a number is a prime number and so much more. You can check the updated `dxHelp.h` for the new namespace and its contents.
+  Or the `dxlib.h` main source file.
+
+- **2025/08/07**
+  
 ---
 
 ### More updates coming soon!

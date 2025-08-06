@@ -126,8 +126,6 @@ int main() {
 - There used to be a `dxlib::dxlibGen`, its now deleted and all its functions are moved to: `dxlib::dxlibRandom` since it
   Makes more sense.
 
----
-
 - **2025/08/07**
 
 ---

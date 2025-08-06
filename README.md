@@ -3,6 +3,8 @@
 # Welcome to dxlib!
 ## v1.1.05
 
+[Download dxlibPackage.zip](https://github.com/Lsfr271/dxlib/raw/main/dxlibPackage.zip)
+
 **dxlib** is a lightweight, easy-to-use C++ header-only library that provides a collection of utilities and tools for:
 
 - Mathematical calculations (geometry, trigonometry, volumes)

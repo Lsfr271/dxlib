@@ -155,4 +155,12 @@ int main() {
   
 ---
 
+## **File structure Change**
+- Before there was a `include` directory in this repository. Now it has been replaced with: `dxlibPackage.zip/include/`
+  `include/` includes: `dxlib.h`, `dxHelp.h`, `DXHELP.md`
+
+- **2025/08/07**
+
+---
+
 ### More updates coming soon!

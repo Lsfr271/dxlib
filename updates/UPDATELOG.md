@@ -77,4 +77,12 @@ int main() {
 
 ---
 
+## **Minor bug fix**
+- In `dxlibRandom::PrintRandomNum` usually printed "Int: " and with the random number chosen. Now that is gone and only prints
+  The random number only
+  
+- **2025/08/06**
+
+---
+
 ### More updates coming soon!

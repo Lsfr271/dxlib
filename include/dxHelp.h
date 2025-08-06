@@ -15,10 +15,7 @@ namespace dxlibHelp {
     }
 
     void dxlibRandUtil() {
-        std::cout << "dxlibRandom has 2 functions: RandomNumRange() and PrintRandomNum()" << std::endl;
-        
         std::cout << "RandomNumRange(): Takes two arguments (min and max) and returns a random number between them." << std::endl;
-        std::cout << "PrintRandomNum(): Similar to RandomNumRange(), but directly prints the random number instead of returning it." << std::endl;
     }
 
     void dxlibConvertUtil() {

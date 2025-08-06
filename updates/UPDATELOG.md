@@ -97,6 +97,7 @@ int main() {
 using namespace dxlib::dxlibRandom; // prevent typing dxlib::dxlibRandom::RandomNumRange()
 
 int main() {
+    std::srand(std::time(0)); // for random number each time
     int a = RandomNumRange(0, 5); // pick from 0 to 5 (int)
     double b = RandomNumRange(1.5, 10.5); // pick from 1.5 to 10.5 (double/float)
 

@@ -1,5 +1,5 @@
 ### If you have questions please DM me: ._2afKeeper (discord)
-### Go to HELP folder if you are on cmake/msvc/gcc
+### Go to HELP folder if you are on cmake
 
 # Welcome to dxlib!
 ## v1.1.05 [Download dxlibPackage.zip](https://github.com/Lsfr271/dxlib/raw/main/dxlibPackage.zip)

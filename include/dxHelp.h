@@ -16,6 +16,9 @@ namespace dxlibHelp {
 
     void dxlibRandUtil() {
         std::cout << "RandomNumRange(): Takes two arguments (min and max) and returns a random number between them." << std::endl;
+        std::cout << "RandomStr(): Generates a password-like random string. The length depends on the value passed." << std::endl;
+        std::cout << "ShuffleVect(): Shuffles a vector. For example: std::vector<char> ex = {'a', 'b', 'c'};"
+                     " ShuffleVect(ex) might become {'a', 'c', 'b'}." << std::endl;
     }
 
     void dxlibConvertUtil() {
@@ -53,12 +56,6 @@ namespace dxlibHelp {
                      " You can check the source or pass an invalid type to learn more." << std::endl;
         std::cout << "GetLocalTime(): Returns your system’s current local time." << std::endl;
         std::cout << "AddSecToTime(): Adds seconds to a time structure by converting it to a numeric value and back." << std::endl;
-    }
-
-    void dxlibGenUtil() {
-        std::cout << "RandomStr(): Generates a password-like random string. The length depends on the value passed." << std::endl;
-        std::cout << "ShuffleVect(): Shuffles a vector. For example: std::vector<char> ex = {'a', 'b', 'c'};"
-                     " ShuffleVect(ex) might become {'a', 'c', 'b'}." << std::endl;
     }
 
     void dxlibPrintUtil() {

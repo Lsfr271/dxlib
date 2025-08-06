@@ -121,7 +121,31 @@ int main() {
 
 - There used to be a nested namespace `dxlib::dxlibMath::dxlibPower`, its now deleted and its function has been stored in `dxlib::dxlibMath`
 
+- There was a namespace called `dxlibMathAdditions` in `dxlibMath`, now its removed and its functions are in `dxlibMath`
+
 - **2025/08/07**
+
+---
+
+## **New Addition**
+
+- `OperatorNums()` in `dxlibMath` has been reworked to support `int`, `float`, `long`, `double`, and `long long`
+
+### Example:
+
+```cpp
+#include "../include/dx.h" // adjust depending on your project structure
+
+using namespace dxlib::dxlibMath; // no need to type 'dxlib::dxlibMath::OperatorNums'
+
+int main() {
+    std::cout << OperatorNums(10, 2, "+") << "\n"; // pick an int
+    std::cout << OperatorNums(10.55f, 2.5f, "+") << "\n"; // pick a float specifically (with f)
+    std::cout << OperatorNums(10.693, 5.212, "+") << "\n"; // pick a double
+}
+```
+
+`Would output: 12 13.05 15.905`
 
 ---
 

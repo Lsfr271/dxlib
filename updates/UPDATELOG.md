@@ -98,7 +98,7 @@ int main() {
 - In `dxlibRandom::RandomNumRange()` It supported only integers, now it supports:
   `float`, `double`, `long`, and `long long`'
 
-### How you would use it:
+#### How you would use it:
 ```cpp
 #include "../include/dx.h" // change this depending on your project structure
 

@@ -14,11 +14,10 @@ namespace dxlibHelp {
                      " This function clears that buffer." << std::endl;
     }
 
-    void dxlibRandUtil() {
+    void dxlibRandUtil() {   
         std::cout << "RandomNumRange(): Takes two arguments (min and max) and returns a random number between them." << std::endl;
-        std::cout << "RandomStr(): Generates a password-like random string. The length depends on the value passed." << std::endl;
-        std::cout << "ShuffleVect(): Shuffles a vector. For example: std::vector<char> ex = {'a', 'b', 'c'};"
-                     " ShuffleVect(ex) might become {'a', 'c', 'b'}." << std::endl;
+        std::cout << "RandomStr(): Generates a random string based on the len argument" << std::endl;
+        std::cout << "ShuffleVect(): Shuffles the elements of a vector randomly" << std::endl;
     }
 
     void dxlibConvertUtil() {
@@ -41,7 +40,7 @@ namespace dxlibHelp {
 
     void dxlibMathUtil() {
         std::cout << "The first few functions are harder to explain, but if you understand sin, cos, and tan, they should make sense." << std::endl;
-        std::cout << "OperatorNums(): Takes two integers and a character. For example, '+' adds them. For the special type \"/*-\","
+        std::cout << "OperatorNums(): Takes two integers/floating numbers and a character. For example, '+' adds them. For the special type \"/*-\","
                      " it runs: a / b * b * pow(a, 2) - (a - b). Be cautious with that." << std::endl;
         std::cout << "MultNums(): Takes a vector of numbers and multiplies all its elements together." << std::endl;
         std::cout << "PrintPower(): Takes a base, exponent, and a twist boolean. If twist is false, it works normally."
@@ -85,6 +84,20 @@ namespace dxlibHelp {
         std::cout << "debugBreak(): Breaks the code immediately if something went wrong. Supports both Windows And Linux" << std::endl;
         std::cout << "assertLog(): Makes something not 0." << std::endl;
         std::cout << "timeLog(): Measures how much time has passed during some block of code execution" << std::endl;
+    }
+
+    void dxlibCheckUtil() {
+        std::cout << "isEven(): Checks if a number is even" << std::endl;
+        std::cout << "isOdd(): Checks if a number is odd" << std::endl;
+        std::cout << "isNumeric(): Checks if a string is numeric" << std::endl;
+        std::cout << "isAlpha(): Checks if a string is alphabetic" << std::endl;
+        std::cout << "isAllNum(): Checks if a string is alphanumeric" << std::endl;
+        std::cout << "isFloatString(): Checks if a string is a valid float" << std::endl;
+        std::cout << "isDoubleString(): Checks if a string is a valid double" << std::endl;
+        std::cout << "isInRange(): Checks if a number is in a closed range" << std::endl;
+        std::cout << "isPrime(): Checks if a number is a prime number" << std::endl;
+        std::cout << "isPalindrome(): Checks if a number is a palindrome" << std::endl;
+        std::cout << "isWhiteSpaceOnly(): Checks if a string is completely whitespaces" << std::endl;
     }
 }
 

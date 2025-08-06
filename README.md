@@ -1,7 +1,7 @@
 ### If you have questions please DM me: ._2afKeeper (discord)
 
 # Welcome to dxlib!
-## v1.0.2
+## v1.0.3
 
 **dxlib** is a lightweight, easy-to-use C++ header-only library that provides a collection of utilities and tools for:
 
@@ -26,6 +26,8 @@
 
 - dxlib is for beginners who want to get comfortable with C++
 without writing verbose boilerplate. It wraps many features into a simple, beginner-friendly interface.
+Then they can move on to learn `std::cin`, or `std::cout` or other functions. So basically its
+training wheels and then move on to learn the actual stuff.
 
 ---
 

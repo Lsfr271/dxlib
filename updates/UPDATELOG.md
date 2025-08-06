@@ -50,7 +50,7 @@ int main() {
     std::string word = "Hello!";
     ChangeCase(word, "randomized");
 
-    varp("New word: -word-", word);
+    printVar("New word: -word-", word);
 }
 
 // Output: hElLo // or something different because its randomized

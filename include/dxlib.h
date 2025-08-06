@@ -51,7 +51,7 @@ namespace dxlib {
         }
 
         void PrintRandomNum(int min, int max){
-            std::cout << "Int: " << min + rand() % (max - min + 1);
+            std::cout << min + rand() % (max - min + 1);
         }
     } 
 
@@ -615,5 +615,6 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 

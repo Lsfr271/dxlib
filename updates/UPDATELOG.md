@@ -94,4 +94,12 @@ int main() {
 
 ---
 
+## **New Addition**
+- In `dxlibRandom::RandomNumRange()` It supported only integers, now it supports:
+  `float`, `double`, `long`, and `long long`
+
+- **2025/08/07**
+
+---
+
 ### More updates coming soon!

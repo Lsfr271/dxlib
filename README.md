@@ -58,7 +58,7 @@ you will find every function there explained.
 - `dxlibConvert` – Type conversions (e.g., double to int)
 - `dxlibFileUtils` – File I/O helpers (check if exists, read, write, etc.)
 - `dxlibMath` – Math + shape calculations
-- `dxlibGen` – Random numbers and strings
+- `dxlibRandom` – Random numbers and strings
 - `dxlibTime` – Time handling and delays
 - `dxlibPrint` – Easy variable printing
 - `dxlibText` – String utilities (trim, split, join, case, etc.)

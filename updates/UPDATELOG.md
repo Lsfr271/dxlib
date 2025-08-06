@@ -2,7 +2,7 @@
 
 - **Added helper file:** `dxHelp.h`
   This file explains all functions in the library for users who get stuck.  
-  Location: `include/dxHelp.h`
+  Location: `dxlibPackage.zip/include/dxHelp.h`
 
 - **2025/08/01**
 

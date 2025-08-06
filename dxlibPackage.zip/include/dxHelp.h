@@ -43,8 +43,6 @@ namespace dxlibHelp {
         std::cout << "OperatorNums(): Takes two integers/floating numbers and a character. For example, '+' adds them. For the special type \"/*-\","
                      " it runs: a / b * b * pow(a, 2) - (a - b). Be cautious with that." << std::endl;
         std::cout << "MultNums(): Takes a vector of numbers and multiplies all its elements together." << std::endl;
-        std::cout << "PrintPower(): Takes a base, exponent, and a twist boolean. If twist is false, it works normally."
-                     " If true, it runs a unique algorithm and prints the result." << std::endl;
         std::cout << "ReturnPower(): Same as PrintPower(), but returns the result instead of printing it." << std::endl;
         std::cout << "There are also shape-related functions — check the dx.h source for those." << std::endl;
     }
@@ -100,5 +98,6 @@ namespace dxlibHelp {
         std::cout << "isWhiteSpaceOnly(): Checks if a string is completely whitespaces" << std::endl;
     }
 }
+
 
 #endif // DX_HELP

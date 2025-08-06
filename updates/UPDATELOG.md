@@ -88,7 +88,7 @@ int main() {
 ## **File structure changes**
 
 - Before, there was a `src/` folder in `include/`, now its in its seperate directory `examples/`
-  In the `examples/` directory you can find dxlibusage.cpp, it demonstrates how to use some dxlib namespaces.
+  In the `examples/` directory you can find `dxlibusage.cpp`, it demonstrates how to use some dxlib namespaces.
 
 - **2025/08/06**
 

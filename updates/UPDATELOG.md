@@ -96,7 +96,24 @@ int main() {
 
 ## **New Addition**
 - In `dxlibRandom::RandomNumRange()` It supported only integers, now it supports:
-  `float`, `double`, `long`, and `long long`
+  `float`, `double`, `long`, and `long long`'
+
+### How you would use it:
+```cpp
+#include "../include/dx.h" // change this depending on your project structure
+
+using namespace dxlib::dxlibRandom; // prevent typing dxlib::dxlibRandom::RandomNumRange()
+
+int main() {
+    int a = RandomNumRange(0, 5); // pick from 0 to 5 (int)
+    double b = RandomNumRange(1.5, 10.5); // pick from 1.5 to 10.5 (double/float)
+
+    std::cout << a << std::endl; // print the int
+    std::cout << b << std::endl; // print the double
+}
+
+// Output should be an integer for the a value and a floating point number for the b value.
+```
 
 - **2025/08/07**
 

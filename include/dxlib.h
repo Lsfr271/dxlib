@@ -638,6 +638,78 @@ namespace dxlib {
             log(label + " took " + std::to_string(ms) + " ms");
         }
     }
+    
+    namespace dxlibCheck {
+        // check if a number is even
+        template<typename T>
+        bool isEven(T num){
+            return num % 2 == 0;
+        }
+
+        // check if a number is odd
+        template<typename T>
+        bool isOdd(T num){
+            return num % 2 != 0;
+        }
+
+        // check if a string is numeric
+        bool isNumeric(const std::string& s){
+            return !s.empty() && std::all_of(s.begin(), s.end(), ::isdigit);
+        }
+        
+        // check if all characters are alphabetic
+        bool isAlpha(const std::string& s){
+            return !s.empty() && std::all_of(s.begin(), s.end(), ::isalpha);
+        }
+
+        // check if all characters are alphanumeric
+        bool isAllNum(const std::string& s){
+            return !s.empty() && std::all_of(s.begin(), s.end(), ::isalnum);
+        }
+
+        // check if a string is a valid float
+        bool isFloatString(const std::string& s){
+            std::istringstream iss(s);
+            float f;
+
+            return (iss >> f) && iss.eof();
+        }
+
+        // check if a string is a valid double
+        bool isDoubleString(const std::string& s){
+            std::istringstream iss(s);
+            double d;
+
+            return (iss >> d) && iss.eof();
+        }
+
+        // check if a number is within a closed range
+        template<typename T>
+        bool isInRange(T value, T min, T max){
+            return value >= min && value <= max;
+        }
+
+        // check if a number is prime
+        bool isPrime(int n){
+            if (n <= 1) return false;
+            
+            for (int i = 2; i * i <= n; ++i){
+                if (n % i == 0) return false;
+            }
+
+            return true;
+        }
+
+        // check if a number is a palindrome
+        bool isPalindrome(const std::string& s){
+            return std::equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
+        }
+
+        // check if a string is only whitespaces
+        bool isWhiteSpaceOnly(const std::string& s){
+            return std::all_of(s.begin(), s.end(), ::isspace);
+        }
+    }
 }
 
 #endif // DX_H

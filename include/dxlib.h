@@ -46,8 +46,20 @@ namespace dxlib {
     }
 
     namespace dxlibRandom {
-        double RandomNumRange(int min, int max){
+        // Int version
+        template <typename T>
+        typename std::enable_if<std::is_integral<T>::value, T>::type
+        RandomNumRange(T min, T max){
+            if (max < min) std::swap(min, max);
             return min + rand() % (max - min + 1);
+        }
+
+        // Floating-types version
+        template<typename T>
+        typename std::enable_if<std::is_floating_point<T>::value, T>::type
+        RandomNumRange(T min, T max){
+            if (max < min) std::swap(min, max);
+            return min + static_cast<T>(rand()) / (static_cast<T>(RAND_MAX) / (max - min));
         }
 
         void PrintRandomNum(int min, int max){
@@ -615,6 +627,5 @@ namespace dxlib {
 }
 
 #endif // DX_H
-
 
 

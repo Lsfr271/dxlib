@@ -63,6 +63,7 @@ you will find every function there explained.
 - `dxlibPrint` – Easy variable printing
 - `dxlibText` – String utilities (trim, split, join, case, etc.)
 - `dxlibDebug` - Debug Utilities (log, assertLog, etc..)
+- `dxlibCheck` - Checking utilities (isPrime, isInRange, isEven, isOdd, etc..)
 
 ---
 

@@ -21,6 +21,7 @@
 
 #ifdef _WIN32
     #include <Lmcons.h>
+    #include <windows.h>
 #else
     #include <unistd.h>
     #include <sys/sysinfo.h>
@@ -638,5 +639,6 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 

@@ -40,7 +40,7 @@ It turned into a utility library that makes many common tasks much simpler.
 
 ### How to learn more about dxlib if you are stuck
 
-- Please go to ``include/dxHelp.h`` in this github repository
+- Please go to ``dxlibPackage.zip/include/dxHelp.h`` in this github repository
 you will find every function there explained.
 
 ---

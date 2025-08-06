@@ -165,7 +165,7 @@ int main() {
 ---
 
 ## **CMAKE Support**
-- CMake support has been added, please navigate to `HELP/CMakeLists.txt` in this repository.
+- CMake support has been added, please navigate to [HELP](https://github.com/Lsfr271/dxlib/tree/main/HELP) in this repository.
   Collab with: [ripcode](https://github.com/ripcode0)
 
 - **2025/08/07**

@@ -92,7 +92,6 @@ int main() {
 
 #### How you would use it:
 ```cpp
-cpp
 #include "../include/dx.h" // change this depending on your project structure
 
 using namespace dxlib::dxlibRandom; // prevent typing dxlib::dxlibRandom::RandomNumRange()
@@ -122,7 +121,6 @@ int main() {
 
 - **2025/08/07**
 
---
+---
 
-# More updates coming soon!
 ### More updates coming soon!

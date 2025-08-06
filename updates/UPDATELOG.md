@@ -164,4 +164,12 @@ int main() {
 
 ---
 
+## **CMAKE Support**
+- CMake support has been added, please navigate to `HELP/CMakeLists.txt` in this repository.
+  Collab with: [ripcode](https://github.com/ripcode0)
+
+- **2025/08/07**
+
+---
+
 ### More updates coming soon!

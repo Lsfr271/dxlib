@@ -61,6 +61,35 @@ namespace dxlib {
             if (max < min) std::swap(min, max);
             return min + static_cast<T>(rand()) / (static_cast<T>(RAND_MAX) / (max - min));
         }
+
+        std::string RandomStr(size_t len){
+            static const std::string chars =
+                "0123456789"
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                "abcdefghijklmnopqrstuvwxyz";
+
+            static std::random_device rd;
+            static std::mt19937 generator(rd());
+            static std::uniform_int_distribution<> distrib(0, chars.size() -1);
+
+            std::string result;
+            result.reserve(len);
+            
+            for (size_t i = 0; i < len; i++){
+                result += chars[distrib(generator)];
+            }
+
+            return result;
+        }
+
+        // shuffles elems
+        template<typename T>
+        void ShuffleVect(std::vector<T>& vec){
+            static std::random_device rd;
+            static std::mt19937 generator(rd());
+            
+            std::shuffle(vec.begin(), vec.end(), generator);
+        }
     } 
 
     namespace dxlibConvert {
@@ -346,37 +375,6 @@ namespace dxlib {
         }
     }
 
-    namespace dxlibGen {
-        std::string RandomStr(size_t len){
-            static const std::string chars =
-                "0123456789"
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                "abcdefghijklmnopqrstuvwxyz";
-
-            static std::random_device rd;
-            static std::mt19937 generator(rd());
-            static std::uniform_int_distribution<> distrib(0, chars.size() -1);
-
-            std::string result;
-            result.reserve(len);
-            
-            for (size_t i = 0; i < len; i++){
-                result += chars[distrib(generator)];
-            }
-
-            return result;
-        }
-
-        // shuffles elems
-        template<typename T>
-        void ShuffleVect(std::vector<T>& vec){
-            static std::random_device rd;
-            static std::mt19937 generator(rd());
-            
-            std::shuffle(vec.begin(), vec.end(), generator);
-        }
-    }
-
     namespace dxlibPrint {
         void printline(std::string text, bool endl=true){
             if (endl){
@@ -623,6 +621,5 @@ namespace dxlib {
 }
 
 #endif // DX_H
-
 
 

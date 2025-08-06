@@ -18,6 +18,7 @@
 #include <random>
 #include <unordered_map>
 #include <functional>
+#include <type_traits>
 
 #ifdef _WIN32
     #include <Lmcons.h>
@@ -233,37 +234,38 @@ namespace dxlib {
             return std::tan(DegToRad(aid));
         }
 
-        namespace dxlibMathAdditions {
-            // operates addition, subtraction, multiplication, division, and a special type /*-
-            int OperatorNums(int a, int b, std::string type){
-                if (type == "+") return a + b;
-                else if (type == "-") return a - b;
-                else if (type == "*") return a * b;
-                else if (type == "/") return a / b;
-                else if (type == "/*-") {
-                    if (b == 0){
-                        throw std::invalid_argument("Divison by zero '/*-' operation Invalid.");
-                    }
-                    else {
-                        return a / b * b * pow(a, 2) - (a - b); // pow (a, 2) hardcoded (because if user enters)
-                                                                                // something like 150 as a. it will be pow (a, a) which
-                                                                                // is extremely large.
-                    }
-                }
-            
-                throw std::invalid_argument("Invalid operator type. Enter +, -, /, *, or /*-");
+        // operates addition, subtraction, multiplication, division, and a special type /*-
+        template<typename T>
+        typename std::enable_if<std::is_arithmetic<T>::value, T>::type
+        OperatorNums(T a, T b, const std::string& type) {
+            if (type == "+") return a + b;
+            else if (type == "-") return a - b;
+            else if (type == "*") return a * b;
+            else if (type == "/") {
+                if (b == 0)
+                    throw std::invalid_argument("Division by zero '/' operation invalid.");
+                return a / b;
+            }
+            else if (type == "/*-") {
+                if (b == 0)
+                    throw std::invalid_argument("Division by zero '/*-' operation invalid.");
+                // Use pow(a, 2) but cast to double to avoid overflow for ints
+                double result = static_cast<double>(a / b) * b * std::pow(static_cast<double>(a), 2) - (a - b);
+                return static_cast<T>(result);
             }
 
-            // multiplies a vector of numbers
-            double MultNums(const std::vector<double> &numbers){
-                double result = 1;
+            throw std::invalid_argument("Invalid operator type. Enter +, -, *, /, or /*-");
+        }
 
-                for (double num : numbers){
-                    result *= num;
-                }
+        // multiplies a vector of numbers
+        double MultNums(const std::vector<double> &numbers){
+            double result = 1;
 
-                return result;
+            for (double num : numbers){
+                result *= num;
             }
+
+            return result;
         }
 
         double ReturnPower(double b, int e){
@@ -639,6 +641,5 @@ namespace dxlib {
 }
 
 #endif // DX_H
-
 
 

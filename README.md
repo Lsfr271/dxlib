@@ -77,18 +77,18 @@ using namespace dxlibPrint;
 
 int main() {
     // print hello world
-    dxp("Hello, World!");
+    printline("Hello, World!");
 
     // print variables in a print statement
     int age = 20;
-    varp("Age is -age-", age);
+    varPrint("Age is -age-", age);
 
     // get user input and print it
     // note: dxi<>() directly asks for input and returns the value,
     // so the next time you print the value, you get a different result depending on what
     // the user entered on the input
-    std::string name = dxi<std::string>("What is your name?: ");
-    varp("Hello, -name-!", name);
+    std::string name = askInput<std::string>("What is your name?: ");
+    varPrint("Hello, -name-!", name);
 }
 ```
 

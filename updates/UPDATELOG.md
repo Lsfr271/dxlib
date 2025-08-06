@@ -67,7 +67,7 @@ int main() {
 - Originally, main dxlib .h file was named `dx.h`, now its named `dxlib.h` for clarity
 
 - Printing Lines would usually need you to call `dxp` or `varp`, but now it has been changed
-  dxp is now `printlnie` and varp is now `varPrint`, this change has been done to make it
+  dxp is now `printline` and varp is now `varPrint`, this change has been done to make it
   easier for beginners to understand
 
 - Asking for input was usually needed for you to call `dxi` function. It has been renamed to

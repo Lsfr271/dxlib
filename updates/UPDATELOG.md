@@ -119,4 +119,12 @@ int main() {
 
 ---
 
+## **Removed Function**
+- In `dxlib::dxlibRandom` there used to be a `PrintRandomNum()` function, now that is removed since
+  It is useless.
+
+- **2025/08/07**
+
+--
+
 ### More updates coming soon!

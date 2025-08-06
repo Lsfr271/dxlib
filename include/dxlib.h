@@ -61,10 +61,6 @@ namespace dxlib {
             if (max < min) std::swap(min, max);
             return min + static_cast<T>(rand()) / (static_cast<T>(RAND_MAX) / (max - min));
         }
-
-        void PrintRandomNum(int min, int max){
-            std::cout << min + rand() % (max - min + 1);
-        }
     } 
 
     namespace dxlibConvert {
@@ -627,5 +623,6 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 

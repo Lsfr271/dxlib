@@ -84,7 +84,7 @@ int main() {
     varPrint("Age is -age-", age);
 
     // get user input and print it
-    // note: dxi<>() directly asks for input and returns the value,
+    // note: printline<>() directly asks for input and returns the value,
     // so the next time you print the value, you get a different result depending on what
     // the user entered on the input
     std::string name = askInput<std::string>("What is your name?: ");

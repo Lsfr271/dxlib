@@ -5,10 +5,10 @@ This file is used to show how dxlib is used.
 
 // make the namespaces easier to use
 using namespace dxlib;
-using namespace dxlib::dxlibPrint;
-using namespace dxlib::dxlibTime;
-using namespace dxlib::dxlibRandom;
-using namespace dxlib::dxlibText;
+using namespace dxlibPrint;
+using namespace dxlibTime;
+using namespace dxlibRandom;
+using namespace dxlibText;
 
 // global vars
 int userMoney = 0;

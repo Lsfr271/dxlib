@@ -16,9 +16,9 @@
 
 ---
 
-- **Created example file:** `dxlibExample.cpp`  
-  Located in `include/src/`, this file demonstrates how to use dxlib and covers multiple namespaces.  
-  File: `include/src/dxlibExample.cpp`
+- **Created example file:** `dxlibusage.cpp`  
+  Located in `examples/dxlibusage.cpp`, this file demonstrates how to use dxlib and covers multiple namespaces.  
+  File: `examples/dxlibusage.cpp`
 
 - **2025/08/04**
 
@@ -81,6 +81,15 @@ int main() {
 - In `dxlibRandom::PrintRandomNum` usually printed "Int: " and with the random number chosen. Now that is gone and only prints
   The random number only
   
+- **2025/08/06**
+
+---
+
+## **File structure changes**
+
+- Before, there was a `src/` folder in `include/`, now its in its seperate directory `examples/`
+  In the `examples/` directory you can find dxlibusage.cpp, it demonstrates how to use some dxlib namespaces.
+
 - **2025/08/06**
 
 ---

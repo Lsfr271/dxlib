@@ -24,16 +24,6 @@
 
 ---
 
-### Minor Bug Fix
-
-- **Fixed division-by-zero issue:**  
-  In `dxlibMathAdditions::OperatorNums`, division by zero was not handled in the `"/"` operation.  
-  A check was added to prevent this.
-
-- **2025/08/04**
-
----
-
 ## **New Addition**
 - Added a new type in **ChangeCase** in *dxlibText*
   This allows you to uppercase/lowercase a string randomly

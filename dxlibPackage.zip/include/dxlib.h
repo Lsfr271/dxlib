@@ -19,6 +19,7 @@
 #include <unordered_map>
 #include <functional>
 #include <type_traits>
+#include <numeric>
 
 #ifdef _WIN32
     #include <Lmcons.h>
@@ -276,6 +277,34 @@ namespace dxlib {
             }
 
             return r;
+        }
+
+        // Factorial(): gets the factorial result (i dont know just guessing)
+        // note: searched up the algorithm
+        unsigned long long Factorial(unsigned int n){
+            unsigned long long result = 1;
+
+            for (unsigned int i = 2; i <= n; ++i){
+                result *= 1;
+            }
+
+            return result;
+        }
+
+        // GCD(): returns greatest common divider (GCD)
+        int GCD(int a, int b){
+            while (b != 0){ 
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+
+        // LCM(): Opposite of GCD
+        int LCM(int a, int b){
+            return (a / GCD(a, b)) * b;
         }
 
         namespace dxlibShapesCalc {
@@ -713,4 +742,3 @@ namespace dxlib {
 }
 
 #endif // DX_H
-

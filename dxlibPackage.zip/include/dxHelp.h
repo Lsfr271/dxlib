@@ -44,7 +44,10 @@ namespace dxlibHelp {
                      " it runs: a / b * b * pow(a, 2) - (a - b). Be cautious with that." << std::endl;
         std::cout << "MultNums(): Takes a vector of numbers and multiplies all its elements together." << std::endl;
         std::cout << "ReturnPower(): Same as PrintPower(), but returns the result instead of printing it." << std::endl;
-        std::cout << "There are also shape-related functions — check the dx.h source for those." << std::endl;
+        std::cout << "There are also shape-related functions — check the dxlib.h source for those." << std::endl;
+        std::cout << "Factorial(): returns the product of all positive integers less than or equal to a given non-negative integer" << std::endl;
+        std::cout << "GCD(): Returns the greatest common divider between two arguments (a, b)" << std::endl;
+        std::cout << "LCM(): Opposite of GCD() and accepts two arguments (a, b)" << std::endl;
     }
 
     void dxlibTimeUtil() {
@@ -98,6 +101,5 @@ namespace dxlibHelp {
         std::cout << "isWhiteSpaceOnly(): Checks if a string is completely whitespaces" << std::endl;
     }
 }
-
 
 #endif // DX_HELP

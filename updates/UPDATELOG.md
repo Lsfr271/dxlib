@@ -172,4 +172,11 @@ int main() {
 
 ---
 
+## **New Addition**
+- 3 New functions has been added in `dxlibMath`, go to `dxHelp.h` to see them.
+
+- **2025/08/07**
+
+---
+
 ### More updates coming soon!

@@ -266,4 +266,12 @@ void AllHelp() {
 
 ---
 
+## **Source file addition**
+- In [dxlib.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxlib.h), there wasn't any ```cpp #pragma once``` included.
+  Now its included to prevent duplicates of includes.
+
+- **2025/08/08**
+
+---
+
 ### More updates coming soon!

@@ -1,6 +1,8 @@
 #ifndef DX_H
 #define DX_H
 
+#pragma once
+
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
@@ -871,3 +873,4 @@ namespace dxlib {
 }
 
 #endif // DX_H
+

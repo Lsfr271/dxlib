@@ -216,6 +216,29 @@ int main() {
 
 - **2025/08/08**
 
------
+---
+
+## Minor bug fix
+- printline in `dxlibPrint` takes in two arguments: `text` and `endl`, endl stands for new line. And endl is a `bool` datatype
+  the problem is that if it was false it still printed a new line:
+
+```cpp
+void printline(std::string text, bool endl=true){
+            if (endl){ // this says is endl is TRUE (newline printed)
+                std::cout << text << std::endl;
+            }
+            else if (!endl){ // this says if endl is FALSE
+                std::cout << text << "\n"; // this is the problem here, it would print a new line anyway
+            }
+            else {
+                throw std::invalid_argument("Please enter true or false on the second argument.");
+            }
+        }
+```
+- So it has been fixed to NOT print a newline.
+
+- **2025/08/08**
+
+---
 
 ### More updates coming soon!

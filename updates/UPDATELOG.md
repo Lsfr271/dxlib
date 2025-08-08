@@ -190,6 +190,30 @@ int main() {
 
 - Please go to `dxHelp.h` to learn more about these new additions.
 
+### Here is how you would use **YesNoPrompt()**:
+```cpp
+#include "../include/dxlib.h" // can be different depending on your project structure
+
+using namespace dxlib; // avoid typing a bunch of namespaces to get to a function
+using namespace dxlibMain;
+
+int main() {
+    while (true){
+        // How to use YesNoPrompt()
+        bool chosen = YesNoPrompt("Is burgers your favourite food? (y/n): "); // assign to a boolean
+
+        if (chosen){ // if it returns true:
+            std::cout << "I like burgers as well!" << std::endl;
+            break;
+        }
+        else { // if it returns false: (two cases)
+            std::cout << "Either you dont like it or you are dumb. Please try again." << "\n";
+            continue;
+        }
+    }
+}
+```
+
 - **2025/08/08**
 
 ---

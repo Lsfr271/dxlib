@@ -218,7 +218,7 @@ int main() {
 
 ---
 
-## Minor bug fix
+## **Minor bug fix**
 - printline in `dxlibPrint` takes in two arguments: `text` and `endl`, endl stands for new line. And endl is a `bool` datatype
   the problem is that if it was false it still printed a new line:
 
@@ -236,6 +236,31 @@ void printline(std::string text, bool endl=true){
 }
 ```
 - So it has been fixed to NOT print a newline.
+
+- **2025/08/08**
+
+---
+
+## **New addition**
+- Usually in [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h) it used to make you call seperate functions to
+  Understand what each namespace did, but theres now a new function that calls all the functions in the [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h):
+
+```cpp
+void AllHelp() {
+    // Calls everything
+    dxlibMainUtil();
+    dxlibRandUtil();
+    dxlibConvertUtil();
+    dxlibFileUtil();
+    dxlibMathUtil();
+    dxlibTimeUtil();
+    dxlibPrintUtil();
+    dxlibTextUtil();
+    dxlibDebugUtil();
+    dxlibCheckUtil();
+    dxlibProbUtil();
+}
+```
 
 - **2025/08/08**
 

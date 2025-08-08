@@ -183,6 +183,13 @@ int main() {
 - New namespace has been added `dxlibProbability`, this is just a random generator for multiple functions. If you are interested
   Please check in `dxHelp.h`
 
+- More functions has been added to `dxlibMain`, these being are:
+- `Pause()`
+- `YesNoPrompt()`
+- `ClearScreen()`
+
+- Please go to `dxHelp.h` to learn more about these new additions.
+
 - **2025/08/08**
 
 ---

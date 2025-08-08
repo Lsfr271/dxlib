@@ -2,7 +2,7 @@
 
 - **Added helper file:** `dxHelp.h`
   This file explains all functions in the library for users who get stuck.  
-  Location: `dxlibPackage.zip/include/dxHelp.h`
+  Location: [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
 
 - **2025/08/01**
 
@@ -10,7 +10,7 @@
 
 - **Introduced new namespace:** `dxlibDebug ` 
   This namespace provides easy-to-use debugging utilities that wrap verbose C++ debug code into simpler functions.  
-  For details, see `dxHelp.h`.
+  For details, see [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h).
 
 - **2025/08/04**
 
@@ -18,7 +18,7 @@
 
 - **Created example file:** `dxlibusage.cpp`  
   Located in `examples/dxlibusage.cpp`, this file demonstrates how to use dxlib and covers multiple namespaces.  
-  File: `examples/dxlibusage.cpp`
+  File: [dxlibUsage](https://github.com/Lsfr271/dxlib/blob/main/examples/dxlibusage.cpp)
 
 - **2025/08/04**
 
@@ -80,7 +80,7 @@ int main() {
 ## **File structure changes**
 
 - Before, there was a `src/` folder in `include/`, now its in its seperate directory `examples/`
-  In the `examples/` directory you can find `dxlibusage.cpp`, it demonstrates how to use some `dxlib` namespaces.
+  In the `examples/` directory you can find [dxlibUsage](https://github.com/Lsfr271/dxlib/blob/main/examples/dxlibusage.cpp), it demonstrates how to use some `dxlib` namespaces.
 
 - **2025/08/06**
 
@@ -149,8 +149,8 @@ int main() {
 `Would output: 12 13.05 15.905`
 
 - Added a new namespace in `dxlib`, its called `dxlibCheck`, it checks for various cases like if a string is alphanumeric
-  or a number is a prime number and so much more. You can check the updated `dxHelp.h` for the new namespace and its contents.
-  Or the `dxlib.h` main source file.
+  or a number is a prime number and so much more. You can check the updated [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h) for the new namespace and its contents.
+  Or the [dxlib.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxlib.h) main source file.
 
 - **2025/08/07**
   
@@ -181,14 +181,14 @@ int main() {
 
 ## **New Addition**
 - New namespace has been added `dxlibProbability`, this is just a random generator for multiple functions. If you are interested
-  Please check in `dxHelp.h`
+  Please check in [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
 
 - More functions has been added to `dxlibMain`, these being are:
 - `Pause()`
 - `YesNoPrompt()`
 - `ClearScreen()`
 
-- Please go to `dxHelp.h` to learn more about these new additions.
+- Please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h) to learn more about these new additions.
 
 ### Here is how you would use **YesNoPrompt()**:
 ```cpp

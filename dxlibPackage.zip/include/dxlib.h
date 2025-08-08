@@ -32,7 +32,9 @@
     #include <limits.h>
 #endif
 
+// ================== dxlib ==================
 namespace dxlib {
+    // ================== dxlibMain ==================
     namespace dxlibMain {
         /*
         * CinFail(): Accepts no arguments, checks if a std::cin failed.
@@ -104,6 +106,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibRandom ==================
     namespace dxlibRandom {
         /*
         * RandomNumRange(): Picks a random number from a decimal number or a whole number and returns it
@@ -157,6 +160,7 @@ namespace dxlib {
         }
     } 
 
+    // ================== dxlibConvert ==================
     namespace dxlibConvert {
         // Converts a double to an int
         int ConvertDoubleToInt(const double &i){
@@ -184,6 +188,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibFileUtils ==================
     namespace dxlibFileUtils {
         // Checks if the file exists
         bool File_Exists(const std::string &filename){
@@ -226,6 +231,7 @@ namespace dxlib {
             file.write(data.data(), data.size());
         }
 
+        // ================== dxlibFileOperations ==================
         namespace dxlibFileOperations {
             // creates a file
             void CreateFile(const std::string &filename, const std::string &filetype){
@@ -266,6 +272,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibMath ==================
     namespace dxlibMath {
         constexpr double PI = 3.14159265358979323846;
 
@@ -397,6 +404,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibTime ==================
     namespace dxlibTime {
         // format a time structure
         std::string FormatDate(const std::tm& tm, const std::string &format = "%Y-%m-%d : %H:%M:%S"){
@@ -461,6 +469,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibPrint ==================
     namespace dxlibPrint {
         // print a message onto the terminal
         void printline(std::string text, bool endl=true){
@@ -561,6 +570,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibText ==================
     namespace dxlibText {
         bool startsWith(const std::string &str, const std::string &prefix){
             return str.size() >= prefix.size() && str.compare(0, prefix.size(), prefix) == 0;
@@ -671,6 +681,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibDebug ==================
     namespace dxlibDebug {
         // create a class for logging
         enum class LogLevel {INFO, WARN, ERRORS};
@@ -717,7 +728,8 @@ namespace dxlib {
             log(label + " took " + std::to_string(ms) + " ms");
         }
     }
-    
+
+    // ================== dxlibCheck ==================
     namespace dxlibCheck {
         // check if a number is even
         template<typename T>
@@ -790,6 +802,7 @@ namespace dxlib {
         }
     }
 
+    // ================== dxlibProbability ==================
     namespace dxlibProbability {
         /* Gets a probability from the start to the end */
         template<typename P>

@@ -41,10 +41,10 @@ namespace dxlib {
         */
         bool CinFail(){
             if (std::cin.fail()){
-                return false;
+                return true;
             }
             else {
-                return true;
+                return false;
             }
         }
 
@@ -871,3 +871,4 @@ namespace dxlib {
 }
 
 #endif // DX_H
+

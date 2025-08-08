@@ -224,7 +224,7 @@ int main() {
 
 ```cpp
 void printline(std::string text, bool endl=true){
-    if (endl){ // this says is endl is TRUE (newline printed)
+    if (endl){ // this says if endl is TRUE (newline printed)
         std::cout << text << std::endl;
     }
     else if (!endl){ // this says if endl is FALSE

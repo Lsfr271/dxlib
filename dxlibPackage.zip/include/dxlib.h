@@ -558,9 +558,9 @@ namespace dxlib {
 
                 std::cin >> input;
 
-                if (std::cin.fail()) {
+                if (CinFail()) {
                     std::cin.clear(); // reset failbit
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // flush input
+                    ClearBuffer(); // flush input
                     std::cout << "Invalid input. Please try again.\n";
                 } else {
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // flush remaining

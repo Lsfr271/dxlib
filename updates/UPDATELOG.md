@@ -224,16 +224,16 @@ int main() {
 
 ```cpp
 void printline(std::string text, bool endl=true){
-            if (endl){ // this says is endl is TRUE (newline printed)
-                std::cout << text << std::endl;
-            }
-            else if (!endl){ // this says if endl is FALSE
-                std::cout << text << "\n"; // this is the problem here, it would print a new line anyway
-            }
-            else {
-                throw std::invalid_argument("Please enter true or false on the second argument.");
-            }
-        }
+    if (endl){ // this says is endl is TRUE (newline printed)
+        std::cout << text << std::endl;
+    }
+    else if (!endl){ // this says if endl is FALSE
+        std::cout << text << "\n"; // this is the problem here, it would print a new line anyway
+    }
+    else {
+        throw std::invalid_argument("Please enter true or false on the second argument.");
+    }
+}
 ```
 - So it has been fixed to NOT print a newline.
 

@@ -7,11 +7,13 @@
 namespace dxlibHelp {
 
     void dxlibMainUtil() { 
-        std::cout << "dxlibMain has 2 functions: CinFail() and ClearBuffer()" << std::endl;
-
         std::cout << "CinFail(): Checks if std::cin failed (likely due to an invalid data type)." << std::endl;
         std::cout << "ClearBuffer(): After std::endl, a buffer is added, which can auto-submit the next input."
                      " This function clears that buffer." << std::endl;
+        std::cout << "Pause(): Pauses the program" << std::endl;
+        std::cout << "YesNoPrompt(): Gets two arguments, a question and a newline boolean. Returns true if 'y' or 'Y' was"
+                     "chosen, else false if 'n'/'N' or something else was chosen." << std::endl;
+        std::cout << "ClearScreen(): Clears the console screen" << std::endl;
     }
 
     void dxlibRandUtil() {   
@@ -111,4 +113,5 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 

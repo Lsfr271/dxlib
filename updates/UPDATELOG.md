@@ -179,4 +179,12 @@ int main() {
 
 ---
 
+## **New Addition**
+- New namespace has been added `dxlibProbability`, this is just a random generator for multiple functions. If you are interested
+  Please check in `dxHelp.h`
+
+- **2025/08/08**
+
+---
+
 ### More updates coming soon!

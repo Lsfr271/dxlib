@@ -52,6 +52,56 @@ namespace dxlib {
         void ClearBuffer(){
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
+        
+        /* Pause(): Pauses the program */
+        inline void Pause(const std::string&msg = "Press enter to continue...."){
+            std::cout << msg;
+            ClearBuffer();
+            std::cin.get();
+        }
+
+        /* YesNoPrompt(): Asks for yes or no */
+        inline bool YesNoPrompt(const std::string& ques, bool newline=true){
+            std::string input;
+
+            if (newline){
+                std::cout << ques << "\n";
+                std::getline(std::cin, input);
+
+                if (input == "y" || input == "Y"){
+                    return true;
+                }
+                else if (input == "n" || input == "N"){
+                    return false;
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                std::cout << ques;
+                std::getline(std::cin, input);
+
+                if (input == "y" || input == "Y"){
+                    return true;
+                }
+                else if (input == "n" || input == "N"){
+                    return false;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        /* ClearScreen(): clears console screen */
+        inline void ClearScreen() {
+            #ifdef _WIN32 // windows
+                system("cls");
+            #else
+                system("clear"); // possibly linux/mac
+            #endif
+        }
     }
 
     namespace dxlibRandom {
@@ -804,8 +854,6 @@ namespace dxlib {
 
             return vec[dist(gen)];
         }
-
-
     }
 }
 

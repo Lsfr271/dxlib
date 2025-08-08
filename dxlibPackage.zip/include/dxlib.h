@@ -39,7 +39,7 @@ namespace dxlib {
         /*
         * CinFail(): Accepts no arguments, checks if a std::cin failed.
         */
-        bool CinFail(){
+        inline bool CinFail(){
             if (std::cin.fail()){
                 return true;
             }
@@ -871,4 +871,3 @@ namespace dxlib {
 }
 
 #endif // DX_H
-

@@ -12,7 +12,7 @@ namespace dxlibHelp {
                      " This function clears that buffer." << std::endl;
         std::cout << "Pause(): Pauses the program" << std::endl;
         std::cout << "YesNoPrompt(): Gets two arguments, a question and a newline boolean. Returns true if 'y' or 'Y' was"
-                     "chosen, else false if 'n'/'N' or something else was chosen." << std::endl;
+                     " chosen, else false if 'n'/'N' or something else was chosen." << std::endl;
         std::cout << "ClearScreen(): Clears the console screen" << std::endl;
     }
 
@@ -113,5 +113,6 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 
 

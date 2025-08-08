@@ -739,6 +739,74 @@ namespace dxlib {
             return std::all_of(s.begin(), s.end(), ::isspace);
         }
     }
+
+    namespace dxlibProbability {
+        /* Gets a probability from the start to the end */
+        template<typename P>
+        P Probability(P start, P end){
+            if (start > end){
+                throw std::invalid_argument("Invalid Argument: (start > end)");
+            }
+            else {
+                if constexpr (std::is_integral_v<P>){
+                    static std::random_device rd;
+                    static std::mt19937 gen(rd());
+                    std::uniform_int_distribution<P> dist(start, end);
+
+                    return dist(gen);
+                }
+                else {
+                    throw std::invalid_argument("Integral Types only.");
+                }
+            }
+        }
+
+        /* FLips a coin either head/tails */
+        inline bool FlipCoin() {
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::bernoulli_distribution dist(0.5);
+
+            return dist(gen);
+        }
+
+        /* rolls a dice depending on the given number of sides */
+        template<typename P>
+        P RollDice(P sides){
+            if (sides <= 0) throw std::invalid_argument("Sides must be greater than 0.");
+
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::uniform_int_distribution<P> dist(1, sides);
+
+            return dist(gen);
+        }
+
+        /* Gets a random number from 0 to 1 (double) */
+        inline bool Chance(double p){
+            if (p < 0.0 || p > 1.0) throw std::invalid_argument("Chance must be between 0 and 1");
+
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::bernoulli_distribution dist(p);
+
+            return dist(gen);
+        }
+
+        /* Grabs a random element from a vector */
+        template<typename T>
+        T SampleFromVector(const std::vector<T>& vec){
+            if (vec.empty()) throw std::invalid_argument("Vector passed should not be empty.");
+
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::uniform_int_distribution<size_t> dist(0, vec.size() -1);
+
+            return vec[dist(gen)];
+        }
+
+
+    }
 }
 
 #endif // DX_H

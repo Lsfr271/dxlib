@@ -468,7 +468,7 @@ namespace dxlib {
                 std::cout << text << std::endl;
             }
             else if (!endl){
-                std::cout << text << "\n";
+                std::cout << text;
             }
             else {
                 throw std::invalid_argument("Please enter true or false on the second argument.");

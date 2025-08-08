@@ -563,7 +563,7 @@ namespace dxlib {
                     ClearBuffer(); // flush input
                     std::cout << "Invalid input. Please try again.\n";
                 } else {
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // flush remaining
+                    ClearBuffer(); // flush remaining
                     return input;
                 }
             }

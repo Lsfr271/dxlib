@@ -62,6 +62,7 @@ you will find every function there explained.
 - `dxlibText` – String utilities (trim, split, join, case, etc.)
 - `dxlibDebug` - Debug Utilities (log, assertLog, etc..)
 - `dxlibCheck` - Checking utilities (isPrime, isInRange, isEven, isOdd, etc..)
+- `dxlibProbability` - it is like `dxlibRandom` but supports probability functions.
 
 ---
 

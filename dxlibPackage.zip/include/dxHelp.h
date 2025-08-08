@@ -110,10 +110,23 @@ namespace dxlibHelp {
         std::cout << "Chance(): Rolls a number from 0 to 1" << std::endl;
         std::cout << "SampleFromVector(): Gets a random element from a vector given" << std::endl;
     }
+
+    void AllHelp() {
+        dxlibMainUtil();
+        dxlibRandUtil();
+        dxlibConvertUtil();
+        dxlibFileUtil();
+        dxlibMathUtil();
+        dxlibTimeUtil();
+        dxlibPrintUtil();
+        dxlibTextUtil();
+        dxlibDebugUtil();
+        dxlibCheckUtil();
+        dxlibProbUtil();
+    }
+
 }
 
 #endif // DX_HELP
-
-
 
 

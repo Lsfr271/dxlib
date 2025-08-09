@@ -14,6 +14,12 @@ namespace dxlibHelp {
         std::cout << "YesNoPrompt(): Gets two arguments, a question and a newline boolean. Returns true if 'y' or 'Y' was"
                      " chosen, else false if 'n'/'N' or something else was chosen." << std::endl;
         std::cout << "ClearScreen(): Clears the console screen" << std::endl;
+        std::cout << "mVect(): Multiplies all the elements in a vector by a multiplied argument" << std::endl;
+        std::cout << "PrintVector(): Prints all elements of a vector" << std::endl;
+        std::cout << "swap(): swaps two variables" << std::endl;
+        std::cout << "CountChar(): Counts how much a specific char has appeared in a string" << std::endl;
+        std::cout << "IsPowerOfTwo(): Checks if a number is a power of two" << std::endl;
+        std::cout << "ReverseVector(): Reverses a vector in place" << std::endl;
     }
 
     void dxlibRandUtil() {   
@@ -128,5 +134,6 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 
 

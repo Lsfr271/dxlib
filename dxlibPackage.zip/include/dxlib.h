@@ -344,7 +344,7 @@ namespace dxlib {
             unsigned long long result = 1;
 
             for (unsigned int i = 2; i <= n; ++i){
-                result *= 1;
+                result *= i;
             }
 
             return result;

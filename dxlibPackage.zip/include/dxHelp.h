@@ -21,6 +21,9 @@ namespace dxlibHelp {
         std::cout << "IsPowerOfTwo(): Checks if a number is a power of two" << std::endl;
         std::cout << "ReverseVector(): Reverses a vector in place" << std::endl;
         std::cout << "SortVector(): Sorts a vectors element from lowest to highest or vice-versa depending on an argument" << std::endl;
+        std::cout << "SumVector(): Sums all the elements in a vector" << std::endl;
+        std::cout << "AbsVal(): Gets the absolute value of a number" << std::endl;
+        std::cout << "GenerateRandomVector(): Generates a random vector and its size depends on the argument: vectorSize" << std::endl;
     }
 
     void dxlibRandUtil() {   
@@ -135,6 +138,7 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 
 
 

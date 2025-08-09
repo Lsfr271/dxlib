@@ -178,6 +178,23 @@ namespace dxlib {
         }
 
         /* GenerateRandomVector(): Generates a random vector and its size depends on the argument (vectorSize) */
+        // string generator helper because RandomStr() is in dxlibRandom which isnt declared yet
+        std::string random_string(size_t length) {
+            const std::string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::uniform_int_distribution<> dist(0, chars.size() -1);
+
+            std::string result;
+
+            for (size_t i = 0; i < length; ++i) {
+                result += chars[dist(gen)];
+            }
+
+            return result;
+        }
+
         template<typename T>
         std::vector<T> GenerateRandomVector(size_t vectorSize){
             std::vector<T> vec;
@@ -202,11 +219,11 @@ namespace dxlib {
             }
             else if constexpr (std::is_same<T, std::string>::value){
                 for (size_t i = 0; i < vectorSize; ++i){
-                    vec.push_back(dxlibRandom::RandomStr(5));
+                    vec.push_back(random_string(5));
                 }
             }
             else {
-                static_assert(always_false<T>::value, "Unsupported type.");
+                throw std::invalid_argument("Unsupported type.");
             }
 
             return vec;

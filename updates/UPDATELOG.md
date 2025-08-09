@@ -334,7 +334,7 @@ using namespace dxlib::dxlibMain;
 
 int main() {
     // note you need to use auto
-    auto randomVector = GenerateRandomVector<int>(10); // give the vector 9 spots to fill in with a random int
+    auto randomVector = GenerateRandomVector<int>(10); // give the vector 10 spots to fill in with a random int
 
     // print the vector by looping through each element
     for (auto v : randomVector){

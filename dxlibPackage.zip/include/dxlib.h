@@ -173,7 +173,7 @@ namespace dxlib {
 
         /* AbsVal(): Gets the absoulute value of a number */
         template<typename A>
-        A abs(A x){
+        A AbsVal(A x){
             return (x < 0) ? -x : x;
         }
 

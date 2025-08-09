@@ -106,6 +106,19 @@ namespace dxlib {
                 system("clear"); // possibly linux/mac
             #endif
         }
+
+        /* mVect: multiplies all elements in a vector. mVect = multiply vector */
+        std::vector<int> mVect(std::vector<int>& vec, int mult){
+            if (mult <= 0){
+                throw std::invalid_argument("The multiplier cannot <= 0");
+            }
+
+            for (size_t i = 0; i < vec.size(); ++i){
+                vec[i] *= mult;
+            }
+
+            return vec;
+        }
     }
 
     // ================== dxlibRandom ==================
@@ -130,7 +143,7 @@ namespace dxlib {
         /*
         * RandomStr(): Generates a string depending on its length argument (len)
         */
-        std::string RandomStr(size_t len){
+        inline std::string RandomStr(size_t len){
             static const std::string chars =
                 "0123456789"
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -165,27 +178,27 @@ namespace dxlib {
     // ================== dxlibConvert ==================
     namespace dxlibConvert {
         // Converts a double to an int
-        int ConvertDoubleToInt(const double &i){
+        inline int ConvertDoubleToInt(const double &i){
             return static_cast<int>(i);
         }
 
         // Converts a int to an double
-        double ConverIntToDouble(const int &i){
+        inline double ConverIntToDouble(const int &i){
             return static_cast<double>(i);
         }
 
         // Converts a float to an double
-        double ConvertFloatToDouble(const float &i){
+        inline double ConvertFloatToDouble(const float &i){
             return static_cast<double>(i);
         }
 
         // Converts a double to an float
-        float ConvertDoubleToFloat(const double &i){
+        inline float ConvertDoubleToFloat(const double &i){
             return static_cast<float>(i);
         }
         
         // Converts a float to an int
-        int ConvertFloatToInt(const float &i){
+        inline int ConvertFloatToInt(const float &i){
             return static_cast<int>(i);
         }
     }
@@ -193,12 +206,12 @@ namespace dxlib {
     // ================== dxlibFileUtils ==================
     namespace dxlibFileUtils {
         // Checks if the file exists
-        bool File_Exists(const std::string &filename){
+        inline bool File_Exists(const std::string &filename){
             return std::filesystem::exists(filename);
         }
 
         // read entire file and convert to string
-        std::string FileToString(const std::string &filename){
+        inline std::string FileToString(const std::string &filename){
             std::ifstream file(filename, std::ios::in | std::ios::binary);
 
             if (!file){
@@ -212,7 +225,7 @@ namespace dxlib {
         }
 
         // write a string to file (overwrite)
-        void WriteString_ToFileAndOverWrite(const std::string &filename, const std::string &content){
+        inline void WriteString_ToFileAndOverWrite(const std::string &filename, const std::string &content){
             std::ofstream file(filename, std::ios::out | std::ios::binary);
 
             if (!file){
@@ -223,7 +236,7 @@ namespace dxlib {
         }
 
         // write a vector<char> to a file (overwrite)
-        void WriteVectorToFileAnd_Overwrite(const std::string &filename, const std::vector<char>&data){
+        inline void WriteVectorToFileAnd_Overwrite(const std::string &filename, const std::vector<char>&data){
             std::ofstream file(filename, std::ios::out | std::ios::binary);
 
             if (!file){
@@ -236,7 +249,7 @@ namespace dxlib {
         // ================== dxlibFileOperations ==================
         namespace dxlibFileOperations {
             // creates a file
-            void CreateFile(const std::string &filename, const std::string &filetype){
+            inline void CreateFile(const std::string &filename, const std::string &filetype){
                 std::string fullName = filename + "." + filetype;
 
                 std::ofstream file(fullName);
@@ -248,14 +261,14 @@ namespace dxlib {
             }
 
             // deletes an existing file
-            void DeleteFile(const std::string &filename){
+            inline void DeleteFile(const std::string &filename){
                 if (!std::filesystem::remove(filename)){
                     throw std::runtime_error("Failed to delete file or file does not exist: " + filename);
                 }
             }
 
             // copies a files contents
-            void CopyFile(const std::string &source, const std::string &destination){
+            inline void CopyFile(const std::string &source, const std::string &destination){
                 try {
                     std::filesystem::copy_file(source, destination, std::filesystem::copy_options::overwrite_existing);
                 } catch (const std::filesystem::filesystem_error &e){
@@ -264,7 +277,7 @@ namespace dxlib {
             }
 
             // renames an existing file
-            void RenameFile(const std::string& oldName, const std::string &newName){
+            inline void RenameFile(const std::string& oldName, const std::string &newName){
                 try {
                     std::filesystem::rename(oldName, newName);
                 } catch (const std::filesystem::filesystem_error &e){
@@ -278,19 +291,19 @@ namespace dxlib {
     namespace dxlibMath {
         constexpr double PI = 3.14159265358979323846;
 
-        double DegToRad(double deg){
+        inline double DegToRad(double deg){
             return deg * PI / 180.0;
         }
 
-        double dlibSin(double aid){
+        inline double dlibSin(double aid){
             return std::sin(DegToRad(aid));
         }
 
-        double dlibCos(double aid){
+        inline double dlibCos(double aid){
             return std::cos(DegToRad(aid));
         }
 
-        double dlibTan(double aid){
+        inline double dlibTan(double aid){
             return std::tan(DegToRad(aid));
         }
 
@@ -318,7 +331,7 @@ namespace dxlib {
         }
 
         // multiplies a vector of numbers
-        double MultNums(const std::vector<double> &numbers){
+        inline double MultNums(const std::vector<double> &numbers){
             double result = 1;
 
             for (double num : numbers){
@@ -328,7 +341,7 @@ namespace dxlib {
             return result;
         }
 
-        double ReturnPower(double b, int e){
+        inline double ReturnPower(double b, int e){
             double r = 1;
 
             for (int i = 0; i < e; i++){
@@ -340,7 +353,7 @@ namespace dxlib {
 
         // Factorial(): gets the factorial result (i dont know just guessing)
         // note: searched up the algorithm
-        unsigned long long Factorial(unsigned int n){
+        inline unsigned long long Factorial(unsigned int n){
             unsigned long long result = 1;
 
             for (unsigned int i = 2; i <= n; ++i){
@@ -351,7 +364,7 @@ namespace dxlib {
         }
 
         // GCD(): returns greatest common divider (GCD)
-        int GCD(int a, int b){
+        inline int GCD(int a, int b){
             while (b != 0){ 
                 int temp = b;
                 b = a % b;
@@ -362,45 +375,45 @@ namespace dxlib {
         }
 
         // LCM(): Opposite of GCD
-        int LCM(int a, int b){
+        inline int LCM(int a, int b){
             return (a / GCD(a, b)) * b;
         }
 
         namespace dxlibShapesCalc {
-            double volumeCube(double side){
+            inline double volumeCube(double side){
                 return side * side * side;
             }
 
-            double Rectprism(double len, double wid, double hei){
+            inline double Rectprism(double len, double wid, double hei){
                 return len * wid * hei;
             }
 
             // (4/3) * pi * r^3
-            double VolSphere(double rad){
+            inline double VolSphere(double rad){
                 return (4.0 / 3.0) * PI * rad * rad * rad;
             }
 
             // pi * r^2 * height
-            double VolCyl(double rad, double hei){
+            inline double VolCyl(double rad, double hei){
                 return PI * rad * rad * hei;
             }
 
             // (1/3) * pi * r^2 * height
-            double VolCone(double rad, double hei){
+            inline double VolCone(double rad, double hei){
                 return (1.0 / 3.0) * PI * rad * rad * hei;
             }
 
-            double VolTrigPrism(double b, double h, double l){
+            inline double VolTrigPrism(double b, double h, double l){
                 return 0.5 * b * h * l;
             }
 
             // (1/3) * base * height
-            double VolPyr(double bl, double bw, double hei){
+            inline double VolPyr(double bl, double bw, double hei){
                 return (1.0 / 3.0) * bl * bw * hei;
             }
 
             // (4/3) * pi * a * b * c (a,b,c = semi-axes)
-            double VolElip(double a, double b, double c){
+            inline double VolElip(double a, double b, double c){
                 return (4.0 / 3.0) * PI * a * b *c;
             }
         }
@@ -409,7 +422,7 @@ namespace dxlib {
     // ================== dxlibTime ==================
     namespace dxlibTime {
         // format a time structure
-        std::string FormatDate(const std::tm& tm, const std::string &format = "%Y-%m-%d : %H:%M:%S"){
+        inline std::string FormatDate(const std::tm& tm, const std::string &format = "%Y-%m-%d : %H:%M:%S"){
             std::ostringstream oss;
             oss << std::put_time(&tm, format.c_str());
 
@@ -417,7 +430,7 @@ namespace dxlib {
         }
 
         // sleep for a given time.
-        void sleepfor(std::string type, int global_sec){
+        inline void sleepfor(std::string type, int global_sec){
             if (type == "s"){
                 std::this_thread::sleep_for(std::chrono::seconds(global_sec));
             }
@@ -436,7 +449,7 @@ namespace dxlib {
         }
 
         // get the time of the USER(S) system
-        std::string GetLocalTime(){
+        inline std::string GetLocalTime(){
             auto now = std::chrono::system_clock::now();
             std::time_t now_time = std::chrono::system_clock::to_time_t(now);
 
@@ -455,7 +468,7 @@ namespace dxlib {
         }
 
         // adds seconds to a time structure
-        std::tm AddSecToTime(const std::tm& tm, int secondsToAdd){
+        inline std::tm AddSecToTime(const std::tm& tm, int secondsToAdd){
             std::time_t time = std::mktime(const_cast<std::tm*>(&tm));
 
             time += secondsToAdd;
@@ -474,7 +487,7 @@ namespace dxlib {
     // ================== dxlibPrint ==================
     namespace dxlibPrint {
         // print a message onto the terminal
-        void printline(std::string text, bool endl=true){
+        inline void printline(std::string text, bool endl=true){
             if (endl){
                 std::cout << text << std::endl;
             }
@@ -487,7 +500,7 @@ namespace dxlib {
         }
         
         // print a variable in a string
-        void printVar(std::string text, const std::unordered_map<std::string, std::string>& vars, bool nl = true) {
+        inline void printVar(std::string text, const std::unordered_map<std::string, std::string>& vars, bool nl = true) {
             size_t pos = 0;
 
             while ((pos = text.find('-', pos)) != std::string::npos) {
@@ -574,15 +587,15 @@ namespace dxlib {
 
     // ================== dxlibText ==================
     namespace dxlibText {
-        bool startsWith(const std::string &str, const std::string &prefix){
+        inline bool startsWith(const std::string &str, const std::string &prefix){
             return str.size() >= prefix.size() && str.compare(0, prefix.size(), prefix) == 0;
         }
 
-        bool endsWith(const std::string &str, const std::string &suffix){
+        inline bool endsWith(const std::string &str, const std::string &suffix){
             return str.size() >= suffix.size() && str.compare(str.size() - suffix.size(), suffix.size(), suffix) == 0;
         }
 
-        void ChangeCase(std::string& s, std::string type){
+        inline void ChangeCase(std::string& s, std::string type){
             if (type == "lower"){
                 std::transform(s.begin(), s.end(), s.begin(), ::tolower);
             }
@@ -611,7 +624,7 @@ namespace dxlib {
         }   
 
         // split a string using a delim
-        std::vector<std::string> Split(const std::string& str, char delimiter){
+        inline std::vector<std::string> Split(const std::string& str, char delimiter){
             std::vector<std::string> tokens;
             std::stringstream ss(str);
             std::string token;
@@ -624,7 +637,7 @@ namespace dxlib {
         }
 
         // join parts of a string
-        std::string Join(const std::vector<std::string>& parts, const std::string& delim){
+        inline std::string Join(const std::vector<std::string>& parts, const std::string& delim){
             std::ostringstream oss;
 
             for (size_t i = 0; i < parts.size(); i++){
@@ -637,7 +650,7 @@ namespace dxlib {
         }
 
         // remove all whitespaces
-        std::string TrimString(std::string& str){
+        inline std::string TrimString(std::string& str){
             str.erase(str.begin(), std::find_if(str.begin(), str.end(), [](unsigned char ch) {return !std::isspace(ch);}));
 
             str.erase(std::find_if(str.rbegin(), str.rend(), [](unsigned char ch){return !std::isspace(ch);}).base(), str.end());
@@ -646,28 +659,28 @@ namespace dxlib {
         }
 
         // reverse the strings content
-        std::string ReverseString(std::string &str){
+        inline std::string ReverseString(std::string &str){
             std::reverse(str.begin(), str.end());
 
             return str;
         }
 
         // remove the whitespaces on the left side
-        std::string LTrim(std::string& str){
+        inline std::string LTrim(std::string& str){
             str.erase(str.begin(), std::find_if(str.begin(), str.end(), [](unsigned char ch){return !std::isspace(ch);}));
 
             return str;
         }
 
         // remove the whitespaces on the right side
-        std::string RTrim(std::string& str){
+        inline std::string RTrim(std::string& str){
             str.erase(std::find_if(str.rbegin(), str.rend(), [](unsigned char ch){return !std::isspace(ch);}).base(), str.end());
 
             return str;
         }
 
         // capitalize the first letter on every word found in a string
-        void CapitalizeWords(std::string& str) {
+        inline void CapitalizeWords(std::string& str) {
             bool capitalizeNext = true;
 
             for (char& c : str) {
@@ -688,7 +701,7 @@ namespace dxlib {
         // create a class for logging
         enum class LogLevel {INFO, WARN, ERRORS};
 
-        void log(const std::string& msg, LogLevel level = LogLevel::INFO){
+        inline void log(const std::string& msg, LogLevel level = LogLevel::INFO){
             std::string prefix;
 
             switch (level){
@@ -701,7 +714,7 @@ namespace dxlib {
         }
 
         // stop the code
-        void debugBreak() {
+        inline void debugBreak() {
             #ifdef _WIN32
                 __debugbreak(); //MSVC
             #else
@@ -710,7 +723,7 @@ namespace dxlib {
         }
 
         // make something not equal to 0
-        void assertLog(bool cond, const std::string& msg){
+        inline void assertLog(bool cond, const std::string& msg){
             if (!cond) {
                 log("[ASSERT FAIL]" + msg, LogLevel::ERRORS);
                 std::exit(EXIT_FAILURE);
@@ -719,7 +732,7 @@ namespace dxlib {
         }
 
         // record how much seconds have passed during a code execution.
-        void timeLog(const std::string& label, const std::function<void()>&func){
+        inline void timeLog(const std::string& label, const std::function<void()>&func){
             auto start = std::chrono::high_resolution_clock::now();
             func(); // run user func
             auto end = std::chrono::high_resolution_clock::now();
@@ -746,22 +759,22 @@ namespace dxlib {
         }
 
         // check if a string is numeric
-        bool isNumeric(const std::string& s){
+        inline bool isNumeric(const std::string& s){
             return !s.empty() && std::all_of(s.begin(), s.end(), ::isdigit);
         }
         
         // check if all characters are alphabetic
-        bool isAlpha(const std::string& s){
+        inline bool isAlpha(const std::string& s){
             return !s.empty() && std::all_of(s.begin(), s.end(), ::isalpha);
         }
 
         // check if all characters are alphanumeric
-        bool isAllNum(const std::string& s){
+        inline bool isAllNum(const std::string& s){
             return !s.empty() && std::all_of(s.begin(), s.end(), ::isalnum);
         }
 
         // check if a string is a valid float
-        bool isFloatString(const std::string& s){
+        inline bool isFloatString(const std::string& s){
             std::istringstream iss(s);
             float f;
 
@@ -769,7 +782,7 @@ namespace dxlib {
         }
 
         // check if a string is a valid double
-        bool isDoubleString(const std::string& s){
+        inline bool isDoubleString(const std::string& s){
             std::istringstream iss(s);
             double d;
 
@@ -783,7 +796,7 @@ namespace dxlib {
         }
 
         // check if a number is prime
-        bool isPrime(int n){
+        inline bool isPrime(int n){
             if (n <= 1) return false;
             
             for (int i = 2; i * i <= n; ++i){
@@ -794,12 +807,12 @@ namespace dxlib {
         }
 
         // check if a number is a palindrome
-        bool isPalindrome(const std::string& s){
+        inline bool isPalindrome(const std::string& s){
             return std::equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
         }
 
         // check if a string is only whitespaces
-        bool isWhiteSpaceOnly(const std::string& s){
+        inline bool isWhiteSpaceOnly(const std::string& s){
             return std::all_of(s.begin(), s.end(), ::isspace);
         }
     }

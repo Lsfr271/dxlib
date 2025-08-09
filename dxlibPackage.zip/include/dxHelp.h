@@ -20,6 +20,7 @@ namespace dxlibHelp {
         std::cout << "CountChar(): Counts how much a specific char has appeared in a string" << std::endl;
         std::cout << "IsPowerOfTwo(): Checks if a number is a power of two" << std::endl;
         std::cout << "ReverseVector(): Reverses a vector in place" << std::endl;
+        std::cout << "SortVector(): Sorts a vectors element from lowest to highest or vice-versa depending on an argument" << std::endl;
     }
 
     void dxlibRandUtil() {   
@@ -134,6 +135,7 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 
 
 

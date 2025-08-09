@@ -295,4 +295,35 @@ unsigned long long Factorial(unsigned int n){
 
 ---
 
+## **New Addition**
+- There is a new function in `dxlibMain`, its called `mVect()`, all it does it shuffles all the elements in a vector. (only integers are supported)
+
+### **Example:**
+```cpp
+#include "../include/dxlib.h"
+
+using namespace dxlib::dxlibMain;
+
+int main() {
+    std::vector<int> ex = {10, 20, 30, 40, 50};
+
+    // note: mVect means multiply vector.
+    mVect(ex, 2); // first argument is the vector which is 'ex' and the second is how much it should be multiplied
+    // so if its 2, it multiples all elements by 2, if its 3 it multiplies all elements by 3, and so on.
+
+    // print the result by looping through each element:
+    for (int numbers : ex){
+        std::cout << numbers << " ";
+    }
+
+    return 0;
+}
+```
+
+`output: 20, 40, 60, 80, 100`
+
+- **2025/08/09**
+
+---
+
 ### More updates coming soon!

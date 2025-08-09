@@ -152,6 +152,19 @@ namespace dxlib {
         void ReverseVector(std::vector<T>& vec){
             std::reverse(vec.begin(), vec.end());
         }
+
+        /* SortVector(): Sorts a vector from lowest to highest or highest to lowest depending on an argument */
+        void SortVector(std::vector<int>& vec, std::string arrange){
+            if (arrange == "ltw"){ // ltw = lowest to highest
+                std::sort(vec.begin(), vec.end());
+            }
+            else if (arrange == "htl"){ // htl == highest to lowest
+                std::sort(vec.begin(), vec.end(), std::greater<int>());
+            }
+            else {
+                throw std::invalid_argument("Please enter either 'ltw' or 'htl' on the arrange argument");
+            }
+        }
     }
 
     // ================== dxlibRandom ==================

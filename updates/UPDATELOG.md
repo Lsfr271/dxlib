@@ -296,7 +296,7 @@ unsigned long long Factorial(unsigned int n){
 ---
 
 ## **New Addition**
-- There is a new function in `dxlibMain`, its called `mVect()`, all it does it shuffles all the elements in a vector. (only integers are supported)
+- There is a new function in `dxlibMain`, its called `mVect()`, all it does it multiplies all the elements in a vector. (only integers are supported)
 
 ### **Example:**
 ```cpp

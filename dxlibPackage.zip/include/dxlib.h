@@ -165,6 +165,52 @@ namespace dxlib {
                 throw std::invalid_argument("Please enter either 'ltw' or 'htl' on the arrange argument");
             }
         }
+
+        /* SumVector(): Sums all the elements in a vector */
+        int SumVector(const std::vector<int>& vec){
+            return std::accumulate(vec.begin(), vec.end(), 0);
+        }
+
+        /* AbsVal(): Gets the absoulute value of a number */
+        template<typename A>
+        A abs(A x){
+            return (x < 0) ? -x : x;
+        }
+
+        /* GenerateRandomVector(): Generates a random vector and its size depends on the argument (vectorSize) */
+        template<typename T>
+        std::vector<T> GenerateRandomVector(size_t vectorSize){
+            std::vector<T> vec;
+            vec.reserve(vectorSize);
+
+            std::random_device rd;
+            std::mt19937 gen(rd());
+
+            if constexpr (std::is_integral<T>::value){
+                std::uniform_int_distribution<T> dist(0, 100);
+                
+                for (size_t i = 0; i < vectorSize; ++i){
+                    vec.push_back(dist(gen));
+                }
+            }
+            else if constexpr (std::is_floating_point<T>::value){
+                std::uniform_int_distribution<T> dist(0.0, 100.0);
+
+                for (size_t i = 0; i < vectorSize; ++i){
+                    vec.push_back(dist(gen));
+                }
+            }
+            else if constexpr (std::is_same<T, std::string>::value){
+                for (size_t i = 0; i < vectorSize; ++i){
+                    vec.push_back(dxlibRandom::RandomStr(5));
+                }
+            }
+            else {
+                static_assert(always_false<T>::value, "Unsupported type.");
+            }
+
+            return vec;
+        }
     }
 
     // ================== dxlibRandom ==================

@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run Active File",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Compile active file to .exe"
+    },
+    {
+      "label": "Run Executable",
+      "type": "shell",
+      "dependsOn": "Build and Run Active File",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Start-Process -NoNewWindow -Wait '${fileDirname}\\${fileBasenameNoExtension}.exe'"
+      ],
+      "group": "build"
+    }
+  ]
+}

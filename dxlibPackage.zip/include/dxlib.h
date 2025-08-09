@@ -119,6 +119,39 @@ namespace dxlib {
 
             return vec;
         }
+        
+        /* PrintVector(): Prints all the vectors elements */
+        void PrintVector(const std::vector<int>& vec, bool newline=true){
+            for (const auto& v : vec){
+                std::cout << v << " ";
+            }
+            
+            if (newline) std::cout << "\n";
+        }
+
+        template<typename V>
+        void swap(V&a, V&b){
+            V temp = a;
+            a = b;
+            b = temp;
+        }
+
+        /* CountChar(): Counts how many of a specific char has appeared in a string */
+        int CountChar(const std::string& str, char c){
+            return std::count(str.begin(), str.end(), c);
+        }
+
+        /* IsPowerOfTwo(): Returns true if a number is a power of two */
+        template<typename T>
+        bool IsPowerOfTwo(T n){
+            return n > 0 && (n & (n -1)) == 0;
+        }
+
+        /* ReverseVector(): reverses a vector in place */
+        template<typename T>
+        void ReverseVector(std::vector<T>& vec){
+            std::reverse(vec.begin(), vec.end());
+        }
     }
 
     // ================== dxlibRandom ==================

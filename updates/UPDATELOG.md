@@ -322,6 +322,9 @@ int main() {
 
 `output: 20, 40, 60, 80, 100`
 
+- Three new functions has been added in dxlibMain, please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
+  To check whats new.
+
 - **2025/08/09**
 
 ---

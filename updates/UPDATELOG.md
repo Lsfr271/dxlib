@@ -274,4 +274,25 @@ void AllHelp() {
 
 ---
 
+## **Minor bug fix**
+- In `dxlibMath::Factorial()` it used to do this:
+
+```cpp
+unsigned long long Factorial(unsigned int n){
+    unsigned long long result = 1;
+
+    for (unsigned int i = 2; i <= n; ++i){
+        result *= 1; // this is the problem
+    }
+
+    return result;
+}
+```
+
+- You see, `result *= 1` basically does nothing. So to fix it, it was changed to `result *= i`
+
+- **2025/08/09**
+
+---
+
 ### More updates coming soon!

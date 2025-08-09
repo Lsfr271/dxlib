@@ -299,7 +299,7 @@ unsigned long long Factorial(unsigned int n){
 - 10 new functions has been added in dxlibMain, please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
   To check whats new.
   
-- I will cover one of them, its called `mVect()`, all it does it multiplies all the elements in a vector. (only integers are supported)
+- I will cover two of them, first one is called `mVect()`, all it does it multiplies all the elements in a vector. (only integers are supported)
 
 ### **Example:**
 ```cpp
@@ -324,6 +324,24 @@ int main() {
 ```
 
 `output: 20, 40, 60, 80, 100`
+
+- Second one is called `GenerateRandomVector()`, heres how you would use it:
+
+```cpp
+#include "../include/dxlib.h"
+
+using namespace dxlib::dxlibMain;
+
+int main() {
+    // note you need to use auto
+    auto randomVector = GenerateRandomVector<int>(10); // give the vector 9 spots to fill in with a random int
+
+    // print the vector by looping through each element
+    for (auto v : randomVector){
+        std::cout << v << " ";
+    }
+}
+```
 
 - **2025/08/09**
 

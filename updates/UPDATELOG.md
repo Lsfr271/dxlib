@@ -296,7 +296,10 @@ unsigned long long Factorial(unsigned int n){
 ---
 
 ## **New Addition**
-- There is a new function in `dxlibMain`, its called `mVect()`, all it does it multiplies all the elements in a vector. (only integers are supported)
+- 6 new functions has been added in dxlibMain, please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
+  To check whats new.
+  
+- I will cover one of them, its called `mVect()`, all it does it multiplies all the elements in a vector. (only integers are supported)
 
 ### **Example:**
 ```cpp
@@ -321,9 +324,6 @@ int main() {
 ```
 
 `output: 20, 40, 60, 80, 100`
-
-- Three new functions has been added in dxlibMain, please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
-  To check whats new.
 
 - **2025/08/09**
 

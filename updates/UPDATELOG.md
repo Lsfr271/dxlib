@@ -347,4 +347,14 @@ int main() {
 
 ---
 
+## **File structure Addition**
+- Added a _gplusplusSupport, you can visit here: [g++](https://github.com/Lsfr271/dxlib/tree/main/_gplusplusSupport/.vscode)
+- This is only if you are running with g++, please download the `.vscode` to get the `tasks.json` and `launch.json`
+
+- Thank you!
+
+- **2025/08/09**
+
+---
+
 ### More updates coming soon!

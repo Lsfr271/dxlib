@@ -155,7 +155,7 @@ namespace dxlib {
 
         /* SortVector(): Sorts a vector from lowest to highest or highest to lowest depending on an argument */
         void SortVector(std::vector<int>& vec, std::string arrange){
-            if (arrange == "ltw"){ // ltw = lowest to highest
+            if (arrange == "lth"){ // ltw = lowest to highest
                 std::sort(vec.begin(), vec.end());
             }
             else if (arrange == "htl"){ // htl == highest to lowest
@@ -1001,6 +1001,7 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 
 

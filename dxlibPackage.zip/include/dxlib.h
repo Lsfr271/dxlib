@@ -162,7 +162,7 @@ namespace dxlib {
                 std::sort(vec.begin(), vec.end(), std::greater<int>());
             }
             else {
-                throw std::invalid_argument("Please enter either 'ltw' or 'htl' on the arrange argument");
+                throw std::invalid_argument("Please enter either 'lth' or 'htl' on the arrange argument");
             }
         }
 
@@ -1001,6 +1001,7 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 
 

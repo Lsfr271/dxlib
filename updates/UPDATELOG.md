@@ -359,7 +359,7 @@ int main() {
 
 ## **New Addition**
 - In `dxlibConvert`, there is a new function called `ConvertAnyNumToString()`, it converts int, float, double, long, long long, and etc to strings!
-  If you would liketo go more please go to: [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
+  If you would like to learn more please go to: [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
 
 - **2025/08/10**
 

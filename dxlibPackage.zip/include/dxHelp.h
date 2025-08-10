@@ -116,7 +116,7 @@ namespace dxlibHelp {
 
     void dxlibProbUtil() {
         std::cout << "Probability(): Gets a random number from two arguments: Start, end" << std::endl;
-        std::cout << "FlipCoin(): Flips either a head or a tails." << std::endl;
+        std::cout << "FlipCoin(): Flips either a head or a tails. Returns 0 if its a head, 1 if its a tail" << std::endl;
         std::cout << "RollDice(): Gets a random number from the given amount of sides" << std::endl;
         std::cout << "Chance(): Rolls a number from 0 to 1" << std::endl;
         std::cout << "SampleFromVector(): Gets a random element from a vector given" << std::endl;
@@ -139,6 +139,7 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 
 
 

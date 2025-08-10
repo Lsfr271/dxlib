@@ -955,10 +955,10 @@ namespace dxlib {
         }
 
         /* FLips a coin either head/tails */
-        bool FlipCoin() {
+        int FlipCoin() {
             static std::random_device rd;
             static std::mt19937 gen(rd());
-            std::bernoulli_distribution dist(0.5);
+            std::uniform_int_distribution<> dist(0, 1);
 
             return dist(gen);
         }
@@ -1001,6 +1001,7 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
 
 
 

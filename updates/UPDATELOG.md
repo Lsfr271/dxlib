@@ -351,7 +351,7 @@ int main() {
 - Added a _gplusplusSupport, you can visit here: [g++](https://github.com/Lsfr271/dxlib/tree/main/_gplusplusSupport/.vscode)
 - This is only if you are running with g++, please download the `.vscode` to get the `tasks.json` and `launch.json`
 
--* Note, you can run with F7
+- *Note, you can run with F7*
 
 - **2025/08/09**
 

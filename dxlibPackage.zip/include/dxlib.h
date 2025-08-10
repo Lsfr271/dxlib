@@ -23,17 +23,6 @@
 #include <type_traits>
 #include <numeric>
 
-#ifdef _WIN32
-    #include <Lmcons.h>
-    #include <windows.h>
-#else
-    #include <unistd.h>
-    #include <sys/sysinfo.h>
-    #include <sys/utsname.h>
-    #include <pwd.h>
-    #include <limits.h>
-#endif
-
 // ================== dxlib ==================
 namespace dxlib {
     // ================== dxlibMain ==================
@@ -1001,7 +990,6 @@ namespace dxlib {
 }
 
 #endif // DX_H
-
 
 
 

@@ -36,6 +36,7 @@ namespace dxlibHelp {
         std::cout << "dxlibConvert has 5 functions for converting between data types. Here's one as an example:" << std::endl;
 
         std::cout << "ConvertDoubleToInt(): Takes a double (e.g., 3.14) and converts it to an int (3)." << std::endl;
+        std::cout << "ConvertAnyNumToString(): It converts only integer data types like int, float, double, long, long long to strings." << std::endl;
         std::cout << "The rest are similar. If you're unfamiliar with data types, look up a beginner tutorial." << std::endl;
     }
 
@@ -138,6 +139,7 @@ namespace dxlibHelp {
 }
 
 #endif // DX_HELP
+
 
 
 

@@ -361,6 +361,40 @@ int main() {
 - In `dxlibConvert`, there is a new function called `ConvertAnyNumToString()`, it converts int, float, double, long, long long, and etc to strings!
   If you would like to learn more please go to: [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
 
+- Reworked `FlipCoin()` in `dxlibProbability` namespace. It used to return either true or false but now it returns an integer either 0 or 1.
+  Here is how it works:
+
+```cpp
+/* FLips a coin either head/tails */
+int FlipCoin() {
+    /* All this is just picking a random number */
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dist(0, 1); // here is picks a random number from 0 to 1. 0 = Tails, 1 = Heads
+
+    return dist(gen); // returns the result
+}
+
+////////////////////////////////////////////
+
+#include "../include/dxlib.h"
+
+using namespace dxlib::dxlibProbability;
+
+int main() {
+    switch (FlipCoin()){ // you can use a switch statement, but you can use if statements if you want, thats your choice.
+        case 0: // if its 0 = "Heads!"
+            std::cout << "Heads!";
+            break;
+        case 1: // if its 1 = "Tails!"
+            std::cout << "Tails!";
+            break;
+        default: // if its not 0 or 1 (which is impossible) it just breaks
+            break;
+    }
+}
+```
+
 - **2025/08/10**
 
 ---

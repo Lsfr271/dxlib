@@ -310,6 +310,12 @@ namespace dxlib {
         int ConvertFloatToInt(const float &i){
             return static_cast<int>(i);
         }
+
+        // Converts any arithmetic type (int, float, double, long, long long, etc) to std::string
+        template<typename T>
+        std::string ConvertAnyNumToString(T num){
+            return to_string(num);
+        }
     }
 
     // ================== dxlibFileUtils ==================
@@ -995,4 +1001,8 @@ namespace dxlib {
 }
 
 #endif // DX_H
+
+
+
+
 

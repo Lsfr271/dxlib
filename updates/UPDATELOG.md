@@ -399,4 +399,32 @@ int main() {
 
 ---
 
+## **New features**
+- A new namespace has been added called `dxlibLoops`, inside there are 3 functions, you can visit[dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h)
+  To see them.
+
+- A new function has been added in `dxlibMain`, its called `CreatePtr()`, all it does is creates a pointer
+- Heres how you would use `CreatePtr()`:
+
+```cpp
+#include "../include/dxlib.h"
+
+using namespace dxlib::dxlibMain;
+
+int main() {
+    int a = 10; // create a variable 'a' or any other name that has the value of 10
+    int *p = CreatePtr(a); // create the pointer by passing in a which is 10
+
+    std::cout << *p; // print the pointers value and include the * or it will show a memory address
+
+    delete p; // dont forget to delete the pointer
+}
+```
+
+`output: 10`
+
+- **2025/08/12**
+
+---
+
 ### More updates coming soon!

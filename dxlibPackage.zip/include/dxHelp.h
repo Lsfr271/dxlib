@@ -24,6 +24,7 @@ namespace dxlibHelp {
         std::cout << "SumVector(): Sums all the elements in a vector" << std::endl;
         std::cout << "AbsVal(): Gets the absolute value of a number" << std::endl;
         std::cout << "GenerateRandomVector(): Generates a random vector and its size depends on the argument: vectorSize" << std::endl;
+        std::cout << "CreatePtr(): Creates a pointer by taking in an argument of a variable" << std::endl;
     }
 
     void dxlibRandUtil() {   
@@ -122,6 +123,12 @@ namespace dxlibHelp {
         std::cout << "SampleFromVector(): Gets a random element from a vector given" << std::endl;
     }
 
+    void dxlibLoopUtil() {
+        std::cout << "forloop(): Acts like a C++ For loop but more friendly to use" << std::endl;
+        std::cout << "whileloop(): Acts like a C++ while loop but more friendly to use" << std::endl;
+        std::cout << "vectorLoop(): Loops through a vectors elements and either adds or decreases the elements based on a choice" << std::endl;
+    }
+
     void AllHelp() {
         dxlibMainUtil();
         dxlibRandUtil();
@@ -134,11 +141,13 @@ namespace dxlibHelp {
         dxlibDebugUtil();
         dxlibCheckUtil();
         dxlibProbUtil();
+        dxlibLoopUtil();
     }
 
 }
 
 #endif // DX_HELP
+
 
 
 

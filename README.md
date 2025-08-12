@@ -50,22 +50,6 @@ you will find every function there explained.
 
 ---
 
-### More explanation into the features:
-
-- `dxlibMain` – Input stream handling
-- `dxlibConvert` – Type conversions (e.g., double to int)
-- `dxlibFileUtils` – File I/O helpers (check if exists, read, write, etc.)
-- `dxlibMath` – Math + shape calculations
-- `dxlibRandom` – Random numbers and strings
-- `dxlibTime` – Time handling and delays
-- `dxlibPrint` – Easy variable printing
-- `dxlibText` – String utilities (trim, split, join, case, etc.)
-- `dxlibDebug` - Debug Utilities (log, assertLog, etc..)
-- `dxlibCheck` - Checking utilities (isPrime, isInRange, isEven, isOdd, etc..)
-- `dxlibProbability` - it is like `dxlibRandom` but supports probability functions.
-
----
-
 ### How to use?
 ## Example snippet:
 

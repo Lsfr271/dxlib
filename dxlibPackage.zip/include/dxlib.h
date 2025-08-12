@@ -217,6 +217,12 @@ namespace dxlib {
 
             return vec;
         }
+
+        /* CreatePtr(): Creates a pointer (usually for memory handling) */
+        template<typename T>
+        T* CreatePtr(const T& num){
+            return new T(num);
+        }
     }
 
     // ================== dxlibRandom ==================
@@ -985,6 +991,77 @@ namespace dxlib {
             std::uniform_int_distribution<size_t> dist(0, vec.size() -1);
 
             return vec[dist(gen)];
+        }
+    }
+
+    namespace dxlibLoops {  
+        /*forloop(): replicates a for loop */
+        template<typename T, typename Func>
+        void forloop(T start, T end, T step, Func action){
+            if (step == 0)
+                throw std::invalid_argument("Step cannot be 0");
+
+            if (start < end && step > 0){
+                for (T i = start; i < end; i += step){
+                    action(i);
+                }
+            }
+            else if (start > end && step < 0){
+                for (T i = start; i > end; i += step){
+                    action(i);
+                }
+            }
+        }
+
+        /* whileloop(): acts like a while loop */
+        template<typename T, typename Func>
+        void whileloop(T start, T end, Func action, size_t maxIt = 1000000){
+            if (start == end)
+                return; // nothing to loop
+
+            size_t it = 0;
+
+            if (start < end){
+                while (start < end){
+                    if (!action(start))
+                        break; // stop if action returns false
+                    
+                    if (++it > maxIt)
+                        break; // failsafe
+                }
+            }
+            else {
+                while (start > end){
+                    if (!action(start))
+                        break;
+
+                    if (++it > maxIt)
+                        break;
+                }
+            }
+        }
+
+        // vectorLoop(): Loops through a vector and either increments/decrement the values
+        void vectorLoop(std::vector<int>& vec, std::string c, int i){
+            // checks
+            if (i <= 0){
+                throw std::invalid_argument("The adding/subtracting factor cannot be lower or equal to 0!");
+            }
+
+            if (vec.empty()){
+                throw std::invalid_argument("The vector shall not be empty!");
+            }
+
+            if (c == "increment"){
+                for (int& number : vec){
+                    number += i;
+                }
+            }
+            else if (c == "decrement"){
+                for (int& number : vec){
+                    number -= i;
+                }
+            }
         }
     }
 }

@@ -24,6 +24,7 @@ namespace dxlibHelp {
         std::cout << "SumVector(): Sums all the elements in a vector" << std::endl;
         std::cout << "AbsVal(): Gets the absolute value of a number" << std::endl;
         std::cout << "GenerateRandomVector(): Generates a random vector and its size depends on the argument: vectorSize" << std::endl;
+        std::cout << "vectorLoop(): Loops through a vectors elements and either adds or decreases the elements based on a choice" << std::endl;
         std::cout << "CreatePtr(): Creates a pointer by taking in an argument of a variable" << std::endl;
     }
 
@@ -31,6 +32,11 @@ namespace dxlibHelp {
         std::cout << "RandomNumRange(): Takes two arguments (min and max) and returns a random number between them." << std::endl;
         std::cout << "RandomStr(): Generates a random string based on the len argument" << std::endl;
         std::cout << "ShuffleVect(): Shuffles the elements of a vector randomly" << std::endl;
+        std::cout << "Probability(): Gets a random number from two arguments: Start, end" << std::endl;
+        std::cout << "FlipCoin(): Flips either a head or a tails. Returns 0 if its a head, 1 if its a tail" << std::endl;
+        std::cout << "RollDice(): Gets a random number from the given amount of sides" << std::endl;
+        std::cout << "Chance(): Rolls a number from 0 to 1" << std::endl;
+        std::cout << "SampleFromVector(): Gets a random element from a vector given" << std::endl;
     }
 
     void dxlibConvertUtil() {
@@ -115,20 +121,6 @@ namespace dxlibHelp {
         std::cout << "isWhiteSpaceOnly(): Checks if a string is completely whitespaces" << std::endl;
     }
 
-    void dxlibProbUtil() {
-        std::cout << "Probability(): Gets a random number from two arguments: Start, end" << std::endl;
-        std::cout << "FlipCoin(): Flips either a head or a tails. Returns 0 if its a head, 1 if its a tail" << std::endl;
-        std::cout << "RollDice(): Gets a random number from the given amount of sides" << std::endl;
-        std::cout << "Chance(): Rolls a number from 0 to 1" << std::endl;
-        std::cout << "SampleFromVector(): Gets a random element from a vector given" << std::endl;
-    }
-
-    void dxlibLoopUtil() {
-        std::cout << "forloop(): Acts like a C++ For loop but more friendly to use" << std::endl;
-        std::cout << "whileloop(): Acts like a C++ while loop but more friendly to use" << std::endl;
-        std::cout << "vectorLoop(): Loops through a vectors elements and either adds or decreases the elements based on a choice" << std::endl;
-    }
-
     void AllHelp() {
         dxlibMainUtil();
         dxlibRandUtil();
@@ -140,18 +132,8 @@ namespace dxlibHelp {
         dxlibTextUtil();
         dxlibDebugUtil();
         dxlibCheckUtil();
-        dxlibProbUtil();
-        dxlibLoopUtil();
     }
 
 }
 
 #endif // DX_HELP
-
-
-
-
-
-
-
-

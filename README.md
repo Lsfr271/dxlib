@@ -38,7 +38,7 @@ It turned into a utility library that makes many common tasks much simpler.
 
 ### How to learn more about dxlib if you are stuck
 
-- Please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/src/dxHelp.hpp) in this github repository
+- Please go to [dxHelp.hpp](https://github.com/Lsfr271/dxlib/blob/main/src/dxHelp.hpp) in this github repository
 you will find every function there explained.
 
 ---

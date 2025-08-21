@@ -436,4 +436,11 @@ int main() {
 
 ---
 
+## **New Additions**
+- Added a new convert function in `dxlibConvert`, the name is `ConvertIntToFloat`, Pretty simple it just converts an int to a float
+
+- **2025/08/22**
+
+---
+
 ### More updates coming soon!

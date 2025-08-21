@@ -68,7 +68,7 @@ int main() {
     varPrint("Age is -age-", age);
 
     // get user input and print it
-    // note: printline<>() directly asks for input and returns the value,
+    // note: askInput<>() directly asks for input and returns the value,
     // so the next time you print the value, you get a different result depending on what
     // the user entered on the input
     std::string name = askInput<std::string>("What is your name?: ");
@@ -78,18 +78,15 @@ int main() {
 
 ---
 
-### How to initialize fully?
-
-Just include the header in your project:
-
+## How to get started?
+- Download `dxlib.h` from this repository
+- You may download `dxHelp.h` as well, its optional if you need help.
+- Include it like this:
 ```cpp
-#include "../include/dx.h" // Adjust the path based on your project structure or compiler-type (it might be different)
-
-using namespace dxlib;  
-using namespace dxlibConvert;
-// other namespaces nested in dxlib
-
-int main() {
-    // your code here.
-}
+#include "../include/dxlib.h"
 ```
+- It can be different, depends on your project structure.
+
+Thank your for reading this and i hope you use it!
+
+---

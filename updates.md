@@ -1,6 +1,6 @@
-### Updates
+# Updates
 
-# DELETIONS AND NEW FEATURES
+## DELETIONS AND NEW FEATURES
 
 ## **Deletion**
 - Deleted the `dxlibLoops` namespace. Only kept `vectorLoop()` and placed it in `dxlibMain()`

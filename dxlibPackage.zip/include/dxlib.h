@@ -223,6 +223,29 @@ namespace dxlib {
         T* CreatePtr(const T& num){
             return new T(num);
         }
+
+        // vectorLoop(): Loops through a vector and either increments/decrement the values
+        void vectorLoop(std::vector<int>& vec, std::string c, int i){
+            // checks
+            if (i <= 0){
+                throw std::invalid_argument("The adding/subtracting factor cannot be lower or equal to 0!");
+            }
+
+            if (vec.empty()){
+                throw std::invalid_argument("The vector shall not be empty!");
+            }
+
+            if (c == "increment"){
+                for (int& number : vec){
+                    number += i;
+                }
+            }
+            else if (c == "decrement"){
+                for (int& number : vec){
+                    number -= i;
+                }
+            }
+        }
     }
 
     // ================== dxlibRandom ==================
@@ -276,6 +299,70 @@ namespace dxlib {
             static std::mt19937 generator(rd());
             
             std::shuffle(vec.begin(), vec.end(), generator);
+        }
+
+        /* Gets a probability from the start to the end */
+        template<typename P>
+        P Probability(P start, P end){
+            if (start > end){
+                throw std::invalid_argument("Invalid Argument: (start > end)");
+            }
+            else {
+                if constexpr (std::is_integral_v<P>){
+                    static std::random_device rd;
+                    static std::mt19937 gen(rd());
+                    std::uniform_int_distribution<P> dist(start, end);
+
+                    return dist(gen);
+                }
+                else {
+                    throw std::invalid_argument("Integral Types only.");
+                }
+            }
+        }
+
+        /* FLips a coin either head/tails */
+        int FlipCoin() {
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::uniform_int_distribution<> dist(0, 1);
+
+            return dist(gen);
+        }
+
+        /* rolls a dice depending on the given number of sides */
+        template<typename P>
+        P RollDice(P sides){
+            if (sides <= 0) throw std::invalid_argument("Sides must be greater than 0.");
+
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::uniform_int_distribution<P> dist(1, sides);
+
+            return dist(gen);
+        }
+
+        /* Gets a random number from 0 to 1 (double) */
+        bool Chance(double p){
+            if (p < 0.0 || p > 1.0) throw std::invalid_argument("Chance must be between 0 and 1");
+
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::bernoulli_distribution dist(p);
+
+            return dist(gen);
+        }
+
+        /* Grabs a random element from a vector */
+        template<typename T>
+        T SampleFromVector(const std::vector<T>& vec){
+            if (vec.empty()) throw std::invalid_argument("Vector passed should not be empty.");
+
+            static std::random_device rd;
+            static std::mt19937 gen(rd());
+            std::uniform_int_distribution<size_t> dist(0, vec.size() -1);
+
+            return vec[dist(gen)];
         }
     } 
 
@@ -926,152 +1013,6 @@ namespace dxlib {
             return std::all_of(s.begin(), s.end(), ::isspace);
         }
     }
-
-    // ================== dxlibProbability ==================
-    namespace dxlibProbability {
-        /* Gets a probability from the start to the end */
-        template<typename P>
-        P Probability(P start, P end){
-            if (start > end){
-                throw std::invalid_argument("Invalid Argument: (start > end)");
-            }
-            else {
-                if constexpr (std::is_integral_v<P>){
-                    static std::random_device rd;
-                    static std::mt19937 gen(rd());
-                    std::uniform_int_distribution<P> dist(start, end);
-
-                    return dist(gen);
-                }
-                else {
-                    throw std::invalid_argument("Integral Types only.");
-                }
-            }
-        }
-
-        /* FLips a coin either head/tails */
-        int FlipCoin() {
-            static std::random_device rd;
-            static std::mt19937 gen(rd());
-            std::uniform_int_distribution<> dist(0, 1);
-
-            return dist(gen);
-        }
-
-        /* rolls a dice depending on the given number of sides */
-        template<typename P>
-        P RollDice(P sides){
-            if (sides <= 0) throw std::invalid_argument("Sides must be greater than 0.");
-
-            static std::random_device rd;
-            static std::mt19937 gen(rd());
-            std::uniform_int_distribution<P> dist(1, sides);
-
-            return dist(gen);
-        }
-
-        /* Gets a random number from 0 to 1 (double) */
-        bool Chance(double p){
-            if (p < 0.0 || p > 1.0) throw std::invalid_argument("Chance must be between 0 and 1");
-
-            static std::random_device rd;
-            static std::mt19937 gen(rd());
-            std::bernoulli_distribution dist(p);
-
-            return dist(gen);
-        }
-
-        /* Grabs a random element from a vector */
-        template<typename T>
-        T SampleFromVector(const std::vector<T>& vec){
-            if (vec.empty()) throw std::invalid_argument("Vector passed should not be empty.");
-
-            static std::random_device rd;
-            static std::mt19937 gen(rd());
-            std::uniform_int_distribution<size_t> dist(0, vec.size() -1);
-
-            return vec[dist(gen)];
-        }
-    }
-
-    namespace dxlibLoops {  
-        /*forloop(): replicates a for loop */
-        template<typename T, typename Func>
-        void forloop(T start, T end, T step, Func action){
-            if (step == 0)
-                throw std::invalid_argument("Step cannot be 0");
-
-            if (start < end && step > 0){
-                for (T i = start; i < end; i += step){
-                    action(i);
-                }
-            }
-            else if (start > end && step < 0){
-                for (T i = start; i > end; i += step){
-                    action(i);
-                }
-            }
-        }
-
-        /* whileloop(): acts like a while loop */
-        template<typename T, typename Func>
-        void whileloop(T start, T end, Func action, size_t maxIt = 1000000){
-            if (start == end)
-                return; // nothing to loop
-
-            size_t it = 0;
-
-            if (start < end){
-                while (start < end){
-                    if (!action(start))
-                        break; // stop if action returns false
-                    
-                    if (++it > maxIt)
-                        break; // failsafe
-                }
-            }
-            else {
-                while (start > end){
-                    if (!action(start))
-                        break;
-
-                    if (++it > maxIt)
-                        break;
-                }
-            }
-        }
-
-        // vectorLoop(): Loops through a vector and either increments/decrement the values
-        void vectorLoop(std::vector<int>& vec, std::string c, int i){
-            // checks
-            if (i <= 0){
-                throw std::invalid_argument("The adding/subtracting factor cannot be lower or equal to 0!");
-            }
-
-            if (vec.empty()){
-                throw std::invalid_argument("The vector shall not be empty!");
-            }
-
-            if (c == "increment"){
-                for (int& number : vec){
-                    number += i;
-                }
-            }
-            else if (c == "decrement"){
-                for (int& number : vec){
-                    number -= i;
-                }
-            }
-        }
-    }
 }
 
 #endif // DX_H
-
-
-
-
-
-
-
-

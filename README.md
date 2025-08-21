@@ -1,5 +1,5 @@
 # Welcome to dxlib!
-## v1.2 [Download dxlibPackage.zip](https://github.com/Lsfr271/dxlib/raw/main/dxlibPackage.zip)
+## v1.2.1
 
 **dxlib** is a lightweight, easy-to-use C++ header-only library that provides a collection of utilities and tools for:
 
@@ -38,7 +38,7 @@ It turned into a utility library that makes many common tasks much simpler.
 
 ### How to learn more about dxlib if you are stuck
 
-- Please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/dxlibPackage.zip/include/dxHelp.h) in this github repository
+- Please go to [dxHelp.h](https://github.com/Lsfr271/dxlib/blob/main/src/dxHelp.hpp) in this github repository
 you will find every function there explained.
 
 ---
@@ -50,40 +50,12 @@ you will find every function there explained.
 
 ---
 
-### How to use?
-## Example snippet:
-
-```cpp
-#include "../include/dx.h"
-
-using namespace dxlib;
-using namespace dxlibPrint;
-
-int main() {
-    // print hello world
-    printline("Hello, World!");
-
-    // print variables in a print statement
-    int age = 20;
-    varPrint("Age is -age-", age);
-
-    // get user input and print it
-    // note: askInput<>() directly asks for input and returns the value,
-    // so the next time you print the value, you get a different result depending on what
-    // the user entered on the input
-    std::string name = askInput<std::string>("What is your name?: ");
-    varPrint("Hello, -name-!", name);
-}
-```
-
----
-
 ## How to get started?
-- Download `dxlib.h` from this repository
-- You may download `dxHelp.h` as well, its optional if you need help.
+- Download `dxlib.hpp` from this repository
+- You may download `dxHelp.hpp` as well, its optional if you need help.
 - Include it like this:
 ```cpp
-#include "../include/dxlib.h"
+#include "../include/dxlib.hpp"
 ```
 - It can be different, depends on your project structure.
 

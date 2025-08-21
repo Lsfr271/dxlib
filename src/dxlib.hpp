@@ -22,6 +22,7 @@
 #include <functional>
 #include <type_traits>
 #include <numeric>
+#include <istream>
 
 // ================== dxlib ==================
 namespace dxlib {
@@ -45,7 +46,7 @@ namespace dxlib {
         void ClearBuffer(){
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
-        
+
         /* Pause(): Pauses the program */
         void Pause(const std::string&msg = "Press enter to continue...."){
             std::cout << msg;
@@ -108,13 +109,13 @@ namespace dxlib {
 
             return vec;
         }
-        
+
         /* PrintVector(): Prints all the vectors elements */
         void PrintVector(const std::vector<int>& vec, bool newline=true){
             for (const auto& v : vec){
                 std::cout << v << " ";
             }
-            
+
             if (newline) std::cout << "\n";
         }
 
@@ -194,7 +195,7 @@ namespace dxlib {
 
             if constexpr (std::is_integral<T>::value){
                 std::uniform_int_distribution<T> dist(0, 100);
-                
+
                 for (size_t i = 0; i < vectorSize; ++i){
                     vec.push_back(dist(gen));
                 }
@@ -282,7 +283,7 @@ namespace dxlib {
 
             std::string result;
             result.reserve(len);
-            
+
             for (size_t i = 0; i < len; i++){
                 result += chars[distrib(generator)];
             }
@@ -297,7 +298,7 @@ namespace dxlib {
         void ShuffleVect(std::vector<T>& vec){
             static std::random_device rd;
             static std::mt19937 generator(rd());
-            
+
             std::shuffle(vec.begin(), vec.end(), generator);
         }
 
@@ -364,7 +365,7 @@ namespace dxlib {
 
             return vec[dist(gen)];
         }
-    } 
+    }
 
     // ================== dxlibConvert ==================
     namespace dxlibConvert {
@@ -387,7 +388,7 @@ namespace dxlib {
         float ConvertDoubleToFloat(const double &i){
             return static_cast<float>(i);
         }
-        
+
         // Converts a float to an int
         int ConvertFloatToInt(const float &i){
             return static_cast<int>(i);
@@ -444,7 +445,7 @@ namespace dxlib {
             if (!file){
                 throw std::runtime_error("Failed to open file for writing: " + filename);
             }
-            
+
             file.write(data.data(), data.size());
         }
 
@@ -455,7 +456,7 @@ namespace dxlib {
                 std::string fullName = filename + "." + filetype;
 
                 std::ofstream file(fullName);
-                
+
                 if (!file){
                     throw std::runtime_error("Failed to create file: " + fullName);
                 }
@@ -512,7 +513,7 @@ namespace dxlib {
         // operates addition, subtraction, multiplication, division, and a special type /*-
         template<typename T>
         typename std::enable_if<std::is_arithmetic<T>::value, T>::type
-        OperatorNums(T a, T b, const std::string& type) {
+        Operators(T a, T b, const std::string& type) {
             if (type == "+") return a + b;
             else if (type == "-") return a - b;
             else if (type == "*") return a * b;
@@ -567,7 +568,7 @@ namespace dxlib {
 
         // GCD(): returns greatest common divider (GCD)
         int GCD(int a, int b){
-            while (b != 0){ 
+            while (b != 0){
                 int temp = b;
                 b = a % b;
                 a = temp;
@@ -700,7 +701,7 @@ namespace dxlib {
                 throw std::invalid_argument("Please enter true or false on the second argument.");
             }
         }
-        
+
         // print a variable in a string
         void printVar(std::string text, const std::unordered_map<std::string, std::string>& vars, bool nl = true) {
             size_t pos = 0;
@@ -823,7 +824,7 @@ namespace dxlib {
             else {
                 throw std::invalid_argument("Invalid Type. Enter either lower, upper, or randomized");
             }
-        }   
+        }
 
         // split a string using a delim
         std::vector<std::string> Split(const std::string& str, char delimiter){
@@ -844,7 +845,7 @@ namespace dxlib {
 
             for (size_t i = 0; i < parts.size(); i++){
                 oss << parts[i];
-                
+
                 if (i < parts.size() - 1) oss << delim;
             }
 
@@ -964,7 +965,7 @@ namespace dxlib {
         bool isNumeric(const std::string& s){
             return !s.empty() && std::all_of(s.begin(), s.end(), ::isdigit);
         }
-        
+
         // check if all characters are alphabetic
         bool isAlpha(const std::string& s){
             return !s.empty() && std::all_of(s.begin(), s.end(), ::isalpha);
@@ -1000,7 +1001,7 @@ namespace dxlib {
         // check if a number is prime
         bool isPrime(int n){
             if (n <= 1) return false;
-            
+
             for (int i = 2; i * i <= n; ++i){
                 if (n % i == 0) return false;
             }
@@ -1027,7 +1028,7 @@ namespace dxlib {
         // check if a number halfed is equal to another number
         template<typename T>
         bool isHalf(T num, T other){
-            // avoid a bug where if you divide an int by a double it shows as an int.
+         // avoid a bug where if you divide an int by a double it shows as an int
             return static_cast<double>(num) / 2.0 == static_cast<double>(other);
         }
 

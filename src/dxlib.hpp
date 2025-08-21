@@ -1017,6 +1017,30 @@ namespace dxlib {
         bool isWhiteSpaceOnly(const std::string& s){
             return std::all_of(s.begin(), s.end(), ::isspace);
         }
+
+        // check if a number is zero
+        template<typename T>
+        bool isZero(T num){
+            return num == 0;
+        }
+
+        // check if a number halfed is equal to another number
+        template<typename T>
+        bool isHalf(T num, T other){
+            // avoid a bug where if you divide an int by a double it shows as an int.
+            return static_cast<double>(num) / 2.0 == static_cast<double>(other);
+        }
+
+        // check if a number multiplied by 2 is equal to another number
+        template<typename T>
+        bool isMultTwo(T num, T other){
+            return num * 2 == other;
+        }
+
+        template<typename T>
+        bool isEqual(T num, T other){
+            return num == other;
+        }
     }
 }
 

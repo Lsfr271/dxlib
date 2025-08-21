@@ -6,7 +6,7 @@
 
 namespace dxlibHelp {
 
-    void dxlibMainUtil() { 
+    void dxlibMainUtil() {
         std::cout << "CinFail(): Checks if std::cin failed (likely due to an invalid data type)." << std::endl;
         std::cout << "ClearBuffer(): After std::endl, a buffer is added, which can auto-submit the next input."
                      " This function clears that buffer." << std::endl;
@@ -28,7 +28,7 @@ namespace dxlibHelp {
         std::cout << "CreatePtr(): Creates a pointer by taking in an argument of a variable" << std::endl;
     }
 
-    void dxlibRandUtil() {   
+    void dxlibRandUtil() {
         std::cout << "RandomNumRange(): Takes two arguments (min and max) and returns a random number between them." << std::endl;
         std::cout << "RandomStr(): Generates a random string based on the len argument" << std::endl;
         std::cout << "ShuffleVect(): Shuffles the elements of a vector randomly" << std::endl;
@@ -119,6 +119,10 @@ namespace dxlibHelp {
         std::cout << "isPrime(): Checks if a number is a prime number" << std::endl;
         std::cout << "isPalindrome(): Checks if a number is a palindrome" << std::endl;
         std::cout << "isWhiteSpaceOnly(): Checks if a string is completely whitespaces" << std::endl;
+        std::cout << "isZero(): Checks if a number is zero." << std::endl;
+        std::cout << "isHalf(): Checks if a number divided by half is equal to another number." << std::endl;
+        std::cout << "isMultTwo(): Checks if a number multiplied by 2 is equal to another number" << std::endl;
+        std::cout << "isEqual(): Checks if two numbers are equal to each other." << std::endl;
     }
 
     void AllHelp() {

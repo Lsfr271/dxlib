@@ -393,6 +393,11 @@ namespace dxlib {
             return static_cast<int>(i);
         }
 
+        // converts a int to a float
+        int ConvertIntToFloat(const int &i){
+            return static_cast<float>(i);
+        }
+
         // Converts any arithmetic type (int, float, double, long, long long, etc) to std::string
         template<typename T>
         std::string ConvertAnyNumToString(T num){

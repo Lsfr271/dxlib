@@ -2,7 +2,7 @@
 
 ## DELETIONS AND NEW FEATURES
 
-## **Deletion**
+## **Deletions**
 - Deleted the `dxlibLoops` namespace. Only kept `vectorLoop()` and placed it in `dxlibMain()`
 - Deleted the `dxlibProbability` namespace and moved all its functions to the `dxlibRandom` namespace since its **redundant**
 

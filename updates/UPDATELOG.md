@@ -427,4 +427,13 @@ int main() {
 
 ---
 
+## **Deletion**
+- Deleted the `dxlibLoops` namespace. Only kept `vectorLoop()` and placed it in `dxlibMain()`
+- Deleted the `dxlibProbability` namespace and moved all its functions to the `dxlibRandom` namespace since its **redundant**
+
+- **2025/08/22**
+- Note: *Updates may be slower due to school*
+
+---
+
 ### More updates coming soon!

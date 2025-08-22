@@ -60,10 +60,10 @@ namespace dxlibHelp {
 
     void dxlibMathUtil() {
         std::cout << "The first few functions are harder to explain, but if you understand sin, cos, and tan, they should make sense." << std::endl;
-        std::cout << "OperatorNums(): Takes two integers/floating numbers and a character. For example, '+' adds them. For the special type \"/*-\","
+        std::cout << "Operators(): Takes two integers/floating numbers and a character. For example, '+' adds them. For the special type \"/*-\","
                      " it runs: a / b * b * pow(a, 2) - (a - b). Be cautious with that." << std::endl;
         std::cout << "MultNums(): Takes a vector of numbers and multiplies all its elements together." << std::endl;
-        std::cout << "ReturnPower(): returns the result." << std::endl;
+        std::cout << "pwr(): returns the result." << std::endl;
         std::cout << "There are also shape-related functions — check the dxlib.h source for those." << std::endl;
         std::cout << "Factorial(): returns the product of all positive integers less than or equal to a given non-negative integer" << std::endl;
         std::cout << "GCD(): Returns the greatest common divider between two arguments (a, b)" << std::endl;

@@ -65,6 +65,8 @@
 
 ## DXLIBPRINT:
 
+## NOTE: FOR PRINTVAR() FUNCTION YOU HAVE TO PUT THE ARGUMENTS IN ORDER OR ELSE IT WONT WORK AS YOU EXPECT.
+
 - printline(string): Print string. Example: `printline("Hello");`
 - printVar(template,vars...): Insert variables into string. Example: `int a=10; printVar("Value is -a-",a);`
 - askInput<Type>(prompt): Ask input from user. Example: `std::string n = askInput<std::string>("Name?: "); std::cout << "Hello, " << n << '\n';`

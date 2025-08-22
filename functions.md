@@ -8,18 +8,18 @@
 using namespace dxlib::dxlibMain;
 
 int main() {
-   int age; // declare a integer variable called 'age' to take in input.
+    int age; // declare a integer variable called 'age' to take in input.
 
-   std::cout << "What is your age?: " << '\n';
-   std::cin >> age; // take in input from the age variable.
+    std::cout << "What is your age?: " << '\n';
+    std::cin >> age; // take in input from the age variable.
 
-   // lets check if something went wrong, we will do this:
-   if (CinFail()){
-       std::cout << "Something went wrong!" << std::endl; // this can happen if the user entered a wrong datatype like letters instead of integers.
-       return 1; // to end the process
-  }
+    // lets check if something went wrong, we will do this:
+    if (CinFail()){
+        std::cout << "Something went wrong!" << std::endl; // this can happen if the user entered a wrong datatype like letters instead of integers.
+        return 1; // to end the process
+    }
 
-  // if it didnt trigger:
-  std::cout << "Your age is " << age << "!" << '\n'; // print the age this means its successful.
+    // if it didnt trigger:
+    std::cout << "Your age is " << age << "!" << '\n'; // print the age this means its successful.
 }
 ```

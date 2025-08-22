@@ -2,39 +2,39 @@
 
 ## DXLIBMAIN:
 
-- CinFail(): Checks if a cin failed (e.g., wrong datatype input). Example: `int age; std::cin >> age; if (CinFail()){ std::cout << "Something went wrong!" << std::endl; return 1; } std::cout << "Your age is " << age << "!" << std::endl;`
+- CinFail(): Checks if a cin failed (wrong datatype input). Example: `int age; std::cin >> age; if (CinFail()){ std::cout << "Something went wrong!" << std::endl; }`
 - ClearBuffer(): Clears leftover newline from cin/endl. Example: `std::string name,dad; std::cin >> name; ClearBuffer(); std::getline(std::cin,dad);`
-- Pause(): Pauses program execution. Example: `std::cout << "Hello.."; Pause(); std::cout << "World!";`
-- YesNoPrompt(): Prompts user with yes/no. Returns true for yes. Example: `bool result = YesNoPrompt("Do you like programming?", true);`
-- ClearScreen(): Clears the console screen. Example: `std::cout << "Hello world!"; ClearScreen();`
-- mVect(): Multiplies all vector elements by a number. Example: `std::vector<int> nums={1,2,3}; mVect(nums,2);`
-- PrintVector(): Prints all the vector elements. Example: `std::vector<int> vect = {1,2,3}; PrintVector(vect);`
-- swap(): Swaps two variables. Example: `int a=10,b=20; swap(a,b); std::cout << a << " " << b;`
-- CountChar(): Counts a character in a string. Example: `int c = CountChar("hello",'l');`
-- IsPowerOfTwo(): Checks if number is a power of two. Example: `bool p = IsPowerOfTwo(8);`
-- ReverseVector(): Reverses vector in place. Example: `ReverseVector(nums);`
-- SortVector(): Sorts vector ascending/descending. Example: `SortVector(nums,true); // ascending`
-- SumVector(): Sums vector elements. Example: `int s = SumVector(nums);`
-- AbsVal(): Returns absolute value. Example: `int a = AbsVal(-5);`
-- GenerateRandomVector(): Generates a random vector. Example: `auto r = GenerateRandomVector(5,1,10);`
-- vectorLoop(): Loops through vector to add/subtract value. Example: `vectorLoop(nums,2,"add");`
-- CreatePtr(): Creates a pointer to a variable. Example: `int x=5; int* p = CreatePtr(x);`
+- Pause(msg="Press Enter to continue"): Pauses program execution. Example: `Pause("Waiting...");`
+- YesNoPrompt(msg,newline=true): Prompts user with yes/no. Returns true for yes. Example: `bool result = YesNoPrompt("Do you like programming?");`
+- ClearScreen(): Clears the console screen. Example: `ClearScreen();`
+- mVect(vec,mult): Multiplies all vector elements by a number. Example: `std::vector<int> nums={1,2,3}; mVect(nums,2);`
+- PrintVector(vec,newline=true): Prints all the vector elements. Example: `PrintVector(nums);`
+- swap(a,b): Swaps two variables. Example: `int a=10,b=20; swap(a,b); std::cout << a << " " << b;`
+- CountChar(str,c): Counts a character in a string. Example: `int c = CountChar("hello",'l');`
+- IsPowerOfTwo(n): Checks if number is a power of two. Example: `bool p = IsPowerOfTwo(8);`
+- ReverseVector(vec): Reverses vector in place. Example: `ReverseVector(nums);`
+- SortVector(vec,order="asc"): Sorts vector ascending/descending. Example: `SortVector(nums,"asc");`
+- SumVector(vec): Sums vector elements. Example: `int s = SumVector(nums);`
+- AbsVal(x): Returns absolute value. Example: `int a = AbsVal(-5);`
+- GenerateRandomVector(size,min=0,max=100): Generates a random vector of integers. Example: `auto r = GenerateRandomVector(5,1,10);`
+- vectorLoop(vec,val,mode="add"): Loops through vector to add/subtract value. Example: `vectorLoop(nums,2,"add");`
+- CreatePtr(var): Creates a pointer to a variable. Example: `int x=5; int* p = CreatePtr(x);`
 
 ## DXLIBRANDOM:
 
 - RandomNumRange(min,max): Random number between min/max. Example: `int r = RandomNumRange(1,6);`
 - RandomStr(len): Random string of length len. Example: `std::string s = RandomStr(5);`
-- ShuffleVect(): Shuffles a vector. Example: `ShuffleVect(nums);`
-- Probability(): Random number between start/end. Example: `double p = Probability(0,10);`
+- ShuffleVect(vec): Shuffles a vector. Example: `ShuffleVect(nums);`
+- Probability(start,end): Random number between start/end. Example: `double p = Probability(0,10);`
 - FlipCoin(): Returns 0=head, 1=tail. Example: `int f = FlipCoin();`
 - RollDice(sides): Returns random number 1 to sides. Example: `int d = RollDice(6);`
 - Chance(): Random float 0-1. Example: `double c = Chance();`
-- SampleFromVector(): Random element from vector. Example: `int e = SampleFromVector(nums);`
+- SampleFromVector(vec): Random element from vector. Example: `int e = SampleFromVector(nums);`
 
 ## DXLIBCONVERT:
 
-- ConvertDoubleToInt(): Converts double → int. Example: `int i = ConvertDoubleToInt(3.14);`
-- ConvertAnyNumToString(): Converts int/float/double → string. Example: `std::string s = ConvertAnyNumToString(42);`
+- ConvertDoubleToInt(d): Converts double → int. Example: `int i = ConvertDoubleToInt(3.14);`
+- ConvertAnyNumToString(num): Converts int/float/double → string. Example: `std::string s = ConvertAnyNumToString(42);`
 
 ## DXLIBFILE:
 
@@ -42,14 +42,14 @@
 - FileToString(filename): Read file as string. Example: `std::string content = FileToString("file.txt");`
 - WriteString_ToFileAndOverWrite(filename,string): Overwrite file. Example: `WriteString_ToFileAndOverWrite("file.txt","Hello");`
 - WriteVectorToFileAnd_OverWrite(filename,vector<char>): Write vector to file. Example: `std::vector<char> v={'a','b'}; WriteVectorToFileAnd_OverWrite("file.txt",v);`
-- CreateFile(filename, extension): Create file. Example: `CreateFile("example","txt");`
+- CreateFile(filename,extension): Create file. Example: `CreateFile("example","txt");`
 - DeleteFile(filename): Delete file. Example: `DeleteFile("example.txt");`
 - CopyFile(src,dest): Copy file. Example: `CopyFile("a.txt","b.txt");`
 - RenameFile(oldname,newname): Rename file. Example: `RenameFile("b.txt","c.txt");`
 
 ## DXLIBMATH:
 
-- Operators(a,b,char): Perform '+','-','*','/' or special '/*-' operation. Example: `int res = Operators(2,3,'+');`
+- Operators(a,b,op): Perform '+','-','*','/' or special '/*-' operation. Example: `int res = Operators(2,3,'+');`
 - MultNums(vector): Multiply all vector elements. Example: `int m = MultNums(nums);`
 - pwr(a,b): Returns a^b. Example: `int x = pwr(2,3);`
 - Factorial(n): Factorial of n. Example: `int f = Factorial(5);`
@@ -59,15 +59,15 @@
 ## DXLIBTIME:
 
 - FormatDate(tm): Convert time to string. Example: `std::string s = FormatDate(std::tm{});`
-- sleepfor(type,value): Sleep for seconds/minutes. Example: `sleepfor('s',1);`
+- sleepfor(type,value): Sleep for seconds/minutes. Example: `sleepfor("s",1);`
 - GetLocalTime(): Get current local time. Example: `auto t = GetLocalTime();`
 - AddSecToTime(tm,seconds): Add seconds to time. Example: `AddSecToTime(t,60);`
 
 ## DXLIBPRINT:
 
 - printline(string): Print string. Example: `printline("Hello");`
-- printVar("template-string", variables...): Insert variables into string. Example: `int a=10; printVar("Value is -a-",a);`
-- askInput<Type>("prompt"): Ask input from user. Example: `std::string n = askInput<std::string>("Name?");`
+- printVar(template,vars...): Insert variables into string. Example: `int a=10; printVar("Value is -a-",a);`
+- askInput<Type>(prompt): Ask input from user. Example: `std::string n = askInput<std::string>("Name?");`
 
 ## DXLIBTEXT:
 

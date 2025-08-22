@@ -10,7 +10,7 @@
 
 ## **New Additions**
 - Added a new convert function in `dxlibConvert`, the name is `ConvertIntToFloat`, Pretty simple it just converts an int to a float
-- Added three new functions in `dxlibChecks`, these being are `isZero()`, `isHalf()`, `isMultTwo()`, and `isEqual()`. Please
+- Added four new functions in `dxlibChecks`, these being are `isZero()`, `isHalf()`, `isMultTwo()`, and `isEqual()`. Please
   Check `dxHelp.hpp` to see how they work.
 
 ---

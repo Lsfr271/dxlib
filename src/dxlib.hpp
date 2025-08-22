@@ -544,7 +544,7 @@ namespace dxlib {
             return result;
         }
 
-        double ReturnPower(double b, int e){
+        double pwr(double b, int e){
             double r = 1;
 
             for (int i = 0; i < e; i++){

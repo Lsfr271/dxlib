@@ -1,64 +1,108 @@
-# This MD file is to explain all available functions.
+# DXLIB Function Documentation
 
 ## DXLIBMAIN:
-- CinFail(): Checks if a cin failed. For an example a user might have entered a wrong datatype when asked for an int. Here is an example:
-```cpp
-#include "../include/dxlib.hpp"
 
-using namespace dxlib::dxlibMain;
+- CinFail(): Checks if a cin failed (e.g., wrong datatype input). Example: `int age; std::cin >> age; if (CinFail()){ std::cout << "Something went wrong!" << std::endl; return 1; } std::cout << "Your age is " << age << "!" << std::endl;`
+- ClearBuffer(): Clears leftover newline from cin/endl. Example: `std::string name,dad; std::cin >> name; ClearBuffer(); std::getline(std::cin,dad);`
+- Pause(): Pauses program execution. Example: `std::cout << "Hello.."; Pause(); std::cout << "World!";`
+- YesNoPrompt(): Prompts user with yes/no. Returns true for yes. Example: `bool result = YesNoPrompt("Do you like programming?", true);`
+- ClearScreen(): Clears the console screen. Example: `std::cout << "Hello world!"; ClearScreen();`
+- mVect(): Multiplies all vector elements by a number. Example: `std::vector<int> nums={1,2,3}; mVect(nums,2);`
+- PrintVector(): Prints all the vector elements. Example: `std::vector<int> vect = {1,2,3}; PrintVector(vect);`
+- swap(): Swaps two variables. Example: `int a=10,b=20; swap(a,b); std::cout << a << " " << b;`
+- CountChar(): Counts a character in a string. Example: `int c = CountChar("hello",'l');`
+- IsPowerOfTwo(): Checks if number is a power of two. Example: `bool p = IsPowerOfTwo(8);`
+- ReverseVector(): Reverses vector in place. Example: `ReverseVector(nums);`
+- SortVector(): Sorts vector ascending/descending. Example: `SortVector(nums,true); // ascending`
+- SumVector(): Sums vector elements. Example: `int s = SumVector(nums);`
+- AbsVal(): Returns absolute value. Example: `int a = AbsVal(-5);`
+- GenerateRandomVector(): Generates a random vector. Example: `auto r = GenerateRandomVector(5,1,10);`
+- vectorLoop(): Loops through vector to add/subtract value. Example: `vectorLoop(nums,2,"add");`
+- CreatePtr(): Creates a pointer to a variable. Example: `int x=5; int* p = CreatePtr(x);`
 
-int main() {
-    int age; // declare a integer variable called 'age' to take in input.
+## DXLIBRANDOM:
 
-    std::cout << "What is your age?: " << '\n';
-    std::cin >> age; // take in input from the age variable.
+- RandomNumRange(min,max): Random number between min/max. Example: `int r = RandomNumRange(1,6);`
+- RandomStr(len): Random string of length len. Example: `std::string s = RandomStr(5);`
+- ShuffleVect(): Shuffles a vector. Example: `ShuffleVect(nums);`
+- Probability(): Random number between start/end. Example: `double p = Probability(0,10);`
+- FlipCoin(): Returns 0=head, 1=tail. Example: `int f = FlipCoin();`
+- RollDice(sides): Returns random number 1 to sides. Example: `int d = RollDice(6);`
+- Chance(): Random float 0-1. Example: `double c = Chance();`
+- SampleFromVector(): Random element from vector. Example: `int e = SampleFromVector(nums);`
 
-    // lets check if something went wrong, we will do this:
-    if (CinFail()){
-        std::cout << "Something went wrong!" << std::endl; // this can happen if the user entered a wrong datatype like letters instead of integers.
-        return 1; // to end the process
-    }
+## DXLIBCONVERT:
 
-    // if it didnt trigger:
-    std::cout << "Your age is " << age << "!" << '\n'; // print the age this means its successful.
-}
-```
+- ConvertDoubleToInt(): Converts double → int. Example: `int i = ConvertDoubleToInt(3.14);`
+- ConvertAnyNumToString(): Converts int/float/double → string. Example: `std::string s = ConvertAnyNumToString(42);`
 
-- ClearBuffer(): Usually clears a newline left over from a std::endl or a std::cin >>, here is an example:
-```cpp
-#include "../include/dxlib.hpp"
+## DXLIBFILE:
 
-using namespace dxlib::dxlibMain;
+- FileExists(filename): Check if file exists. Example: `if(FileExists("file.txt")) std::cout << "Yes";`
+- FileToString(filename): Read file as string. Example: `std::string content = FileToString("file.txt");`
+- WriteString_ToFileAndOverWrite(filename,string): Overwrite file. Example: `WriteString_ToFileAndOverWrite("file.txt","Hello");`
+- WriteVectorToFileAnd_OverWrite(filename,vector<char>): Write vector to file. Example: `std::vector<char> v={'a','b'}; WriteVectorToFileAnd_OverWrite("file.txt",v);`
+- CreateFile(filename, extension): Create file. Example: `CreateFile("example","txt");`
+- DeleteFile(filename): Delete file. Example: `DeleteFile("example.txt");`
+- CopyFile(src,dest): Copy file. Example: `CopyFile("a.txt","b.txt");`
+- RenameFile(oldname,newname): Rename file. Example: `RenameFile("b.txt","c.txt");`
 
-int main() {
-    std::string name;
-    std::string dad;
+## DXLIBMATH:
 
-    std::cout << "Enter your name: " << std::endl;
-    std::cin >> name; // this is the problem right here, it leavs a newline
-    // so it will skip the "Enter your dad's name" process and leave it with a newline
-    // so to fix it you must call the ClearBuffer() function to destroy that newline.
+- Operators(a,b,char): Perform '+','-','*','/' or special '/*-' operation. Example: `int res = Operators(2,3,'+');`
+- MultNums(vector): Multiply all vector elements. Example: `int m = MultNums(nums);`
+- pwr(a,b): Returns a^b. Example: `int x = pwr(2,3);`
+- Factorial(n): Factorial of n. Example: `int f = Factorial(5);`
+- GCD(a,b): Greatest common divisor. Example: `int g = GCD(12,18);`
+- LCM(a,b): Least common multiple. Example: `int l = LCM(4,6);`
 
-    ClearBuffer(); // now it should work.
+## DXLIBTIME:
 
-    std::cout << "Enter your dad's name: " << std::endl;
-    std::getline(std::cin, dad);
+- FormatDate(tm): Convert time to string. Example: `std::string s = FormatDate(std::tm{});`
+- sleepfor(type,value): Sleep for seconds/minutes. Example: `sleepfor('s',1);`
+- GetLocalTime(): Get current local time. Example: `auto t = GetLocalTime();`
+- AddSecToTime(tm,seconds): Add seconds to time. Example: `AddSecToTime(t,60);`
 
-    std::cout << "Hello, " << name << " your dad is: " << dad << std::endl;
-}
-```
+## DXLIBPRINT:
 
-- Pause(): Pauses the program, think of it as like time. Without calling it time moves on, but when you call it time freezes until you unpause it. Heres an example:
-```cpp
-#include "../include/dxlib.hpp"
+- printline(string): Print string. Example: `printline("Hello");`
+- printVar("template-string", variables...): Insert variables into string. Example: `int a=10; printVar("Value is -a-",a);`
+- askInput<Type>("prompt"): Ask input from user. Example: `std::string n = askInput<std::string>("Name?");`
 
-using namespace dxlib::dxlibMain;
+## DXLIBTEXT:
 
-int main() {
-    std::cout << "Hello.." << '\n';
-    Pause(); // call the Pause() function to pause the program, usually for debugging.
-    std::cout << "World!" << '\n';
-}
-```
+- startsWith(string,prefix): True if string starts with prefix. Example: `bool b = startsWith("Hello","He");`
+- endsWith(string,suffix): True if string ends with suffix. Example: `bool b = endsWith("Hello","lo");`
+- ChangeCase(string,type): Change case. Example: `ChangeCase("Hello","upper");`
+- Split(string,delimiter): Split string. Example: `auto parts = Split("a,b,c",',');`
+- Join(vector<string>): Join strings. Example: `std::string s = Join({"a","b"});`
+- TrimString(string): Remove all whitespace. Example: `std::string s = TrimString(" h e l l o ");`
+- ReverseString(string): Reverse string. Example: `std::string r = ReverseString("Hello");`
+- LTrim(string): Trim left whitespace. Example: `std::string l = LTrim("  Hello");`
+- RTrim(string): Trim right whitespace. Example: `std::string r = RTrim("Hello  ");`
+- CapitalizeWords(string): Capitalize first letter of each word. Example: `std::string c = CapitalizeWords("hello world");`
 
--
+## DXLIBDEBUG:
+
+- log(msg,type): Log message. Example: `log("Started","INFO");`
+- debugBreak(): Break code execution. Example: `debugBreak();`
+- assertLog(value): Assert value != 0. Example: `assertLog(5);`
+- timeLog(block): Measure execution time. Example: `timeLog([](){ /* code */ });`
+
+## DXLIBCHECK:
+
+- isEven(n): True if even. Example: `bool e = isEven(4);`
+- isOdd(n): True if odd. Example: `bool o = isOdd(5);`
+- isNumeric(string): True if numeric. Example: `bool n = isNumeric("123");`
+- isAlpha(string): True if alphabetic. Example: `bool a = isAlpha("abc");`
+- isAllNum(string): True if alphanumeric. Example: `bool an = isAllNum("a1b2");`
+- isFloatString(string): True if valid float. Example: `bool f = isFloatString("3.14");`
+- isDoubleString(string): True if valid double. Example: `bool d = isDoubleString("3.1415");`
+- isInRange(num,min,max): True if number in range. Example: `bool r = isInRange(5,1,10);`
+- isPrime(n): True if prime. Example: `bool p = isPrime(7);`
+- isPalindrome(n): True if palindrome. Example: `bool pal = isPalindrome(121);`
+- isWhiteSpaceOnly(string): True if string is only spaces. Example: `bool ws = isWhiteSpaceOnly("   ");`
+- isZero(n): True if number is zero. Example: `bool z = isZero(0);`
+- isHalf(num,other): True if num/2 == other. Example: `bool h = isHalf(10,5);`
+- isMultTwo(num,other): True if num*2 == other. Example: `bool m = isMultTwo(5,10);`
+- isEqual(a,b): True if a==b. Example: `bool eq = isEqual(3,3);`

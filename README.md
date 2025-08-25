@@ -52,7 +52,6 @@ you will find every function there explained.
 
 ## How to get started?
 - Download `dxlib.hpp` from this repository
-- You may download `dxHelp.hpp` as well, its optional if you need help.
 - Include it like this:
 ```cpp
 #include "../include/dxlib.hpp"

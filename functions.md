@@ -33,8 +33,12 @@
 
 ## DXLIBCONVERT:
 
-- `ConvertDoubleToInt(d)`: Converts double → int. Example: `int i = ConvertDoubleToInt(3.14);`
-- `ConvertAnyNumToString(num)`: Converts int/float/double → string. Example: `std::string s = ConvertAnyNumToString(42);`
+- `ConvertDoubleToInt(i)`: Converts double to int. Example: `double i = 10.593; ConvertDoubleToInt(i)`
+- `ConvertIntToDouble(i)`: Converts a int to double. Example: `int i = 30; ConvertIntToDouble(i);`
+- `ConvertFloatToDouble(i)`: Converts a float to a double. Example: `float i = 3.49501; ConvertFloatToDouble(i);`
+- `ConvertDoubleToFloat(i)`: Converts a Double to a float. Example: `double i = 3.59581010199; ConvertDoubleToFloat(i);`
+- `ConvertAnyNumToString(num)`: Converts any arithmetic type to a stirng. Example: `int a = 10; std::cout << "Number is: " + ConvertAnyNumToString(a);`
+- There are much more functions that are simmilar, if you are interested please look into the source code and find `dxlibConvert`.
 
 ## DXLIBFILE:
 
@@ -108,3 +112,7 @@
 - `isHalf(num,other)`: True if num/2 == other. Example: `bool h = isHalf(10,5);`
 - `isMultTwo(num,other)`: True if num*2 == other. Example: `bool m = isMultTwo(5,10);`
 - `isEqual(a,b)`: True if a==b. Example: `bool eq = isEqual(3,3);`
+- `isBelowIntMaxOrOverIntMax(std::string what, n)`: Returns true if a number is over or below INT_MAX depending on the 'what' argument.
+- `isBelowIntMinOrOverIntMin(std::string what, n)`: Returns true if a number is over or below INT_MIN depending on the 'what' argument.
+- `isOverTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is greater than n2 & n3 in a specific operator, the operator depends on the 'what' argument.
+- `isLessThanTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is lower than n2 & n3 in a specific operator, the operator depends on the 'what' argument.

@@ -150,11 +150,10 @@ namespace dxlib {
          */
         template<typename T>
         void PrintVector(const std::vector<T>& vec, bool newline=true){
-            for (size_t i = 0; i < vec.size(); i++){
-                std::cout << "Element #" << i << ": " << vec[i] << " ";
+            for (size_t i = 0; i < vec.size(); i++) {
+                std::cout << "Element #" << i << ": " << vec[i];
+                std::cout << (newline ? "\n" : " ");
             }
-
-            if (newline) std::cout << "\n";
         }
 
         /**

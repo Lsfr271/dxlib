@@ -394,38 +394,33 @@ namespace dxlib {
             return static_cast<int>(i);
         }
 
-        // converts a int to a float
-        int ConvertIntToFloat(const int &i){
+        // converts int to float
+        float ConvertIntToFloat(const int &i){
             return static_cast<float>(i);
         }
 
-        // converts a long to a long double
-        int ConvertLongToLongDouble(const int& i){
+        // converts long to long double
+        long double ConvertLongToLongDouble(const long& i){
             return static_cast<long double>(i);
         }
 
-        // converts a long double to a long
-        int ConvertLongDoubleToLong(const int& i){
+        // converts long double to long
+        long ConvertLongDoubleToLong(const long double& i){
             return static_cast<long>(i);
         }
 
-        // converts a int to an unsigned int
-        int ConvertIntToUnsigned(const int& i){
+        // converts int to unsigned int
+        unsigned int ConvertIntToUnsigned(const int& i){
             return static_cast<unsigned int>(i);
         }
 
-        // converts an unsigned int to a int
-        int ConvertUnsignedToInt(const int& i){
-            return static_cast<int>(i);
-        }
-
-        // converts a const char to char
-        int ConvertConstCharToChar(const char& i){
+        // converts const char to char
+        char ConvertConstCharToChar(const char& i){
             return static_cast<char>(i);
         }
 
-        // converts a char to a const char
-        int ConvertCharToConstChar(const char& i){
+        // converts char to const char
+        const char ConvertCharToConstChar(const char& i){
             return static_cast<const char>(i);
         }
 
@@ -1075,42 +1070,6 @@ namespace dxlib {
         template<typename T>
         bool isEqual(T num, T other){
             return num == other;
-        }
-
-        /**
-         * @param std::string what = Argument that checks if the user wants to do a check
-         * if @param n is over INT_MAX or @param n is below INT_MAX
-         *
-         * @param n = number that we will check that is either over INT_MAX or below INT_MAX
-        */
-        bool isBelowIntMaxOrOverIntMax(const std::string& what, int n){
-            if (what == "below"){
-                return n < INT_MAX;
-            }
-            else if (what == "over"){
-                return n > INT_MAX;
-            }
-            else {
-                throw std::invalid_argument("Please either choose \"below\" or \"over\" in the first argument");
-            }
-        }
-
-        /**
-         * @param std::string what = Argument that checks if the user wants to do a check
-         * if @param n is over INT_MIN or @param n is below INT_MIN
-         *
-         * @param n = number that we will check that is either over INT_MIN or below INT_MIN
-        */
-        bool isBelowIntMinOrOverIntMin(const std::string& what, int n){
-            if (what == "below"){
-                return n < INT_MIN;
-            }
-            else if (what == "over"){
-                return n > INT_MIN;
-            }
-            else {
-                throw std::invalid_argument("Please either choose \"below\" or \"over\" in the first argument");
-            }
         }
 
         /**

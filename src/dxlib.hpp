@@ -152,7 +152,7 @@ namespace dxlib {
         void PrintVector(const std::vector<T>& vec, bool newline=true){
             for (size_t i = 0; i < vec.size(); i++) {
                 std::cout << "Element #" << i << ": " << vec[i];
-                std::cout << (newline ? "\n" : " ");
+                std::cout << (newline ? "\n" : (i < vec.size() - 1 ? ", " : ""));
             }
         }
 

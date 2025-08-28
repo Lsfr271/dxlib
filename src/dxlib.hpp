@@ -141,14 +141,16 @@ namespace dxlib {
 
         /**
          * @brief Prints all elements in a vector
+         * @tparam Template for flexibility
          * @param vec = Vector to print
          * @param newline = Whether to add a newline after printing
          * @example
          * std::vector<int> v = {1,2,3};
          * PrintVector(v); // prints "1 2 3"
          */
-        void PrintVector(const std::vector<int>& vec, bool newline=true){
-            for (const auto& v : vec){
+        template<typename T>
+        void PrintVector(const std::vector<T>& vec, bool newline=true){
+            for (const T& v : vec){
                 std::cout << v << " ";
             }
 

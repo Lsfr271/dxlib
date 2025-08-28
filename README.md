@@ -38,7 +38,7 @@ It turned into a utility library that makes many common tasks much simpler.
 
 ### How to learn more about dxlib if you are stuck
 
-- Please go to [functions.md](https://github.com/Lsfr271/dxlib/blob/main/functions.md) or [dxlib.hpp](https://github.com/Lsfr271/dxlib/blob/src/dxlib.hpp)in this github repository
+- Please go to [functions.md](https://github.com/Lsfr271/dxlib/blob/main/functions.md) or [dxlib.hpp](https://github.com/Lsfr271/dxlib/blob/main/src/dxlib.hpp) in this github repository
 you will find every function there explained.
 
 ---

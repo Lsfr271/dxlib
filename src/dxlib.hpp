@@ -146,7 +146,10 @@ namespace dxlib {
          * @param newline = Whether to add a newline after printing
          * @example
          * std::vector<int> v = {1,2,3};
-         * PrintVector(v); // prints "1 2 3"
+         * PrintVector(v); // (if newline is true), prints "Element #1: 1
+         *                                                  Element #2: 2
+         *                                                  Element #3: 3"
+         * // (if newline is fals), prints "Element #1: 1, Element #2: 2, Element #3: 3"
          */
         template<typename T>
         void PrintVector(const std::vector<T>& vec, bool newline=true){

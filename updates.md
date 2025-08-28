@@ -16,6 +16,7 @@
 - Added four new functions in `dxlibCheck`, these being are `isZero()`, `isHalf()`, `isMultTwo()`, and `isEqual()`.
 - Added two new functions in `dxlibCheck`, these being are `isOverTwoNumbersCombined()` and `isLessThanTwoNumbersCombined()`.
 - Added Doxygen comments in every function.
+- Added new convert functions in `dxlibConvert` you can check them in the source code `dxlib.hpp` file.
 
 ---
 

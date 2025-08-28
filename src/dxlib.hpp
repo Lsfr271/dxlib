@@ -1073,27 +1073,32 @@ namespace dxlib {
         }
 
         /**
+         * @brief checks if one number is higher than two numbers on a specific operator
+         *
          * @param std::string what = Argument that checks what operation user wants to do
          * @param n1 = main number that we will check that is greater than @param n2 and @param n3
          * @param n2 = first number that we will check that is added by @param n3 that is lower than @param n1
          * @param n3 = last number that we will check that is added by @param n2 that is lower than @param n1
          *
          * @note templates are for flexibility to support all arithmetic types.
-         * @note Reason that there are 2 templates 'T' and 'A' is for more flexibility and possibly,
+         * @tparam Reason that there are 2 templates 'T' and 'A' is for more flexibility and possibly,
          * less bugs
+         *
+         * @example
+         * isOverTwoNumbersCombined("add", 10, 4, 5); this returns true because 10 > 9 (addition operator)
         */
         template<typename T, typename A>
         bool isOverTwoNumbersCombined(const std::string& what, T n1, A n2, A n3){
-            if (what == "add"){
+            if (std::set<std::string>{"add", "ad", "addd", "aad"}.count(what)){
                 return n1 > n2 + n3;
             }
-            else if (what == "sub"){
+            else if (std::set<std::string>{"sub", "sb", "ssub", "suub", "subb"}.count(what)){
                 return n1 > n2 - n3;
             }
-            else if (what == "mult"){
+            else if (std::set<std::string>{"mult", "multiply", "multiplication", "mlt", "multt"}.count(what)){
                 return n1 > n2 * n3;
             }
-            else if (what == "div"){
+            else if (std::set<std::string>{"div", "divide", "division", "divv", "diiv", "ddiv"}.count(what)){
                 if (n3 == 0){
                     throw std::invalid_argument("Divide by 0 error.");
                 }
@@ -1106,27 +1111,32 @@ namespace dxlib {
         }
 
         /**
+         * @brief checks if one number is less than two numbers on a specific operator
+         *
          * @param std::string what = Argument that checks what operation user wants to do
          * @param n1 = main number that we will check that is less than @param n2 and @param n3
          * @param n2 = first number that we will check that is added by @param n3 that is higher than @param n1
          * @param n3 = last number that we will check that is added by @param n2 that is higher than @param n1
          *
          * @note templates are for flexibility to support all arithmetic types.
-         * @note Reason that there are 2 templates 'T' and 'A' is for more flexibility and possibly,
+         * @tparam Reason that there are 2 templates 'T' and 'A' is for more flexibility and possibly,
          * less bugs
+         *
+         * @example
+         * isLessThanTwoNumbersCombined("sub", 10, 30, 10); returns true because 10 < 20 (subtraction operator)
         */
         template<typename T, typename A>
         bool isLessThanTwoNumbersCombined(const std::string& what, T n1, A n2, A n3){
-            if (what == "add"){
+            if (std::set<std::string>{"add", "ad", "addd", "aad"}.count(what)){
                 return n1 < n2 + n3;
             }
-            else if (what == "sub"){
+            else if (std::set<std::string>{"sub", "sb", "ssub", "suub", "subb"}.count(what)){
                 return n1 < n2 - n3;
             }
-            else if (what == "mult"){
+            else if (std::set<std::string>{"mult", "multiply", "multiplication", "mlt", "multt"}.count(what)){
                 return n1 < n2 * n3;
             }
-            else if (what == "div"){
+            else if (std::set<std::string>{"div", "divide", "division", "divv", "diiv", "ddiv"}.count(what)){
                 if (n3 == 0){
                     throw std::invalid_argument("Divide by 0 error.");
                 }
@@ -1138,6 +1148,8 @@ namespace dxlib {
             }
         }
     }
+
+    
 }
 
 #endif // DX_H

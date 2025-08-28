@@ -1730,7 +1730,9 @@ namespace dxlib {
             } else if (std::find(std::begin(multOps), std::end(multOps), what) != std::end(multOps)) {
                 return n1 > n2 * n3;
             } else if (std::find(std::begin(divOps), std::end(divOps), what) != std::end(divOps)) {
-                if (n3 == 0) throw std::invalid_argument("Divide by 0 error.");
+                if (n3 == 0){
+                    throw std::invalid_argument("Divide by 0 error.");
+                }
                 return n1 > n2 / n3;
             } else {
                 throw std::invalid_argument("Please enter \"add\", \"sub\", \"mult\", or \"div\".");
@@ -1763,7 +1765,9 @@ namespace dxlib {
             } else if (std::find(std::begin(multOps), std::end(multOps), what) != std::end(multOps)) {
                 return n1 < n2 * n3;
             } else if (std::find(std::begin(divOps), std::end(divOps), what) != std::end(divOps)) {
-                if (n3 == 0) throw std::invalid_argument("Divide by 0 error.");
+                if (n3 == 0){
+                    throw std::invalid_argument("Divide by 0 error.");
+                }
                 return n1 < n2 / n3;
             } else {
                 throw std::invalid_argument("Please enter \"add\", \"sub\", \"mult\", or \"div\".");

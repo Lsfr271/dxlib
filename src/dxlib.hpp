@@ -399,6 +399,36 @@ namespace dxlib {
             return static_cast<float>(i);
         }
 
+        // converts a long to a long double
+        int ConvertLongToLongDouble(const int& i){
+            return static_cast<long double>(i);
+        }
+
+        // converts a long double to a long
+        int ConvertLongDoubleToLong(const int& i){
+            return static_cast<long>(i);
+        }
+
+        // converts a int to an unsigned int
+        int ConvertIntToUnsigned(const int& i){
+            return static_cast<unsigned int>(i);
+        }
+
+        // converts an unsigned int to a int
+        int ConvertUnsignedToInt(const int& i){
+            return static_cast<int>(i);
+        }
+
+        // converts a const char to char
+        int ConvertConstCharToChar(const char& i){
+            return static_cast<char>(i);
+        }
+
+        // converts a char to a const char
+        int ConvertCharToConstChar(const char& i){
+            return static_cast<const char>(i);
+        }
+
         // Converts any arithmetic type (int, float, double, long, long long, etc) to std::string
         template<typename T>
         std::string ConvertAnyNumToString(T num){
@@ -1028,7 +1058,7 @@ namespace dxlib {
         // check if a number halfed is equal to another number
         template<typename T>
         bool isHalf(T num, T other){
-         // avoid a bug where if you divide an int by a double it shows as an int
+            // avoid a bug where if you divide an int by a double it shows as an int
             return static_cast<double>(num) / 2.0 == static_cast<double>(other);
         }
 
@@ -1038,9 +1068,115 @@ namespace dxlib {
             return num * 2 == other;
         }
 
+        /**
+         * @param num = first number to check against @param other
+         * @param other = second number to check against @param num
+        */
         template<typename T>
         bool isEqual(T num, T other){
             return num == other;
+        }
+
+        /**
+         * @param std::string what = Argument that checks if the user wants to do a check
+         * if @param n is over INT_MAX or @param n is below INT_MAX
+         *
+         * @param n = number that we will check that is either over INT_MAX or below INT_MAX
+        */
+        bool isBelowIntMaxOrOverIntMax(const std::string& what, int n){
+            if (what == "below"){
+                return n < INT_MAX;
+            }
+            else if (what == "over"){
+                return n > INT_MAX;
+            }
+            else {
+                throw std::invalid_argument("Please either choose \"below\" or \"over\" in the first argument");
+            }
+        }
+
+        /**
+         * @param std::string what = Argument that checks if the user wants to do a check
+         * if @param n is over INT_MIN or @param n is below INT_MIN
+         *
+         * @param n = number that we will check that is either over INT_MIN or below INT_MIN
+        */
+        bool isBelowIntMinOrOverIntMin(const std::string& what, int n){
+            if (what == "below"){
+                return n < INT_MIN;
+            }
+            else if (what == "over"){
+                return n > INT_MIN;
+            }
+            else {
+                throw std::invalid_argument("Please either choose \"below\" or \"over\" in the first argument");
+            }
+        }
+
+        /**
+         * @param std::string what = Argument that checks what operation user wants to do
+         * @param n1 = main number that we will check that is greater than @param n2 and @param n3
+         * @param n2 = first number that we will check that is added by @param n3 that is lower than @param n1
+         * @param n3 = last number that we will check that is added by @param n2 that is lower than @param n1
+         *
+         * @note templates are for flexibility to support all arithmetic types.
+         * @note Reason that there are 2 templates 'T' and 'A' is for more flexibility and possibly,
+         * less bugs
+        */
+        template<typename T, typename A>
+        bool isOverTwoNumbersCombined(const std::string& what, T n1, A n2, A n3){
+            if (what == "add"){
+                return n1 > n2 + n3;
+            }
+            else if (what == "sub"){
+                return n1 > n2 - n3;
+            }
+            else if (what == "mult"){
+                return n1 > n2 * n3;
+            }
+            else if (what == "div"){
+                if (n3 == 0){
+                    throw std::invalid_argument("Divide by 0 error.");
+                }
+
+                return n1 > n2 / n3;
+            }
+            else {
+                throw std::invalid_argument("Please either enter \"add\", \"sub\", \"mult\", or \"div\" in first argument.");
+            }
+        }
+
+        /**
+         * @param std::string what = Argument that checks what operation user wants to do
+         * @param n1 = main number that we will check that is less than @param n2 and @param n3
+         * @param n2 = first number that we will check that is added by @param n3 that is higher than @param n1
+         * @param n3 = last number that we will check that is added by @param n2 that is higher than @param n1
+         *
+         * @note templates are for flexibility to support all arithmetic types.
+         * @note Reason that there are 2 templates 'T' and 'A' is for more flexibility and possibly,
+         * less bugs
+        */
+        template<typename T, typename A>
+        bool isLessThanTwoNumbersCombined(const std::string& what, T n1, A n2, A n3){
+            if (what == "add"){
+                return n1 < n2 + n3;
+            }
+            else if (what == "sub"){
+                return n1 < n2 - n3;
+            }
+            else if (what == "mult"){
+                return n1 < n2 * n3;
+            }
+            else if (what == "div"){
+                if (n3 == 0){
+                    throw std::invalid_argument("Divide by 0 error.");
+                }
+
+                return n1 < n2 / n3;
+            }
+            else {
+                throw std::invalid_argument("Please either enter \"add\", \"sub\", \"mult\", or \"div\" in first argument.");
+            }
         }
     }
 }

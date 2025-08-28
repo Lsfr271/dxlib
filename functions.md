@@ -112,7 +112,5 @@
 - `isHalf(num,other)`: True if num/2 == other. Example: `bool h = isHalf(10,5);`
 - `isMultTwo(num,other)`: True if num*2 == other. Example: `bool m = isMultTwo(5,10);`
 - `isEqual(a,b)`: True if a==b. Example: `bool eq = isEqual(3,3);`
-- `isBelowIntMaxOrOverIntMax(std::string what, n)`: Returns true if a number is over or below INT_MAX depending on the 'what' argument.
-- `isBelowIntMinOrOverIntMin(std::string what, n)`: Returns true if a number is over or below INT_MIN depending on the 'what' argument.
 - `isOverTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is greater than n2 & n3 in a specific operator, the operator depends on the 'what' argument.
 - `isLessThanTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is lower than n2 & n3 in a specific operator, the operator depends on the 'what' argument.

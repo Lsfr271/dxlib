@@ -150,8 +150,10 @@ namespace dxlib {
          */
         template<typename T>
         void PrintVector(const std::vector<T>& vec, bool newline=true){
-            for (const T& v : vec){
-                std::cout << v << " ";
+            for (int i = 0; i < vec.size(); i++){
+                for (const T& v : vec){
+                    std::cout << "Element #" << i << ": " << v << " ";
+                }
             }
 
             if (newline) std::cout << "\n";
@@ -1718,13 +1720,18 @@ namespace dxlib {
          */
         template<typename T, typename A>
         bool isOverTwoNumbersCombined(const std::string& what, T n1, A n2, A n3){
-            if (std::set<std::string>{"add","ad","addd","aad"}.count(what)){
+            const std::string addOps[] = {"add","ad","addd","aad"};
+            const std::string subOps[] = {"sub","sb","ssub","suub","subb"};
+            const std::string multOps[] = {"mult","multiply","multiplication","mlt","multt"};
+            const std::string divOps[] = {"div","divide","division","divv","diiv","ddiv"};
+
+            if (std::find(std::begin(addOps), std::end(addOps), what) != std::end(addOps)) {
                 return n1 > n2 + n3;
-            } else if (std::set<std::string>{"sub","sb","ssub","suub","subb"}.count(what)){
+            } else if (std::find(std::begin(subOps), std::end(subOps), what) != std::end(subOps)) {
                 return n1 > n2 - n3;
-            } else if (std::set<std::string>{"mult","multiply","multiplication","mlt","multt"}.count(what)){
+            } else if (std::find(std::begin(multOps), std::end(multOps), what) != std::end(multOps)) {
                 return n1 > n2 * n3;
-            } else if (std::set<std::string>{"div","divide","division","divv","diiv","ddiv"}.count(what)){
+            } else if (std::find(std::begin(divOps), std::end(divOps), what) != std::end(divOps)) {
                 if (n3 == 0) throw std::invalid_argument("Divide by 0 error.");
                 return n1 > n2 / n3;
             } else {
@@ -1746,13 +1753,18 @@ namespace dxlib {
          */
         template<typename T, typename A>
         bool isLessThanTwoNumbersCombined(const std::string& what, T n1, A n2, A n3){
-            if (std::set<std::string>{"add","ad","addd","aad"}.count(what)){
+            const std::string addOps[] = {"add","ad","addd","aad"};
+            const std::string subOps[] = {"sub","sb","ssub","suub","subb"};
+            const std::string multOps[] = {"mult","multiply","multiplication","mlt","multt"};
+            const std::string divOps[] = {"div","divide","division","divv","diiv","ddiv"};
+
+            if (std::find(std::begin(addOps), std::end(addOps), what) != std::end(addOps)) {
                 return n1 < n2 + n3;
-            } else if (std::set<std::string>{"sub","sb","ssub","suub","subb"}.count(what)){
+            } else if (std::find(std::begin(subOps), std::end(subOps), what) != std::end(subOps)) {
                 return n1 < n2 - n3;
-            } else if (std::set<std::string>{"mult","multiply","multiplication","mlt","multt"}.count(what)){
+            } else if (std::find(std::begin(multOps), std::end(multOps), what) != std::end(multOps)) {
                 return n1 < n2 * n3;
-            } else if (std::set<std::string>{"div","divide","division","divv","diiv","ddiv"}.count(what)){
+            } else if (std::find(std::begin(divOps), std::end(divOps), what) != std::end(divOps)) {
                 if (n3 == 0) throw std::invalid_argument("Divide by 0 error.");
                 return n1 < n2 / n3;
             } else {

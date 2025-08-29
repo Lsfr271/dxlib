@@ -324,6 +324,7 @@ namespace dxlib {
 
         /**
          * @brief Loops through a vector and either increments or decrements each element
+         * @tparam template T for all arithmetic types
          * @param vec = Vector to modify
          * @param c = "increment" or "decrement"
          * @param i = Amount to add or subtract (must be > 0)
@@ -331,7 +332,8 @@ namespace dxlib {
          * std::vector<int> v = {1,2,3};
          * vectorLoop(v, "increment", 2); // v = {3,4,5}
          */
-        void vectorLoop(std::vector<int>& vec, std::string c, int i){
+        template<typename T>
+        void vectorLoop(std::vector<T>& vec, std::string c, T i){
             if (i <= 0){
                 throw std::invalid_argument("The adding/subtracting factor cannot be lower or equal to 0!");
             }
@@ -341,12 +343,12 @@ namespace dxlib {
             }
 
             if (c == "increment"){
-                for (int& number : vec){
+                for (T& number : vec){
                     number += i;
                 }
             }
             else if (c == "decrement"){
-                for (int& number : vec){
+                for (T& number : vec){
                     number -= i;
                 }
             }

@@ -821,6 +821,34 @@ namespace dxlib {
             }
         }
 
+        /**
+         * @brief Gets the extension of a file
+         *
+         * @param filename = extension in file to search
+         * @throws std::invalid_argument() if @param filename is empty or dosent have a '.'
+         * @throws std::runtime_error() if something went wrong.
+         * @returns it returns the extension.
+         * @example
+         * // imagine you have a file called "test.hpp", heres how it would work
+         * std::string ex = GetExtension("test.hpp"); // it will get the .hpp (if std::runtime_error() dosent get triggered);
+         */
+        std::string GetExtension(const std::string& filename){
+            if (filename.empty()){
+                throw std::invalid_argument("Filename cannot be empty.");
+            }
+            else if (filename.find('.') == std::string::npos){
+                throw std::invalid_argument("Filename should have an extension.");
+            }
+
+            try {
+                std::filesystem::path filePath(filename);
+
+                return filePath.extension().string();
+            } catch (const std::filesystem::filesystem_error &e){
+                throw std::runtime_error("Failed to fetch the extension: " + std::string(e.what()));
+            }
+        }
+
     }
 
 

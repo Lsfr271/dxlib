@@ -310,19 +310,6 @@ namespace dxlib {
         }
 
         /**
-         * @brief Creates a pointer to a value
-         * @tparam T = Type of the value
-         * @param num = Value to create a pointer for
-         * @return Pointer to the value
-         * @example
-         * int* p = CreatePtr(5); // p points to an int with value 5
-         */
-        template<typename T>
-        T* CreatePtr(const T& num){
-            return new T(num);
-        }
-
-        /**
          * @brief Loops through a vector and either increments or decrements each element
          * @tparam template T for all arithmetic types
          * @param vec = Vector to modify

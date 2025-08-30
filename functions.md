@@ -19,7 +19,6 @@
 - `AbsVal(x)`: Returns absolute value. Example: `int a = AbsVal(-5);`
 - `GenerateRandomVector(size,min=0,max=100)`: Generates a random vector of integers. Example: `auto r = GenerateRandomVector(5,1,10);`
 - `vectorLoop(vec,val,mode="add")`: Loops through vector to add/subtract value. Example: `std::vector<int> nums = {3, 3, 3}; vectorLoop(nums,2,"add");`
-- `CreatePtr(var)`: Creates a pointer to a variable. Example: `int x=5; int* p = CreatePtr(x);`
 
 ## DXLIBRANDOM:
 

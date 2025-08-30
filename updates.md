@@ -8,6 +8,7 @@
 - Deleted the `dxlibProbability` namespace and moved all its functions to the `dxlibRandom` namespace since its **redundant**
 - Deleted the inner namespace in `dxlibFileUtils` that used to be called `dxlibFileOperations` and moved all its functions into `dxlibFileUtils`
 - Deleted `dxlibShapesCalc` namespace since its **redundant** and probably wont be used in code.
+- Deleted `CreatePtr()` in `dxlibMain` since its redundant and no one would use it.
 
 ---
 

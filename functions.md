@@ -50,6 +50,7 @@
 - `DeleteFile(filename)`: Delete file. Example: `DeleteFile("example.txt");`
 - `CopyFile(src,dest)`: Copy file. Example: `CopyFile("a.txt","b.txt");`
 - `RenameFile(oldname,newname)`: Rename file. Example: `RenameFile("b.txt","c.txt");`
+- `GetExtension(filename)`: Gets the extension of a filename. Example: `GetExtension("testing.hpp"); // returns .hpp`
 
 ## DXLIBMATH:
 

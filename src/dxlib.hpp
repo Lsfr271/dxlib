@@ -235,13 +235,15 @@ namespace dxlib {
 
         /**
          * @brief Sums all elements in a vector
+         * @tparam template for all support
          * @param vec = Vector to sum
          * @return Sum of all elements
          * @example
          * std::vector<int> v = {1,2,3};
          * SumVector(v); // returns 6
          */
-        int SumVector(const std::vector<int>& vec){
+        template<typename T>
+        int SumVector(const std::vector<T>& vec){
             return std::accumulate(vec.begin(), vec.end(), 0);
         }
 
@@ -344,6 +346,74 @@ namespace dxlib {
 
     // ================== dxlibRandom ==================
     namespace dxlibRandom {
+        /**
+         * @brief Gets a random number offset between min & max and a add factor
+         *
+         * @tparam Template for support
+         * @param a = first number
+         * @param b = second number
+         * @param add = number that will be added to @param b
+         * @returns random generated number (eq = min - max + add)
+         *
+         * @example
+         * _add_RandomNumberOffset(10, 20, 30); // picks a random number from 10 -> 50 (20+30=50)
+         */
+        template<typename T>
+        T _add_RandomNumberOffset(const T a, const T b, int add){
+            if (add <= 0){
+                throw std::invalid_argument("The add argument (third argument) cannot be lower than or equal to 0");
+            }
+
+            if (a > b){
+                throw std::invalid_argument("Minimum argument cannot be higher than maximum argument (a > b)");
+            }
+
+            static_assert(std::is_integral<T>::value, "T must be an integral type.");
+
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::uniform_int_distribution<T> dist(a, b + add);
+
+            return dist(gen);
+        }
+
+        /**
+         * @brief Gets a random number offset between min & max and a sub factor
+         *
+         * @tparam Template for support
+         * @param a = first number
+         * @param b = second number
+         * @param sub = number that will be subtracted to @param b
+         * @returns random generated number (eq = min - max - add)
+         *
+         * @example
+         * _sub_RandomNumberOffset(10, 20, 5); // picks random number from 10 -> 15 (20-5=15)
+         */
+        template<typename T>
+        T _sub_RandomNumberOffset(const T a, const T b, int sub){
+            if (sub <= 0){
+                throw std::invalid_argument("The add argument (third argument) cannot be lower than or equal to 0");
+            }
+
+            if (a > b){
+                throw std::invalid_argument("Minimum argument cannot be higher than maximum argument (a > b)");
+            }
+
+            if (b - sub > 0){
+
+                static_assert(std::is_integral<T>::value, "T must be an integral type.");
+
+                std::random_device rd;
+                std::mt19937 gen(rd());
+                std::uniform_int_distribution<T> dist(a, b - sub);
+
+                return dist(gen);
+            }
+            else {
+                throw std::invalid_argument("Please pick a lower number so it dosent go into the negatives.");
+            }
+        }
+
         /**
          * @brief Generates a random integral number within a range [min, max].
          *
@@ -1019,6 +1089,37 @@ namespace dxlib {
             return (a / GCD(a, b)) * b;
         }
 
+        /**
+         * @brief Rounds a floating-point number to the nearest integer.
+         *
+         * @note >>
+         * The result is rounded up if the fractional part is 0.5 or higher,
+         * otherwise it is rounded down.
+         *
+         * @tparam T = floating-point type (float, double, long double)
+         * @param a = number to round
+         * @returns the nearest integer to the original number
+         *
+         * @example
+         * double c = 10.7;
+         * std::cout << RoundToNearest(c); // prints 11
+         *
+         * float d = 3.2f;
+         * std::cout << RoundToNearest(d); // prints 3
+         */
+        template<typename T>
+        T RoundToNearest(T& a){
+            static_assert(std::is_floating_point<T>::value, "T must be a floating point type.");
+
+            T decimal_part = a - std::floor(a);
+
+            if (decimal_part >= 0.5){
+                return std::ceil(a);
+            }
+            else {
+                return std::floor(a);
+            }
+        }
     }
 
     // ================== dxlibTime ==================
@@ -1790,6 +1891,41 @@ namespace dxlib {
                 return n1 < n2 / n3;
             } else {
                 throw std::invalid_argument("Please enter \"add\", \"sub\", \"mult\", or \"div\".");
+            }
+        }
+
+        /**
+         * @brief Checks if a vectors elements all summed up is higher than a certain number.
+         *
+         * @param vec = vector to check
+         * @param num = number to compare against all the vectors elements
+         * @param op = operation (lower / higher)
+         *
+         * @returns true / false depending on the situation
+         * @example
+         * std::vector<int> ex = {5, 5, 5}; // 15 all summed up
+         * VectorCheck(ex, 14, 'h'); // returns true because 15 > 14
+         */
+        template<typename T>
+        bool VectorCheck(std::vector<T>& vec, int num, std::string op){
+            if (vec.empty() || num <= 0){
+                throw std::invalid_argument("Invalid arguments. Either number to check is lower than or equal to 0, or \n the vector is empty.");
+            }
+
+            if (op == "l"){ // l = lower
+                if (dxlibMain::SumVector(vec) < num){
+                    return true;
+                }
+                return false;
+            }
+            else if (op == "h"){ // h = higher
+                if (dxlibMain::SumVector(vec) > num){
+                    return true;
+                }
+                return false;
+            }
+            else {
+                throw std::invalid_argument("Invalid operation. please enter either 'l' = lower, or 'h' = higher");
             }
         }
     }

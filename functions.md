@@ -22,6 +22,10 @@
 
 ## DXLIBRANDOM:
 
+- `_add_RandomNumberOffset(a, b, add)`: Takes in two arguments and a add factor and adds b + add and picks
+- a random number from that.
+- `_sub_RandomNumberOffset(a, b, sub)`: Same as `_add_RandomNumberOffset(a, b, add)` but opposite, instead of adding,
+- it subtracts b - sub.
 - `RandomNumRange(min,max)`: Random number between min/max. Example: `int r = RandomNumRange(1,6);`
 - `RandomStr(len)`: Random string of length len. Example: `std::string s = RandomStr(5);`
 - `ShuffleVect(vec)`: Shuffles a vector. Example: `std::vector<int> nums = {1, 2, 3, 4}; ShuffleVect(nums);`

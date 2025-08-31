@@ -119,3 +119,5 @@
 - `isEqual(a,b)`: True if a==b. Example: `bool eq = isEqual(3,3);`
 - `isOverTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is greater than n2 & n3 in a specific operator, the operator depends on the 'what' argument.
 - `isLessThanTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is lower than n2 & n3 in a specific operator, the operator depends on the 'what' argument.
+- `VectorCheck(std::vector<T>& vec, int num, std::string op)`: Checks if all elements in a vector summed-up is
+- lower or higher than `int num`.

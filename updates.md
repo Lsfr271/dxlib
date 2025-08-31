@@ -19,6 +19,10 @@
 - Added Doxygen comments in every function.
 - Added new convert functions in `dxlibConvert` you can check them in the source code `dxlib.hpp` file.
 - Added new function in `dxlibFileUtils`, the function being is `GetExtension()`, for more informations go to `functions.md` or `dxlib.hpp`
+- Added 2 new functions in `dxlibRandom`, being are: `_add_RandomNumberOffset()`, and `_sub_RandomNumberOffset()`. For
+- more information please go to `functions.md` or `dxlib.hpp`
+- Added a new function in `dxlibCheck`, function: `VectorCheck()`, for more information go to `functions.md` or
+- `dxlib.hpp`
 
 ---
 

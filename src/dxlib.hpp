@@ -1928,6 +1928,37 @@ namespace dxlib {
                 throw std::invalid_argument("Invalid operation. please enter either 'l' = lower, or 'h' = higher");
             }
         }
+
+        /**
+         * @brief Checks if a number is below 0
+         *
+         * @tparam Template for more support
+         * @param a = number to check if its below 0
+         *
+         * @example
+         * isNeg(-5); // returns true
+         */
+        template<typename T>
+        bool isNeg(const T& a){
+            return a < 0;
+        }
+
+        /* INFINITE ARGUMENTS VERSION */
+        /**
+         * @brief Checks if a number subtracted by how much other numbers is below 0
+         *
+         * @tparam T for flexibility
+         * @tparam Args for infinite arguments.
+         * @param a = number to check if its below 0 subtracted by @param rest
+         * @param rest = number of args to subtract from @param a
+         *
+         * @example
+         * isNeg(5, -6); // returns true because 5 - -6 < 0 (-1)
+         */
+        template<typename T, typename... Args>
+        bool isNeg(const T& a, const Args&... rest){
+            return (a - (rest + ...)) < 0;
+        }
     }
 }
 

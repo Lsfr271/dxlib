@@ -121,3 +121,5 @@
 - `isLessThanTwoNumbersCombined(std::string what, n1, n2, n3)`: Returns true if n1 is lower than n2 & n3 in a specific operator, the operator depends on the 'what' argument.
 - `VectorCheck(std::vector<T>& vec, int num, std::string op)`: Checks if all elements in a vector summed-up is
 - lower or higher than `int num`.
+- `isNeg(a)`: Checks if a number is below 0
+- `isNeg(a, rest...)(infinite args version)`: Checks if a number subtracted by how much other numbers IS below 0

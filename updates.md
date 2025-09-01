@@ -23,6 +23,7 @@
 - more information please go to `functions.md` or `dxlib.hpp`
 - Added a new function in `dxlibCheck`, function: `VectorCheck()`, for more information go to `functions.md` or
 - `dxlib.hpp`
+- Added a new function in `dxlibCheck`, function: `isNeg()`, for more information go to `functions.md` or `dxlib.hpp`
 
 ---
 

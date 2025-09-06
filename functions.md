@@ -19,6 +19,8 @@
 - `AbsVal(x)`: Returns absolute value. Example: `int a = AbsVal(-5);`
 - `GenerateRandomVector(size,min=0,max=100)`: Generates a random vector of integers. Example: `auto r = GenerateRandomVector(5,1,10);`
 - `vectorLoop(vec,val,mode="add")`: Loops through vector to add/subtract value. Example: `std::vector<int> nums = {3, 3, 3}; vectorLoop(nums,2,"add");`
+- `IsInVector(vec, to_find)`: Checks if a element is in a vector. Example: `std::vector<char> c = {'a', 'b'}; IsInVec(c, 'a');` returns true
+because b is in vector c.
 
 ## DXLIBRANDOM:
 

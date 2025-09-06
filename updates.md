@@ -24,7 +24,8 @@
 - Added a new function in `dxlibCheck`, function: `VectorCheck()`, for more information go to `functions.md` or
 - `dxlib.hpp`
 - Added a new function in `dxlibCheck`, function: `isNeg()`, for more information go to `functions.md` or `dxlib.hpp`
-
+- Added a new function in `dxlibMain`, function: `IsInVec()`, for more information go to `functions.md` or `dxlib.hpp`
+- 
 ---
 
 ### More updates coming soon!

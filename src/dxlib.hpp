@@ -365,45 +365,6 @@ namespace dxlib {
             // if value isn't in the vector, return false.
             return false;
         }
-
-        /**
-         * @brief Displays a progress bar that is with [---] and changes each - to a #
-         * and a percentage.
-         *
-         * @tparam for flexibility
-         * @param T& duration_seconds = seconds that it will take for the progress bar
-         * to finish.
-         *
-         * @example
-         * ProgressBar(2.5); // wait for 2500ms or 2.5 seconds
-         */
-        template<typename T>
-        void ProgressBar(T& duration_seconds){
-            const int totalPercent = 100;
-            const int barWidth = 20;
-            int delay = (duration_seconds * 1000) / totalPercent;
-
-            for (int i = 0; i <= totalPercent; i++){
-                int pos = (i * barWidth) / totalPercent;
-
-                std::cout << "\r[";
-
-                for (int j = 0; j < barWidth; ++j){
-                    if (j < pos){
-                        std::cout << "#";
-                    }
-                    else {
-                        std::cout << "-";
-                    }
-                }
-
-                std::cout << "]" << i << "%" << std::flush;
-
-                sleepfor("ms", delay);
-            }
-
-            std::cout << std::endl;
-        }
     }
 
     // ================== dxlibRandom ==================
@@ -1273,6 +1234,42 @@ namespace dxlib {
             return new_tm;
         }
 
+        /**
+         * @brief Displays a progress bar that is with [---] and changes each - to a #
+         * and a percentage.
+         *
+         * @param T& duration_seconds = seconds that it will take for the progress bar
+         * to finish.
+         *
+         * @example
+         * ProgressBar(2.5); // wait for 2500ms or 2.5 seconds
+         */
+        void ProgressBar(int& duration_seconds){
+            const int totalPercent = 100;
+            const int barWidth = 20;
+            int delay = (duration_seconds * 1000) / totalPercent;
+
+            for (int i = 0; i <= totalPercent; i++){
+                int pos = (i * barWidth) / totalPercent;
+
+                std::cout << "\r[";
+
+                for (int j = 0; j < barWidth; ++j){
+                    if (j < pos){
+                        std::cout << "#";
+                    }
+                    else {
+                        std::cout << "-";
+                    }
+                }
+
+                std::cout << "]" << i << "%" << std::flush;
+
+                sleepfor("ms", delay);
+            }
+
+            std::cout << std::endl;
+        }
     }
 
     // ================== dxlibPrint ==================

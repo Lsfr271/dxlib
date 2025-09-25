@@ -21,8 +21,6 @@
 - `vectorLoop(vec,val,mode="add")`: Loops through vector to add/subtract value. Example: `std::vector<int> nums = {3, 3, 3}; vectorLoop(nums,2,"add");`
 - `IsInVector(vec, to_find)`: Checks if a element is in a vector. Example: `std::vector<char> c = {'a', 'b'}; IsInVec(c, 'a');` returns true
 because b is in vector c.
-- `ProgressBar(duration_seconds)`: Displays a progress bar with the pattern `[----]` and fils each `-` with a `#` until its fully with `#`, time depends
-  on `duration_seconds`.
 
 ## DXLIBRANDOM:
 
@@ -75,6 +73,8 @@ because b is in vector c.
 - `sleepfor(type,value)`: Sleep for seconds/minutes. Example: `sleepfor("s",1);`
 - `GetLocalTime():` Get current local time. Example: `std::cout << GetLocalTime();`
 - `AddSecToTime(tm,seconds)`: Add seconds to time. Example: `AddSecToTime(t,60);`
+- `ProgressBar(duration_seconds)`: Displays a progress bar with the pattern `[----]` and fils each `-` with a `#` until its fully with `#`, time depends
+  on `duration_seconds`.
 
 ## DXLIBPRINT:
 

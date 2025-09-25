@@ -365,6 +365,45 @@ namespace dxlib {
             // if value isn't in the vector, return false.
             return false;
         }
+
+        /**
+         * @brief Displays a progress bar that is with [---] and changes each - to a #
+         * and a percentage.
+         *
+         * @tparam for flexibility
+         * @param T& duration_seconds = seconds that it will take for the progress bar
+         * to finish.
+         *
+         * @example
+         * ProgressBar(2.5); // wait for 2500ms or 2.5 seconds
+         */
+        template<typename T>
+        void ProgressBar(T& duration_seconds){
+            const int totalPercent = 100;
+            const int barWidth = 20;
+            int delay = (duration_seconds * 1000) / totalPercent;
+
+            for (int i = 0; i <= totalPercent; i++){
+                int pos = (i * barWidth) / totalPercent;
+
+                std::cout << "\r[";
+
+                for (int j = 0; j < barWidth; ++j){
+                    if (j < pos){
+                        std::cout << "#";
+                    }
+                    else {
+                        std::cout << "-";
+                    }
+                }
+
+                std::cout << "]" << i << "%" << std::flush;
+
+                sleepfor("ms", delay);
+            }
+
+            std::cout << std::endl;
+        }
     }
 
     // ================== dxlibRandom ==================
@@ -1980,6 +2019,27 @@ namespace dxlib {
         bool isNeg(const T& a, const Args&... rest){
             return (a - (rest + ...)) < 0;
         }
+
+        /**
+         * @brief Checks if a string has a space in it.
+         *
+         * @param std::string& str = string to check
+         * @example
+         * std::string example = "Hello World!";
+         * if (isSpace(example)){
+         *      std::cout << "String has a space.";
+         * }
+         * else {
+         *     std::cout << "String does not have a space!";
+         * }
+         *
+         * in this example it would return true because theres a space between
+         * "Hello" and "World!"
+         */
+        bool isSpace(const std::string& str){
+            return str.find(" ") != std::string::npos;
+        }
+
     }
 
     // ================== dxlibUtility ==================

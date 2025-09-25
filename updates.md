@@ -25,6 +25,7 @@
 - `dxlib.hpp`
 - Added a new function in `dxlibCheck`, function: `isNeg()`, for more information go to `functions.md` or `dxlib.hpp`
 - Added a new function in `dxlibMain`, function: `IsInVec()`, for more information go to `functions.md` or `dxlib.hpp`
+- Added a new function in `dxlibTime`, function: `ProgressBar()`, for more information go to `functions.md` or `dxlb.hpp`
 - Added a new namespace called `dxlibUtility`. functions: `VectContains()`, and `GetType()`, for more information go to `functions.md`
 or `dxlib.hpp`
 

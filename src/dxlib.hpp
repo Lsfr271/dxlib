@@ -1238,13 +1238,13 @@ namespace dxlib {
          * @brief Displays a progress bar that is with [---] and changes each - to a #
          * and a percentage.
          *
-         * @param T& duration_seconds = seconds that it will take for the progress bar
+         * @param int duration_seconds = seconds that it will take for the progress bar
          * to finish.
          *
          * @example
          * ProgressBar(2.5); // wait for 2500ms or 2.5 seconds
          */
-        void ProgressBar(int& duration_seconds){
+        void ProgressBar(int duration_seconds){
             const int totalPercent = 100;
             const int barWidth = 20;
             int delay = (duration_seconds * 1000) / totalPercent;

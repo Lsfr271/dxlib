@@ -99,6 +99,8 @@ because b is in vector c.
 - `LTrim(string)`: Trim left whitespace. Example: `std::string l = LTrim("  Hello");`
 - `RTrim(string)`: Trim right whitespace. Example: `std::string r = RTrim("Hello  ");`
 - `CapitalizeWords(string)`: Capitalize first letter of each word. Example: `std::string c = CapitalizeWords("hello world");`
+- `scrambleWord(str)`: Scrambles a word randomly. Example: `std::string word = "Hello"; std::cout << scrambleWord(word) << "\n"; /* would give a scrambled version
+of "Hello" */`
 
 ## DXLIBDEBUG:
 

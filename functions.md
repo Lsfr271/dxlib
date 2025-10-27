@@ -21,6 +21,9 @@
 - `vectorLoop(vec,val,mode="add")`: Loops through vector to add/subtract value. Example: `std::vector<int> nums = {3, 3, 3}; vectorLoop(nums,2,"add");`
 - `IsInVector(vec, to_find)`: Checks if a element is in a vector. Example: `std::vector<char> c = {'a', 'b'}; IsInVec(c, 'a');` returns true
 because b is in vector c.
+- `VectContains(vec, element)`: Checks if `element` is in a vector. (`vec`)
+- `*INFNITE ARGUMENTS VERSION* of VectContains(vec, element)`: Checks if `element` done by any operation by any number of that result is in `vec`.
+- `GetType(elem)`: Gets the type of a datatype.
 
 ## DXLIBRANDOM:
 
@@ -128,9 +131,3 @@ because b is in vector c.
 - `isNeg(a)`: Checks if a number is below 0
 - `isNeg(a, rest...)(infinite args version)`: Checks if a number subtracted by how much other numbers IS below 0
 - `isSpace(std::string str)`: Checks if a string has a space in it.
-
-## DXLIBUTILITY:
-
-- `VectContains(vec, element)`: Checks if `element` is in a vector. (`vec`)
-- `*INFNITE ARGUMENTS VERSION* of VectContains(vec, element)`: Checks if `element` done by any operation by any number of that result is in `vec`.
-- `GetType(elem)`: Gets the type of a datatype.

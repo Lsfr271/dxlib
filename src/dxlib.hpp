@@ -1718,6 +1718,28 @@ namespace dxlib {
             }
         }
 
+        /**
+         * @brief Scrambles a word randomly.
+         *
+         * @param str = the word to scramble
+         * @return returns the scrambled word of @param str
+         *
+         * @example
+         * std::string word = "Hello, World!";
+         * std::string scrambled = scrambleWord(word);
+         *
+         * std::cout << "Original: " << word << "\n";
+         * std::cout << "Scrambled: " << scrambled << "\n";
+         */
+        std::string scrambleWord(const std::string& str){
+            std::string scrambled_word = str;
+            unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+            std::shuffle(scrambled_word.begin(), scrambled_word.end(),
+            std::default_random_engine(seed));
+
+            return scrambled_word;
+        }
     }
 
     // ================== dxlibDebug ==================

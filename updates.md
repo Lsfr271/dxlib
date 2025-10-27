@@ -28,6 +28,7 @@
 - Added a new function in `dxlibTime`, function: `ProgressBar()`, for more information go to `functions.md` or `dxlb.hpp`
 - Added a new namespace called `dxlibUtility`. functions: `VectContains()`, and `GetType()`, for more information go to `functions.md`
 or `dxlib.hpp`
+- Added a new function called `scrambleWord` in namespace `dxlibText`, for more information go to `functions.md` or `dxlib.hpp`.
 
 ---
 

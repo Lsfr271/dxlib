@@ -9,7 +9,7 @@
 - Deleted the inner namespace in `dxlibFileUtils` that used to be called `dxlibFileOperations` and moved all its functions into `dxlibFileUtils`
 - Deleted `dxlibShapesCalc` namespace since its **redundant** and probably wont be used in code.
 - Deleted `CreatePtr()` in `dxlibMain` since its redundant and no one would use it.
-
+- Deleted namespace `dxlibUtility` since its really redundant and moved all its functions into namespace `dxlibMain`
 ---
 
 ## **New Additions**

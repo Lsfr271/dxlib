@@ -38,7 +38,7 @@ you will find every function there explained.
 
 ### About me
 
-- I have been learning C++ for about 2 months now
+- I have been learning C++ for about ~4 months now
 - My favourite programming language is C++ and second is Python
 
 ---

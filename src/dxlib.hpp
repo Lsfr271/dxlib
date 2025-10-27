@@ -355,7 +355,7 @@ namespace dxlib {
          * IsInVec(ex, 3); // returns true because 3 IS in the vector.
          */
         template<typename T>
-        bool IsInVec(const std::vector<T>& vec, const T& to_find){
+        bool IsInVec(const std::vector<T>& vec, const T to_find){
             for (const auto& item : vec){
                 if (item == to_find){
                     return true;
@@ -364,6 +364,126 @@ namespace dxlib {
 
             // if value isn't in the vector, return false.
             return false;
+        }
+
+        /**
+         * @brief Checks if a element is in a vector.
+         *
+         * @tparam template for flexibility
+         * @param vec = vector to check
+         * @param element = element to check in @param vec
+         *
+         * @example
+         * std::vector<int> ex = {5, 2, 10};
+         * VectContains(ex, 2); // returns true because 2 IS in the vector (ex)
+         */
+        template<typename T>
+        bool VectContains(const std::vector<T>& vec, const T& element){
+            static_assert(!std::is_same<T, std::string>::value, "Vectors of std::string \n is not supported");
+
+            return std::find(vec.begin(), vec.end(), element) != vec.end();
+        }
+
+        /**
+         * INFINITE ARGS VERSION
+         * @brief Checks if a element is in a vector subtracted or added or other operation
+         * by other numbers.
+         *
+         * @tparam T = template for flexibility
+         * @tparam Args = for infinite arguments
+         * @param vec = vector to check
+         * @param element = element to check in @param vec
+         * @param op = operation to do
+         *
+         * @example
+         * std::vector<int> ex = {5, 2, 10};
+         * VectContains(ex, 10, "add", 5, 5); // returns true because 5 + 5 = 10 and 10 IS in the vector (ex)
+         */
+        template<typename T, typename... Args>
+        bool VectContains(const std::vector<T>& vec, T element, std::string op, const Args&... rest){
+            static_assert(!std::is_same<T, std::string>::value, "Vectors of std::string \n is not supported");
+
+            T result;
+
+            // check for divison by 0
+            if (op == "div" && ((rest == 0) || ...))
+                throw std::invalid_argument("Divison by 0 error.");
+
+            if (op == "add")
+                result = element + (... + rest);
+            else if (op == "sub")
+                result = (element - ... - rest);
+            else if (op == "mult")
+                result = element * (... * rest);
+            else if (op == "div")
+                result = (element / ... / rest);
+            else
+                throw std::invalid_argument("Invalid operation");
+
+            return std::find(vec.begin(), vec.end(), result) != vec.end();
+        }
+
+        /**
+         * @brief Gets the data-type of a value
+         *
+         * @tparam template for all types support
+         * @param elem = element to check for data-type
+         * @returns the associated datatype
+         *
+         * @example
+         * int a = 10;
+         * GetType(a); // returns "int" because a is an integer. (value of a = 10 (integer-value))
+         */
+        template<typename T>
+        std::string GetType(T& elem) {
+            if (std::is_same<T, int>::value) {
+                return "int";
+            }
+            else if (std::is_same<T, float>::value) {
+                return "float";
+            }
+            else if (std::is_same<T, double>::value) {
+                return "double";
+            }
+            else if (std::is_same<T, long>::value) {
+                return "long";
+            }
+            else if (std::is_same<T, long long>::value) {
+                return "long long";
+            }
+            else if (std::is_same<T, unsigned int>::value) {
+                return "unsigned int";
+            }
+            else if (std::is_same<T, unsigned long>::value) {
+                return "unsigned long";
+            }
+            else if (std::is_same<T, unsigned long long>::value) {
+                return "unsigned long long";
+            }
+            else if (std::is_same<T, char>::value) {
+                return "char";
+            }
+            else if (std::is_same<T, unsigned char>::value) {
+                return "unsigned char";
+            }
+            else if (std::is_same<T, signed char>::value) {
+                return "signed char";
+            }
+            else if (std::is_same<T, bool>::value) {
+                return "bool";
+            }
+            else if (std::is_same<T, const char*>::value) {
+                return "const char*";
+            }
+            else if (std::is_same<T, char*>::value) {
+                return "char*";
+            }
+            else if (std::is_same<T, std::string>::value) {
+                return "std::string";
+            }
+            else {
+                return "unknown";
+            }
         }
     }
 
@@ -2036,131 +2156,6 @@ namespace dxlib {
         bool isSpace(const std::string& str){
             return str.find(" ") != std::string::npos;
         }
-
-    }
-
-    // ================== dxlibUtility ==================
-    namespace dxlibUtility {
-        /**
-         * @brief Checks if a element is in a vector.
-         *
-         * @tparam template for flexibility
-         * @param vec = vector to check
-         * @param element = element to check in @param vec
-         *
-         * @example
-         * std::vector<int> ex = {5, 2, 10};
-         * VectContains(ex, 2); // returns true because 2 IS in the vector (ex)
-         */
-        template<typename T>
-        bool VectContains(const std::vector<T>& vec, const T& element){
-            static_assert(!std::is_same<T, std::string>::value, "Vectors of std::string \n is not supported");
-
-            return std::find(vec.begin(), vec.end(), element) != vec.end();
-        }
-
-        /**
-         * INFINITE ARGS VERSION
-         * @brief Checks if a element is in a vector subtracted or added or other operation
-         * by other numbers.
-         *
-         * @tparam T = template for flexibility
-         * @tparam Args = for infinite arguments
-         * @param vec = vector to check
-         * @param element = element to check in @param vec
-         * @param op = operation to do
-         *
-         * @example
-         * std::vector<int> ex = {5, 2, 10};
-         * VectContains(ex, 10, "add", 5, 5); // returns true because 5 + 5 = 10 and 10 IS in the vector (ex)
-         */
-        template<typename T, typename... Args>
-        bool VectContains(const std::vector<T>& vec, T element, std::string op, const Args&... rest){
-            static_assert(!std::is_same<T, std::string>::value, "Vectors of std::string \n is not supported");
-
-            T result;
-
-            // check for divison by 0
-            if (op == "div" && ((rest == 0) || ...))
-                throw std::invalid_argument("Divison by 0 error.");
-
-            if (op == "add")
-                result = element + (... + rest);
-            else if (op == "sub")
-                result = (element - ... - rest);
-            else if (op == "mult")
-                result = element * (... * rest);
-            else if (op == "div")
-                result = (element / ... / rest);
-            else
-                throw std::invalid_argument("Invalid operation");
-
-            return std::find(vec.begin(), vec.end(), result) != vec.end();
-        }
-
-        /**
-         * @brief Gets the data-type of a value
-         *
-         * @tparam template for all types support
-         * @param elem = element to check for data-type
-         * @returns the associated datatype
-         *
-         * @example
-         * int a = 10;
-         * GetType(a); // returns "int" because a is an integer. (value of a = 10 (integer-value))
-         */
-        template<typename T>
-        std::string GetType(T& elem) {
-            if (std::is_same<T, int>::value) {
-                return "int";
-            }
-            else if (std::is_same<T, float>::value) {
-                return "float";
-            }
-            else if (std::is_same<T, double>::value) {
-                return "double";
-            }
-            else if (std::is_same<T, long>::value) {
-                return "long";
-            }
-            else if (std::is_same<T, long long>::value) {
-                return "long long";
-            }
-            else if (std::is_same<T, unsigned int>::value) {
-                return "unsigned int";
-            }
-            else if (std::is_same<T, unsigned long>::value) {
-                return "unsigned long";
-            }
-            else if (std::is_same<T, unsigned long long>::value) {
-                return "unsigned long long";
-            }
-            else if (std::is_same<T, char>::value) {
-                return "char";
-            }
-            else if (std::is_same<T, unsigned char>::value) {
-                return "unsigned char";
-            }
-            else if (std::is_same<T, signed char>::value) {
-                return "signed char";
-            }
-            else if (std::is_same<T, bool>::value) {
-                return "bool";
-            }
-            else if (std::is_same<T, const char*>::value) {
-                return "const char*";
-            }
-            else if (std::is_same<T, char*>::value) {
-                return "char*";
-            }
-            else if (std::is_same<T, std::string>::value) {
-                return "std::string";
-            }
-            else {
-                return "unknown";
-            }
-        }
-
 
     }
 }
